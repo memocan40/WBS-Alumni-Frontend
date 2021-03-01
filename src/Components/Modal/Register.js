@@ -7,7 +7,7 @@ export default function Register({ show, setshow }) {
   };
 
   return (
-    <div className={show ? 'modal-wrapper' : ''}>
+    <div>
       <Modal
         show={show}
         onHide={handleClose}
