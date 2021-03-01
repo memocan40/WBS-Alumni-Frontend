@@ -6,12 +6,15 @@ import {useState}from "react";
 
 export default function LandingPage(){
     let[toggle,settoggle]=useState(false);
-    let[log,setlog]      =useState(false)
+    let[log,setlog]      =useState(false);
+
+   
+   
     return(
         <div className="landing-page-wrapper">
-        <Register show={toggle} setshow={settoggle}/>
+        <Register className="Register" show={toggle} setshow={settoggle}/>
         <Login login={log}  setlogin={setlog}/>
-            <div className="landing-page-content-wrapper">
+            <div className={toggle||log ? "landing-page-content-wrapper2 " : "landing-page-content-wrapper"}>
             
                 <h3 className="landing-page-subheading">welcome to</h3>
                 <h1 className="landing-page-heading">WBS <span class="lighter-font">Alumni</span></h1>

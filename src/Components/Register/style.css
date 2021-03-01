@@ -1,0 +1,92 @@
+.modal{
+  width:90rem;
+  height: 45rem;
+  min-height: 20rem;
+  top:23vh;
+  left:50%;
+  margin-left: -45rem;
+  position:absolute;
+  font-family: "Rubik", "Roboto", sans-serif;
+  outline: none;
+}
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content-container {
+  background-color: white;
+  border: 3px solid #007895;
+  border-radius: 2rem;
+  box-shadow: 6px 6px 10px rgb(82, 82, 82);
+}
+
+.modal-heading {
+  margin: 5rem 0;
+  color: #007895;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.modal-input-container {
+  width: 90%;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.modal-input-label {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.modal-input{
+  width: 70%;
+  height: 3rem;
+  padding: .5rem;
+  font-size: 2.3rem;
+  border: 2px solid #007895;
+  outline: none;
+}
+
+.modal-input:hover {
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
+  transition: all .2s;
+}
+
+.modal-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.modal-register-btn,
+.modal-close-btn {
+    width: 10rem;
+    height: 4rem;
+    margin: 2rem 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all .2s;
+    outline: none;
+}
+
+.modal-register-btn:hover,
+.modal-close-btn:hover {
+    box-shadow: 2px 2px 5px rgb(82, 82, 82);
+}
+
+.modal-register-btn {
+  color: #fff;
+  background-color: #F8485E;
+  border: 2px solid #F8485E;
+}
+
+.modal-close-btn {
+  color: #F8485E;
+  background-color: #fff;
+  border: 2px solid #F8485E;
+}
