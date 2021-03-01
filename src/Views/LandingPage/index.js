@@ -7,7 +7,9 @@ export default function LandingPage(){
                 <h3 className="landing-page-subheading">welcome to</h3>
                 <h1 className="landing-page-heading">WBS <span class="lighter-font">Alumni</span></h1>
                 <div className="landing-page-btn-wrapper">
-                    <button class="log-in-btn">Log in</button>
+                    <button class="log-in-btn" onClick={() => {
+                        console.log("you clicked!")
+                    }}>Log in</button>
                     <button class="register-btn">Register</button>
                 </div>
             </div>

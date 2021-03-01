@@ -1,7 +1,9 @@
 .landing-page-wrapper {
     width: 100%;
     height: 100vh;
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Rubik", "Roboto", sans-serif;
@@ -9,21 +11,39 @@
 
 .landing-page-content-wrapper {
     width: 100%;
-    height: 40vh;
+    height: 30rem;
+    padding: 5rem 0;
     background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 2px solid #007895;
+    border-bottom: 2px solid #007895;
+}
+
+.rotated-border-top {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing-page-wrapper:after {
+    width: 0;
+    height: 0;
+    border-top: 100% solid #ebebeb;
+    border-left: 45% solid #ebebeb;
 }
 
 .landing-page-subheading {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 300;
 }
 
 .landing-page-heading {
-    font-size: 5rem;
+    font-size: 6rem;
     color: #007895;
     letter-spacing: .2rem;
 }
