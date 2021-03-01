@@ -3,17 +3,15 @@ import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import "./Register.css";
 
-export default function Register() {
-  const [show, setShow] = useState(true);
+export default function Register({show,setshow}) {
+  
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {setshow(false);}
+
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
+      
 
       <Modal
         show={show}
@@ -22,12 +20,12 @@ export default function Register() {
         keyboard={false}
         portalClassName="modal"
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Register</Modal.Title>
+        <Modal.Header>
+          <Modal.Title className="Reg"><h1>Register</h1></Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div class="container"> 
-    <label for="Name"><b>Name</b></label>
+    <label for="Name" id="name"><b>Name</b></label>
     <input type="text" placeholder="Enter Name" name="Name" id="Name" required></input>
 
       <label for="email"><b>Email</b></label>
@@ -40,10 +38,10 @@ export default function Register() {
     </div> 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="registerbtn">
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          
         </Modal.Footer>
       </Modal>
     </>
