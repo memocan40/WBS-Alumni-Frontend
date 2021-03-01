@@ -35,14 +35,10 @@ export default function Register({show,setshow}) {
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required></input>
     
     <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn" onClick={handleClose}>Close</button>
     </div> 
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose} className="registerbtn">
-            Close
-          </Button>
-          
-        </Modal.Footer>
+     
       </Modal>
     </>
   );

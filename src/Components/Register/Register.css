@@ -11,6 +11,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -32,6 +33,7 @@ hr {
   width:50%;
   border:solid 3px;
   border-radius:20px;
+  padding:5px;
 }
 .Reg{
   text-align: center;
