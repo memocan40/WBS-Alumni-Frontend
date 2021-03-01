@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 //Views
-import LandingPageView from "./Views/LandingPage";
-import HomePageView from "./Views/HomePage";
+import LandingPageView from "./Views/Landingpage";
+import HomePageView from "./Views/Homepage";
 
 //App general styles
 import './App.css';
