@@ -16,7 +16,7 @@ export default function Login({login,setlogin}) {
       <Modal
         show={login}
         onHide={handleClose}
-        backdrop="static"
+        backdrop="false"
         keyboard={false}
         portalClassName="modal"
       >
@@ -34,7 +34,7 @@ export default function Login({login,setlogin}) {
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required></input>
     
     <button type="submit" class="registerbtn">Login</button>
-    <button type="submit" class="registerbtn" onClick={handleClose}>Close</button>
+    <button type="submit" class="close" onClick={handleClose}>X</button>
     </div> 
         </Modal.Body>
        

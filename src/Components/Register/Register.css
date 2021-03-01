@@ -29,11 +29,14 @@ hr {
 }
 
 .modal{
-  margin:auto;
+ margin:auto;
   width:50%;
   border:solid 3px;
   border-radius:20px;
-  padding:5px;
+  background-color:rgb(255, 255, 255)(179, 155, 155);
+  padding:1px;
+  
+  
 }
 .Reg{
   text-align: center;
