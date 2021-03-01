@@ -32,6 +32,9 @@ hr {
   width:50%;
   border:solid 3px;
   border-radius:20px;
+  background-color:rgb(255, 255, 255)(179, 155, 155);
+  padding:5px;
+  
 }
 .Reg{
   text-align: center;

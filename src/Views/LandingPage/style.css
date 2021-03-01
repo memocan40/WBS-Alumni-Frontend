@@ -17,6 +17,18 @@
     align-items: center;
 }
 
+.landing-page-content-wrapper2 {
+    width: 100%;
+    height: 40vh;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity:0.5;
+}
+
+
 .landing-page-subheading {
     font-size: 3rem;
     font-weight: 300;
@@ -70,3 +82,9 @@
 
 
 
+.modal{
+    position:absolute;
+    top:100px;
+    left:30%;
+    
+}
