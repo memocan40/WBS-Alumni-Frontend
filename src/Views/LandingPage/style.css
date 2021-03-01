@@ -1,7 +1,9 @@
 .landing-page-wrapper {
     width: 100%;
     height: 100vh;
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Rubik", "Roboto", sans-serif;
@@ -9,33 +11,38 @@
 
 .landing-page-content-wrapper {
     width: 100%;
-    height: 40vh;
-    background-color: #ebebeb;
+    height: 30rem;
+    padding: 5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ebebeb;
+    border-top: 2px solid #007895;
+    border-bottom: 2px solid #007895;
 }
 
 .landing-page-content-wrapper2 {
     width: 100%;
-    height: 40vh;
+    height: 30rem;
+    padding: 5rem 0;
     background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity:0.5;
+    opacity:0.2;
+    border-top: 2px solid #007895;
+    border-bottom: 2px solid #007895;
 }
 
-
 .landing-page-subheading {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 300;
 }
 
 .landing-page-heading {
-    font-size: 5rem;
+    font-size: 8rem;
     color: #007895;
     letter-spacing: .2rem;
 }
@@ -53,13 +60,14 @@
 
 .log-in-btn,
 .register-btn {
-    width: 10rem;
-    height: 4rem;
+    width: 14rem;
+    height: 5rem;
     margin: 2rem 1rem;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     transition: all .2s;
+    outline: none;
 }
 
 .log-in-btn {
@@ -78,13 +86,4 @@
 .log-in-btn:hover,
 .register-btn:hover {
     box-shadow: 2px 2px 5px rgb(82, 82, 82);
-}
-
-
-
-.modal{
-    position:absolute;
-    top:100px;
-    left:30%;
-    
 }

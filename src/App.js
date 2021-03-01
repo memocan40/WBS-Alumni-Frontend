@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
 //Views
-import LandingPageView from "./Views/LandingPage/index";
+import LandingPageView from "./Views/Landingpage/index";
 import HomePageView from "./Views/Homepage";
-import Register from "./Components/Register/Register.js";
 
 //App general styles
 import './App.css';
