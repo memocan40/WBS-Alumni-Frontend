@@ -4,7 +4,7 @@ import Register from '../../Components/Modal/Register.js';
 import Login from '../../Components/Modal/Login.js';
 import { useState } from 'react';
 
-export default function LandingPage() {
+export default function LandingPageView() {
   let [toggle, settoggle] = useState(false);
   let [log, setlog] = useState(false);
 
