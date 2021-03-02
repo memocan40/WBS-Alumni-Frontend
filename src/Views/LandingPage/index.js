@@ -3,10 +3,12 @@ import './style.css';
 import Register from '../../Components/Modal/Register.js';
 import Login from '../../Components/Modal/Login.js';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next'
 
 export default function LandingPageView() {
   let [toggle, settoggle] = useState(false);
   let [log, setlog] = useState(false);
+  const { t, i18n } = useTranslation()
 
   return (
     <div className="landing-page-wrapper">
@@ -18,7 +20,9 @@ export default function LandingPageView() {
             ? 'landing-page-content-wrapper2 '
             : 'landing-page-content-wrapper'
         }>
-        <h3 className="landing-page-subheading">welcome to</h3>
+        <h3 className="landing-page-subheading">
+        {t('welcome.label')}
+          </h3>
         <h1 className="landing-page-heading">
           WBS <span class="lighter-font">Alumni</span>
         </h1>
