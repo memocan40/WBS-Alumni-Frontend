@@ -24,7 +24,8 @@
 
 .header-right-top-wrapper {
     height: 35%;
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
