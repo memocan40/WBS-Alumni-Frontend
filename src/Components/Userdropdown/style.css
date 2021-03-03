@@ -1,0 +1,33 @@
+.dropdown {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 3rem;
+}
+
+.btn-secondary {
+    width: inherit;
+    height: inherit;
+    border: none;
+    color: #007895;
+    font-size: 1.5rem;
+    outline:none;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff !important;
+    border: 1px solid #007895;
+    font-size: 1.5rem;
+}
+
+.dropdown-item {
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-item:hover {
+    background-color: #ebebeb;
+}
