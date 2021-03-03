@@ -5,8 +5,8 @@ export default function AllBatches() {
   return (
     <div>
       <Header />
-      <BatchCard value="david" />
-      <BatchCard value="elie" />
+      <BatchCard batchName="batch1" batchDate=""/>
+      <BatchCard batchName="batch2" batchDate=""/>
     </div>
   );
 }

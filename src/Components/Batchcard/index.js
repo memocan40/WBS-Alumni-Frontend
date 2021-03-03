@@ -1,21 +1,11 @@
 import './style.css';
 
-export default function BatchCard({ value }) {
+export default function BatchCard({ batchName, batchDate }) {
   return (
-    <div>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-
-      <div class="card">
-        <h1>{value}</h1>
-        <p class="title">All Students of Batch</p>
-        <p>WBS CodingSchool</p>
-
-        <p>
-          <button>Visit Batch</button>
-        </p>
-      </div>
+    <div className="batch-card">
+      <h1 className="batch-heading">{batchName}</h1>
+      <p class="batch-date">Start date: {batchDate}</p>
+      <button className="batch-card-btn">Visit Batch</button>
     </div>
   );
 }
