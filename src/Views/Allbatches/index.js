@@ -1,12 +1,12 @@
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
+import Header from '../../Components/Header';
+import BatchCard from '../../Components/Batchcard';
 
-export default function AllBatches () {
-    return (
-        <>
-        <Header />
-        <div>hello</div>
-        <Footer />
-        </>
-    )
+export default function AllBatches() {
+  return (
+    <div>
+      <Header />
+      <BatchCard value="david" />
+      <BatchCard value="elie" />
+    </div>
+  );
 }

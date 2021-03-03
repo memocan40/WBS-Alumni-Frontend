@@ -81,3 +81,8 @@
     font-size: 3rem;
     font-weight: 400;
 }
+
+.nav-item:hover {
+    color: #007895;
+    transition: all .2s;
+}
