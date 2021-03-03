@@ -13,20 +13,26 @@ let[inputvalue,setinputvalue]=useState();
     //item.textContent = msg;
     //messages.appendChild(item);
     //window.scrollTo(0, document.body.scrollHeight);});
-
- 
+let messages=document.getElementById("messages");
+let textfield=document.getElementById("input");
  
   const submitHandler=(e)=>{
       e.preventDefault();
     if (inputvalue) {
-      socket.emit('chat message', input.value);
-      input.value = '';
+      socket.emit('chat message', inputvalue);
+      setinputvalue("");
+        var item = document.createElement('li');
+        item.textContent = inputvalue;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+        textfield.value=""
   }}
+  
     return(
         <div>
             <ul id="messages"></ul>
     <form onSubmit={submitHandler} id="form" action="">
-      <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button>Send</button>
+      <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button id="button">Send</button>
       </form>
         </div>
     )
