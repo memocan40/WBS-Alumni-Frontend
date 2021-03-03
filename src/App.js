@@ -4,6 +4,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import "./i18next-config";
 
 //Views
+import Profile from "./Views/Profile";
 import LetsCodeView from "./Views/Letscode";
 import AllBatchesView from "./Views/Allbatches";
 import ReachOutView from "./Views/Reachout";
@@ -18,6 +19,11 @@ function App() {
     <div className='App'>
       <Suspense fallback={null}>
         <Switch>
+
+          {/*----profile route---- */}
+          <Route path="/profile/">
+              <Profile />
+          </Route>
 
           {/*----lets code route---- */}
           <Route path="/letscode/">
