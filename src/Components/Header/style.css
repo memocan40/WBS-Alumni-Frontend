@@ -26,7 +26,7 @@
     height: 35%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -68,6 +68,8 @@
 }
 
 .nav-item {
+    text-decoration: none;
+    color: #000;
     padding-top: 2rem;
     font-size: 3rem;
     font-weight: 400;

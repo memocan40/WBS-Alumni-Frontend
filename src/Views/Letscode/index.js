@@ -1,11 +1,10 @@
 import Header from "../../Components/Header";
 
-import "./style.css";
-
-export default function Homepage () {
+export default function LetsCode () {
     return (
         <>
-            <Header />
+        <Header />
+        <div>hello</div>
         </>
     )
 }
