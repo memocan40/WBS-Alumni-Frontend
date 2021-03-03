@@ -8,7 +8,7 @@ import "./style.css";
 
 export default function Header() {
     return (
-        <section className="header">
+        <header className="header">
             <div className="header-left">
                 <h1 className="landing-page-heading">WBS <span class="lighter-font">Alumni</span></h1>
             </div>
@@ -29,6 +29,6 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
     )
 }
