@@ -1,5 +1,6 @@
 import { Switch, Route, Link } from "react-router-dom";
 
+import UserDropdown from '../Userdropdown';
 import ToggleBtn from '../Togglebtn';
 import LanguageSelector from "../Languageselector";
 
@@ -24,6 +25,7 @@ export default function Header() {
                     </nav>
                     <div class="log-in-wrapper">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="user-profile-img" />
+                        <UserDropdown />    
                     </div>
                 </div>
             </div>
