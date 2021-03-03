@@ -14,7 +14,9 @@ export default function LandingPageView() {
 
   return (
     <div className="landing-page-wrapper">
-      <LanguageSelector />
+      <div className="landing-page-lang-wrapper">
+        <LanguageSelector />
+      </div>
       <Register className="Register" show={toggle} setshow={settoggle} />
       <Login login={log} setlogin={setlog} />
       <div

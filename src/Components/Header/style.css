@@ -24,7 +24,8 @@
 
 .header-right-top-wrapper {
     height: 35%;
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -52,8 +53,14 @@
     width: 4rem;
     height: 4rem;
     margin-top: 1.5rem;
+    background: #000;
     border-radius: 50%;
     border: 1px solid #007895;
+    transition: all .2s;
+}
+
+.user-profile-img:hover {
+    opacity: 0.7;
 }
 
 
@@ -73,4 +80,9 @@
     padding-top: 2rem;
     font-size: 3rem;
     font-weight: 400;
+}
+
+.nav-item:hover {
+    color: #007895;
+    transition: all .2s;
 }
