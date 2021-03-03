@@ -1,11 +1,10 @@
 import Header from "../../Components/Header";
 
-import "./style.css";
-
-export default function Homepage () {
+export default function ReachOut () {
     return (
         <>
-            <Header />
+        <Header />
+        <div>hello</div>
         </>
     )
 }

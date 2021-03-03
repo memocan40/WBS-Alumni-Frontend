@@ -2,6 +2,8 @@ import './style.css';
 
 import Register from '../../Components/Modal/Register.js';
 import Login from '../../Components/Modal/Login.js';
+import LanguageSelector from '../../Components/Languageselector';
+
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next'
 
@@ -12,6 +14,7 @@ export default function LandingPageView() {
 
   return (
     <div className="landing-page-wrapper">
+      <LanguageSelector />
       <Register className="Register" show={toggle} setshow={settoggle} />
       <Login login={log} setlogin={setlog} />
       <div

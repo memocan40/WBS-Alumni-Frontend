@@ -42,6 +42,7 @@
 }
 
 .landing-page-heading {
+    margin: 1.5rem 0;
     font-size: 8rem;
     color: #007895;
     letter-spacing: .2rem;
