@@ -1,14 +1,17 @@
 import Header from '../../Components/Header';
-import BatchCard from '../../Components/Batchcard';
+import BatchCard from '../../Components/BatchCard';
 import Chat from "../../Components/Chat/Chat";
-import Usercard from "../../Components/Usercard";
+
+import "./style.css";
 
 export default function AllBatches() {
   return (
     <div>
       <Header />
-      <BatchCard batchName="batch1" batchDate=""/>
-      <BatchCard batchName="batch2" batchDate=""/>
+      <section class="batch-cards-container">
+        <BatchCard batchName="batch1" batchDate=""/>
+        <BatchCard batchName="batch2" batchDate=""/>
+      </section>
       <Chat/>
     </div>
   );

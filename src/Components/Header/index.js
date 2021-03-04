@@ -1,8 +1,8 @@
 import { Switch, Route, Link } from "react-router-dom";
 
-import UserDropdown from '../Userdropdown';
-import ToggleBtn from '../Togglebtn';
-import LanguageSelector from "../Languageselector";
+import UserDropdown from '../UserDropdown';
+import ToggleBtn from '../ToggleBtn';
+import LanguageSelector from "../LanguageSelector";
 
 import "./style.css";
 

@@ -1,0 +1,91 @@
+.profile-wrapper {
+  width: 50%;
+  max-width: 1300px;
+  min-height: 10rem;
+  margin: 5rem auto;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #ebebeb;
+  border: 3px solid #007895;
+  border-radius: 2rem;
+}
+
+/*---right wrapper---*/
+.profile-right-wrapper {
+  width: 40%;
+  margin: 0 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-desc {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.profile-edit-btn {
+  width: 15rem;
+  height: 3rem;
+  margin-top: 3rem;
+  align-self: center;
+  background-color: #f8485e;
+  color: #fff;
+  border: 2px solid #f8485e;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.profile-edit-btn:hover {
+  background-color: #fff;
+  color: #f8485e;
+  transition: all 0.2s;
+}
+
+/*---left wrapper---*/
+.profile-left-wrapper {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-heading {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.profile-img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #007895;
+}
+
+.profile-img {
+  width: 100%;
+  transform: scale(1.1);
+}
+
+.upload-pic-btn {
+  width: 15rem;
+  height: 3rem;
+  margin-top: 2rem;
+  align-self: center;
+  background-color: #fff;
+  color: #f8485e;
+  border: 2px solid #f8485e;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.upload-pic-btn:hover {
+  background-color: #f8485e;
+  color: #fff;
+  transition: all 0.2s;
+}

@@ -2,7 +2,7 @@ import './style.css';
 
 import Register from '../../Components/Modal/Register.js';
 import Login from '../../Components/Modal/Login.js';
-import LanguageSelector from '../../Components/Languageselector';
+import LanguageSelector from '../../Components/LanguageSelector';
 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next'
