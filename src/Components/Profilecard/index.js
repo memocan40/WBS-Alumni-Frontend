@@ -1,4 +1,4 @@
-import './Profilecard.css';
+import './style.css';
 
 export default function Profilecard() {
   return (
