@@ -1,53 +1,47 @@
-import { Modal } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './style.css';
 
-export default function Login({ login, setlogin }) {
-  const handleClose = () => {
-    setlogin(false);
-  };
+export default function Login() {
+  const [name, setName] = useState('');
+  const [pw, setPw] = useState('');
 
   return (
     <div>
-      <Modal
-        show={login}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        portalClassName="modal">
-        <Modal.Body>
-          <div class="modal-content-container">
-            <h1 className="modal-heading">Log in</h1>
-            <div className="modal-input-container">
-              <label for="Name" id="name" className="modal-input-label">Name:</label>
-              <input
-                className="modal-input"
-                type="text"
-                placeholder="Enter Name"
-                name="Name"
-                id="Name"
-                required></input>
-            </div>
-            <div className="modal-input-container">
-              <label for="psw" className="modal-input-label">Password:</label>
-              <input
-                className="modal-input"
-                type="password"
-                placeholder="Enter Password"
-                name="psw"
-                id="psw"
-                required></input>
-            </div>
-            <div className="modal-btn-wrapper">
-              <button type="submit" class="modal-register-btn">
-                Register
-              </button>
-              <button type="submit" class="modal-close-btn" onClick={handleClose}>
-                Close
-              </button>
-            </div>  
-          </div>
-        </Modal.Body>
-      </Modal>
+      <div className="form-content-container">
+        <h1 className="form-heading">Log in</h1>
+        <div className="form-input-container">
+          <label for="Name" id="name" className="form-input-label">
+            Name:
+          </label>
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Enter Name"
+            name="Name"
+            id="Name"
+            required></input>
+        </div>
+        <div className="form-input-container">
+          <label for="psw" className="form-input-label">
+            Password:
+          </label>
+          <input
+            className="form-input"
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            id="psw"
+            required></input>
+        </div>
+        <button type="submit" className="form-btn">
+          Log-in
+        </button>
+        <div className="form-redirection">
+          Don't have and account ? <Link className="form-redirection-link" to="/register">Register</Link>
+        </div>
+      </div>
     </div>
   );
 }
