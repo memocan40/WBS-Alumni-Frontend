@@ -1,47 +1,37 @@
-.modal{
-  width: 90rem;
-  min-height: 20rem;
-  top:23vh;
-  left:50%;
-  margin-left: -45rem;
-  position:absolute;
-  font-family: "Rubik", "Roboto", sans-serif;
-  outline: none;
-}
-
-.modal-content {
-  width: 100%;
-  height: 100%;
-}
-
-.modal-content-container {
+.form-content-container {
+  width: 50%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   border: 3px solid #007895;
   border-radius: 2rem;
   box-shadow: 6px 6px 10px rgb(82, 82, 82);
 }
 
-.modal-heading {
+.form-heading {
   margin: 5rem 0;
   color: #007895;
   text-align: center;
   font-size: 4rem;
 }
 
-.modal-input-container {
+.form-input-container {
   width: 90%;
-  margin: 4rem auto;
+  margin: 3rem auto;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.modal-input-label {
+.form-input-label {
   font-size: 3rem;
   font-weight: 500;
 }
 
-.modal-input{
+.form-input{
   width: 70%;
   height: 3rem;
   padding: .5rem;
@@ -50,22 +40,18 @@
   outline: none;
 }
 
-.modal-input:hover {
+.form-input:hover {
   box-shadow: 2px 2px 5px rgb(82, 82, 82);
   transition: all .2s;
 }
 
-.modal-btn-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 3rem 0;
-}
-
-.modal-register-btn,
-.modal-close-btn {
+.form-btn {
     width: 12rem;
     height: 5rem;
-    margin: 2rem 1rem;
+    margin-top: 2rem;
+    color: #fff;
+    background-color: #F8485E;
+    border: 2px solid #F8485E;
     border-radius: 1rem;
     font-size: 2.5rem;
     font-weight: bold;
@@ -73,19 +59,21 @@
     outline: none;
 }
 
-.modal-register-btn:hover,
-.modal-close-btn:hover {
+.form-btn:hover {
     box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 
-.modal-register-btn {
-  color: #fff;
-  background-color: #F8485E;
-  border: 2px solid #F8485E;
+.form-redirection {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.modal-close-btn {
-  color: #F8485E;
-  background-color: #fff;
-  border: 2px solid #F8485E;
+.form-redirection-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.form-redirection-link:hover {
+  color: #007895;
+  transition: all .2s;
 }

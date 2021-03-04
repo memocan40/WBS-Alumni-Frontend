@@ -8,6 +8,8 @@ import Profile from './Views/UserProfile';
 import LetsCodeView from './Views/LetsCode';
 import AllBatchesView from './Views/AllBatches';
 import ReachOutView from './Views/ReachOut';
+import Login from './Views/Login';
+import Register from './Views/Register';
 import LandingPageView from './Views/LandingPage';
 import HomePageView from './Views/HomePage';
 
@@ -46,6 +48,16 @@ function App() {
           {/*---- Home Page Route---- */}
           <Route path={'/home'}>
             <HomePageView />
+          </Route>
+
+          {/*---- Register Route---- */}
+          <Route path={'/register'}>
+            <Register />
+          </Route>
+
+          {/*---- Log-in Route---- */}
+          <Route path={'/login'}>
+            <Login />
           </Route>
 
           {/*---- Landing Page Route---- */}
