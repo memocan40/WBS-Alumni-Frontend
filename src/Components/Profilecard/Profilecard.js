@@ -2,17 +2,17 @@ import "./Profilecard.css";
 
 
 
-export default function Profilecard(){
+export default function Profilecard({Forename}){
 
     return(
         <div class="profile">
             <div class="flex-container">
                 <div class="picture">
-                    Picture
+                   
                 </div>
             </div>
             <div class="grid-container">
-                <div class="infos"><h5>Forename: </h5></div>
+                <div class="infos"><h5>Forename: {Forename}</h5></div>
                 <div class="infos"><h5>Last Name: </h5></div>
                 <div class="infos"><h5>Strength: </h5></div>
                 <div class="infos"><h5>Weakness: </h5></div>

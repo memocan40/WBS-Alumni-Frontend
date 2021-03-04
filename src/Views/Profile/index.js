@@ -10,7 +10,7 @@ export default function Profile() {
         <Header />
         <div className="profile-wrapper">
             
-            <Profilecard/>
+            <Profilecard />
             
         </div>
         <Footer />
