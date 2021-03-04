@@ -5,9 +5,9 @@
   max-width: 30rem;
   text-align: center;
   margin-top: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   border: 2px solid #007895;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .batch-heading {
@@ -20,7 +20,19 @@
 }
 
 .batch-card-btn {
-  border: 1px solid #F8485E;
-  background-color: #F8485E;
+  height: 3rem;
+  width: 9rem;
+  margin: 1rem auto;
+  background-color: #f8485e;
+  border: 2px solid #f8485e;
+  border-radius: 1rem;
   color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.batch-card-btn:hover {
+  background-color: #fff;
+  color: #f8485e;
+  transition: all 0.2s;
 }

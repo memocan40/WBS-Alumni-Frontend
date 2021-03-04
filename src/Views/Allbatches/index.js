@@ -1,7 +1,7 @@
 import Header from '../../Components/Header';
-import BatchCard from '../../Components/Batchcard';
+import BatchCard from '../../Components/BatchCard';
 import Chat from "../../Components/Chat/Chat";
-import Usercard from "../../Components/Usercard";
+import Usercard from "../../Components/UserCard";
 
 export default function AllBatches() {
   return (
