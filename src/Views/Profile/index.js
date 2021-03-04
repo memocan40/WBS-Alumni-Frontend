@@ -1,5 +1,6 @@
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
+import Profilecard from "../../Components/Profilecard/Profilecard"
 
 import "./style.css";
 
@@ -9,7 +10,8 @@ export default function Profile() {
         <Header />
         <div className="profile-wrapper">
             
-            <p>Hello profile</p>
+            <Profilecard/>
+            
         </div>
         <Footer />
         </>
