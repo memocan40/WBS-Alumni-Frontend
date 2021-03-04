@@ -1,4 +1,4 @@
-import UserCard from '../../Components/UserCard';
+import UserCard from '../../Components/StudentCard';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 

@@ -20,6 +20,7 @@ export default function Profile({userObject}) {
                 <div className="profile-desc">City: <span>data</span></div>
                 <div className="profile-desc">Strengths: <span>data</span></div>
                 <div className="profile-desc">Weaknesses: <span>data</span></div>
+                <div className="profile-desc">Work Status: <span>data</span></div>
                 <button className="profile-edit-btn">Edit Profile</button>
             </div>
         </div>
