@@ -12,7 +12,7 @@ import Login from './Views/Login';
 import Register from './Views/Register';
 import LandingPageView from './Views/Landingpage';
 import HomePageView from './Views/Homepage';
-import StudentProfile from "./Views/Studentprofile"
+import StudentProfile from "./Views/Studentprofile";
 
 //App general styles
 import './App.css';
