@@ -1,63 +1,58 @@
-import { Modal } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import './style.css';
 
-export default function Register({ show, setshow }) {
-  const handleClose = () => {
-    setshow(false);
-  };
+export default function Register() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [pw, setPw] = useState('');
 
   return (
-    <div>
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-        portalClassName="modal">
-        <Modal.Body>
-          <div class="modal-content-container">
-            <h1 className="modal-heading">Register</h1>
-            <div className="modal-input-container">
-              <label for="Name" id="name" className="modal-input-label">Name:</label>
-              <input
-                className="modal-input"
-                type="text"
-                placeholder="Enter Name"
-                name="Name"
-                id="Name"
-                required></input>
-            </div>
-            <div className="modal-input-container">
-              <label for="email" className="modal-input-label">Email:</label>
-              <input
-                className="modal-input"
-                type="text"
-                placeholder="Enter Email"
-                name="email"
-                id="email"
-                required></input>
-            </div>
-            <div className="modal-input-container">
-              <label for="psw" className="modal-input-label">Password:</label>
-              <input
-                className="modal-input"
-                type="password"
-                placeholder="Enter Password"
-                name="psw"
-                id="psw"
-                required></input>
-            </div>
-            <div className="modal-btn-wrapper">
-              <button type="submit" class="modal-register-btn">
-                Register
-              </button>
-              <button type="submit" class="modal-close-btn" onClick={handleClose}>
-                Close
-              </button>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+    <div class="form-content-container">
+      <h1 className="form-heading">Register</h1>
+      <div className="form-input-container">
+        <label for="Name" id="name" className="form-input-label">
+          Name:
+        </label>
+        <input
+          className="form-input"
+          type="text"
+          placeholder="Enter Name"
+          name="Name"
+          id="Name"
+          required></input>
+      </div>
+      <div className="form-input-container">
+        <label for="email" className="form-input-label">
+          Email:
+        </label>
+        <input
+          className="form-input"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required></input>
+      </div>
+      <div className="form-input-container">
+        <label for="psw" className="form-input-label">
+          Password:
+        </label>
+        <input
+          className="form-input"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          id="psw"
+          required></input>
+      </div>
+      <button type="submit" class="form-btn">
+        Register
+      </button>
+      <div class="form-redirection">
+        Have an account ? <Link className="form-redirection-link" to="/login">Log-in</Link>
+      </div>
     </div>
   );
 }

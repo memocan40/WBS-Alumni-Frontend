@@ -5,11 +5,13 @@ import './i18next-config';
 
 //Views
 import Profile from './Views/UserProfile';
-import LetsCodeView from './Views/LetsCode';
-import AllBatchesView from './Views/AllBatches';
-import ReachOutView from './Views/ReachOut';
-import LandingPageView from './Views/LandingPage';
-import HomePageView from './Views/HomePage';
+import LetsCodeView from './Views/Letscode';
+import AllBatches from './Views/Allbatches';
+import ReachOutView from './Views/Reachout';
+import Login from './Views/Login';
+import Register from './Views/Register';
+import LandingPageView from './Views/Landingpage';
+import HomePageView from './Views/Homepage';
 
 //App general styles
 import './App.css';
@@ -40,12 +42,22 @@ function App() {
 
           {/*----all batches route---- */}
           <Route path="/allbatches/">
-            <AllBatchesView />
+            <AllBatches />
           </Route>
 
           {/*---- Home Page Route---- */}
           <Route path={'/home'}>
             <HomePageView />
+          </Route>
+
+          {/*---- Register Route---- */}
+          <Route path={'/register'}>
+            <Register />
+          </Route>
+
+          {/*---- Log-in Route---- */}
+          <Route path={'/login'}>
+            <Login />
           </Route>
 
           {/*---- Landing Page Route---- */}
