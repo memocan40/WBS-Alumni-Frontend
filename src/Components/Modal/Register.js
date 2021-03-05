@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [pw, setPw] = useState('');
+  //const [name, setName] = useState('');
+  //const [email, setEmail] = useState('');
+  //const [pw, setPw] = useState('');
 
   return (
-    <div class="form-content-container">
+    <div className="form-content-container">
       <h1 className="form-heading">Register</h1>
       <div className="form-input-container">
         <label for="Name" id="name" className="form-input-label">
@@ -47,10 +47,10 @@ export default function Register() {
           id="psw"
           required></input>
       </div>
-      <button type="submit" class="form-btn">
+      <button type="submit" className="form-btn">
         Register
       </button>
-      <div class="form-redirection">
+      <div className="form-redirection">
         Have an account ? <Link className="form-redirection-link" to="/login">Log-in</Link>
       </div>
     </div>

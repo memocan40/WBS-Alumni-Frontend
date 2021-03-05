@@ -1,4 +1,4 @@
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import UserDropdown from '../Userdropdown';
 import ToggleBtn from '../Togglebtn';
@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header className="header">
             <div className="header-left">
-                <h1 className="landing-page-heading">WBS <span class="lighter-font">Alumni</span></h1>
+                <h1 className="landing-page-heading">WBS <span className="lighter-font">Alumni</span></h1>
             </div>
             <div className="header-right">
                 <div className="header-right-top-wrapper">
@@ -23,8 +23,8 @@ export default function Header() {
                         <Link to="/reachout/" className="nav-item">Reach Out</Link>
                         <Link to="/letscode/" className="nav-item">Let's Code</Link>
                     </nav>
-                    <div class="log-in-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="user-profile-img" />
+                    <div className="log-in-wrapper">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="user-profile-img" />
                         <UserDropdown />    
                     </div>
                 </div>

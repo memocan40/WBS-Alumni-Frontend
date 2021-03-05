@@ -30,7 +30,7 @@ export default function LandingPageView() {
           </Link>
           <Link
             to="/register"
-            class="register-btn">
+            className="register-btn">
             Register
           </Link>
         </div>
