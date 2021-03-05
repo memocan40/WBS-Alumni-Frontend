@@ -1,4 +1,5 @@
 import './style.css';
+import {Link} from "react-router-dom";
 
 export default function Usercard({ Name, Batch }) {
   return (
@@ -8,7 +9,7 @@ export default function Usercard({ Name, Batch }) {
           </div>
           <h1 id="user-card-name">Name:</h1>
           <p class="user-card-desc">Batch: 20 NOV 2020</p>
-          <button class="user-card-btn">Contact</button>
+         <Link to="/studentprofile"> <button class="user-card-btn">Contact</button></Link>
       </div>
   );
 }
