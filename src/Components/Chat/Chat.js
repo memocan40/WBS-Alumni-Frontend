@@ -5,6 +5,7 @@ import {useState}from "react";
 
 export default function Chat(){
 let[inputvalue,setinputvalue]=useState();
+let[username,setusername]=useState("anonym");
     var socket = io();
 
   
@@ -18,11 +19,12 @@ let textfield=document.getElementById("input");
  
   const submitHandler=(e)=>{
       e.preventDefault();
-    if (inputvalue) {
-      socket.emit('chat message', inputvalue);
+    if (inputvalue!=""&&username) {
+      const message={inputvalue,username}
+      socket.emit('chat message', message);
       setinputvalue("");
         var item = document.createElement('li');
-        item.textContent = inputvalue;
+        item.textContent = message;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
         textfield.value=""

@@ -2,16 +2,16 @@
 
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
-import Profilecard from '../../Components/Profilecard/Profilecard';
+import Studentprofile from '../../Components/Studentprofile';
 
-import './style.css';
 
-export default function Profile() {
+
+export default function StudentProfile() {
   return (
     <>
       <Header />
       <div className="profile-wrapper">
-        <Profilecard />
+        <Studentprofile />
       </div>
       <Footer />
     </>
