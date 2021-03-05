@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './style.css';
 
 export default function Login() {
-  const [name, setName] = useState('');
-  const [pw, setPw] = useState('');
+  //const [name, setName] = useState('');
+  //const [pw, setPw] = useState('');
 
   return (
     <div>

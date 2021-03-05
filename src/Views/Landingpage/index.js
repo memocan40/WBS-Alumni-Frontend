@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import './style.css';
 
-import LanguageSelector from '../../Components/LanguageSelector';
+import LanguageSelector from '../../Components/Languageselector';
 
 
 export default function LandingPageView() {
@@ -30,7 +30,7 @@ export default function LandingPageView() {
           </Link>
           <Link
             to="/register"
-            class="register-btn">
+            className="register-btn">
             Register
           </Link>
         </div>

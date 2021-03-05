@@ -1,10 +1,12 @@
 import './style.css';
 
-export default function Profilecard() {
+export default function Studentprofile() {
   return (
     <div className="profile">
       <div className="flex-container">
-        <div className="picture">Picture</div>
+        <div className="picture">
+        <img className="user-card-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profilepic" />
+        </div>
       </div>
       <div className="grid-container">
         <div className="infos">

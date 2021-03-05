@@ -8,7 +8,7 @@ export default function Profile({userObject}) {
         <>
         <Header />
         <div className="profile-wrapper">
-            <div class="profile-left-wrapper">
+            <div className="profile-left-wrapper">
                 <h1 className="profile-heading">Your Profile</h1>
                 <div className="profile-img-wrapper"><img className="profile-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" placeholder="user-profile"></img></div>
                 <button className="upload-pic-btn">Upload picture</button>
