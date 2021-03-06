@@ -1,4 +1,27 @@
 {
-    "welcome.label": "willkommen bei"
-
+    "welcome.label": "willkommen bei",
+    "login.label": "Log-in",
+    "register.label": "Registrieren",
+    "allbatches.label": "Change me",
+    "reachout.label": "Change me",
+    "letscode.label": "Change me",
+    "theme.label": "Change me",
+    "profile.label": "Change me",
+    "logout.label": "Change me",
+    "startdate.label": "Change me",
+    "visitbatch.label": "Change me",
+    "name.label": "Change me",
+    "batch.label": "Change me",
+    "contact.label": "Change me",
+    "password.label": "Change me",
+    "email.label": "Change me",
+    "haveanacc.label": "Change me",
+    "donthaveanacc.label": "Change me",
+    "city.label": "Change me",
+    "strengths.label": "Change me",
+    "weaknesses.label": "Change me",
+    "workstatus.label": "Change me",
+    "editprofile.label": "Change me",
+    "uploadpicture.label": "Change me",
+    "yourprofile.label": "Change me"
   }

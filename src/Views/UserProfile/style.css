@@ -40,12 +40,6 @@
   outline: none;
 }
 
-.profile-edit-btn:hover {
-  background-color: #fff;
-  color: #f8485e;
-  transition: all 0.2s;
-}
-
 /*---left wrapper---*/
 .profile-left-wrapper {
   width: 30%;
@@ -84,8 +78,8 @@
   outline: none;
 }
 
+.profile-edit-btn:hover,
 .upload-pic-btn:hover {
-  background-color: #f8485e;
-  color: #fff;
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
   transition: all 0.2s;
 }

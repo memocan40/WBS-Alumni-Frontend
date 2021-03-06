@@ -46,7 +46,7 @@
 }
 
 .form-btn {
-    width: 12rem;
+    min-width: 12rem;
     height: 5rem;
     margin-top: 2rem;
     color: #fff;

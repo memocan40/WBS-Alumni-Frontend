@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './style.css';
 
@@ -7,13 +8,13 @@ export default function Register() {
   //const [name, setName] = useState('');
   //const [email, setEmail] = useState('');
   //const [pw, setPw] = useState('');
-
+  const { t, i18n } = useTranslation();
   return (
     <div className="form-content-container">
       <h1 className="form-heading">Register</h1>
       <div className="form-input-container">
         <label for="Name" id="name" className="form-input-label">
-          Name:
+        {t('name.label')}
         </label>
         <input
           className="form-input"
@@ -25,7 +26,7 @@ export default function Register() {
       </div>
       <div className="form-input-container">
         <label for="email" className="form-input-label">
-          Email:
+        {t('email.label')}
         </label>
         <input
           className="form-input"
@@ -37,7 +38,7 @@ export default function Register() {
       </div>
       <div className="form-input-container">
         <label for="psw" className="form-input-label">
-          Password:
+        {t('password.label')}
         </label>
         <input
           className="form-input"
@@ -48,10 +49,10 @@ export default function Register() {
           required></input>
       </div>
       <button type="submit" className="form-btn">
-        Register
+      {t('register.label')}
       </button>
       <div className="form-redirection">
-        Have an account ? <Link className="form-redirection-link" to="/login">Log-in</Link>
+      {t('haveanacc.label')} <Link className="form-redirection-link" to="/login">{t('login.label')}</Link>
       </div>
     </div>
   );

@@ -57,10 +57,10 @@
 
 .log-in-btn,
 .register-btn {
-    width: 14rem;
+    min-width: 8rem;
     height: 4rem;
     margin: 2rem 1rem;
-    padding-top: .5rem;
+    padding: .5rem .5rem 0 .5rem;
     border-radius: 1rem;
     font-size: 3rem;
     font-weight: bold;
