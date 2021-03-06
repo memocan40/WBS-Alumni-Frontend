@@ -1,10 +1,13 @@
 import React, { useEffect, useState, Suspense } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+//Api call 
+import Api from './Api/Api.js';
 
 import './i18next-config';
 
 //Views
-import Profile from './Views/UserProfile';
+import Profile from './Views/Userprofile';
 import LetsCodeView from './Views/Letscode';
 import AllBatches from './Views/Allbatches';
 import ReachOutView from './Views/Reachout';
@@ -19,8 +22,22 @@ import './App.css';
 
 function App() {
   //state variable for logged user
-  const [user, setUser] = useState('');
-  
+  //const [user, setUser] = useState('');
+
+  //state variable for all students
+  const [studentList, setStudentList] = useState('');
+
+  useEffect(() => {
+    Api.getAllUsers()
+      .then((res) => {
+        console.log(res);
+        setStudentList(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
   return (
     <div className="App">
       <Suspense fallback={null}>
@@ -38,7 +55,7 @@ function App() {
 
           {/*----reach out route---- */}
           <Route path="/reachout/">
-            <ReachOutView />
+            <ReachOutView students={studentList}/>
           </Route>
 
           {/*----all batches route---- */}

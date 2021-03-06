@@ -1,4 +1,27 @@
 {
-    "welcome.label": "welcome to"
-    
+    "welcome.label": "welcome to",
+    "login.label": "Log-in",
+    "register.label": "Register",
+    "allbatches.label": "All Batches",
+    "reachout.label": "Reach Out",
+    "letscode.label": "Let's Code",
+    "theme.label": "Theme",
+    "profile.label": "Profile",
+    "logout.label": "Log-out",
+    "startdate.label": "Start date: ",
+    "visitbatch.label": "Visit batch",
+    "name.label": "Name: ",
+    "batch.label": "Batch: ",
+    "contact.label": "Contact",
+    "password.label": "Password: ",
+    "email.label": "E-mail: ",
+    "haveanacc.label": "Have an account ? ",
+    "donthaveanacc.label": "Don't have an account ? ",
+    "city.label": "City: ",
+    "strengths.label": "Strengths: ",
+    "weaknesses.label": "Weaknesses: ",
+    "workstatus.label": "Workstatus: ",
+    "editprofile.label": "Edit Profile",
+    "uploadpicture.label": "Upload Picture",
+    "yourprofile.label": "Your Profile"
   }

@@ -1,4 +1,5 @@
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 import UserDropdown from '../Userdropdown';
 import ToggleBtn from '../Togglebtn';
@@ -7,10 +8,11 @@ import LanguageSelector from "../Languageselector";
 import "./style.css";
 
 export default function Header() {
+    const { t, i18n } = useTranslation()
     return (
         <header className="header">
             <div className="header-left">
-                <h1 className="landing-page-heading">WBS <span class="lighter-font">Alumni</span></h1>
+                <h1 className="landing-page-heading">WBS <span className="lighter-font">Alumni</span></h1>
             </div>
             <div className="header-right">
                 <div className="header-right-top-wrapper">
@@ -19,12 +21,12 @@ export default function Header() {
                 </div>
                 <div className="header-right-bottom-wrapper">
                     <nav className="nav-wrapper">
-                        <Link to="/allbatches/" className="nav-item">All Batches</Link>
-                        <Link to="/reachout/" className="nav-item">Reach Out</Link>
-                        <Link to="/letscode/" className="nav-item">Let's Code</Link>
+                        <Link to="/allbatches/" className="nav-item">{t('allbatches.label')}</Link>
+                        <Link to="/reachout/" className="nav-item">{t('reachout.label')}</Link>
+                        <Link to="/letscode/" className="nav-item">{t('letscode.label')}</Link>
                     </nav>
-                    <div class="log-in-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="user-profile-img" />
+                    <div className="log-in-wrapper">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="user-profile-img" />
                         <UserDropdown />    
                     </div>
                 </div>

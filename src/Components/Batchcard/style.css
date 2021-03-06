@@ -1,13 +1,13 @@
 .batch-card {
-  box-shadow: 4px 4px 8px 0 rgb(122, 122, 122);
   width: 10%;
-  min-width: 15rem;
+  min-width: 18rem;
   max-width: 30rem;
   text-align: center;
-  margin-top: 3rem;
+  margin: 2rem .5rem;
   padding: 0.5rem;
   border: 2px solid #007895;
   border-radius: 0.5rem;
+  box-shadow: 4px 4px 8px 0 rgb(122, 122, 122);
 }
 
 .batch-heading {

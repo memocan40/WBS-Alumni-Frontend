@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './style.css';
 
 export default function Login() {
-  const [name, setName] = useState('');
-  const [pw, setPw] = useState('');
-
+  //const [name, setName] = useState('');
+  //const [pw, setPw] = useState('');
+  const { t, i18n } = useTranslation();
   return (
     <div>
       <div className="form-content-container">
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
           <label for="Name" id="name" className="form-input-label">
-            Name:
+          {t('name.label')}
           </label>
           <input
             className="form-input"
@@ -25,7 +26,7 @@ export default function Login() {
         </div>
         <div className="form-input-container">
           <label for="psw" className="form-input-label">
-            Password:
+          {t('password.label')}
           </label>
           <input
             className="form-input"
@@ -36,10 +37,10 @@ export default function Login() {
             required></input>
         </div>
         <button type="submit" className="form-btn">
-          Log-in
+        {t('login.label')}
         </button>
         <div className="form-redirection">
-          Don't have and account ? <Link className="form-redirection-link" to="/register">Register</Link>
+        {t('donthaveanacc.label')}<Link className="form-redirection-link" to="/register">{t('register.label')}</Link>
         </div>
       </div>
     </div>

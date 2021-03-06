@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 import './style.css';
 
@@ -7,7 +7,7 @@ import LanguageSelector from '../../Components/Languageselector';
 
 
 export default function LandingPageView() {
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="landing-page-wrapper">
@@ -26,12 +26,12 @@ export default function LandingPageView() {
           <Link
             to="/login"
             class="log-in-btn">
-            Log in
+            {t('login.label')}
           </Link>
           <Link
             to="/register"
-            class="register-btn">
-            Register
+            className="register-btn">
+            {t('register.label')}
           </Link>
         </div>
       </div>
