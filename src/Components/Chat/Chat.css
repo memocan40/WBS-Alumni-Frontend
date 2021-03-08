@@ -4,7 +4,8 @@ body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSyst
 #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
 #input:focus { outline: none; }
 #button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-#messages { list-style-type: none; margin: 0; bottom: 0; left: 0; right: 0; overflow:scroll; height:25em; border:solid; position:fixed;  padding: 0; width:35em;}
-#messageli { padding: 0.5rem 1rem; overflow:auto; border: solid 1px; border-radius:5px;margin-bottom:1px;}
+#messages { list-style-type:none; background-color:rgba(109, 109, 116, 0.116); margin: 0; bottom: 0; left: 0; right: 0; overflow:scroll; height:25em; border:solid; position:fixed;  padding: 0; width:35em;}
+#messageli { padding: 0.5rem 1rem; overflow:clip; border: solid 1px; border-radius:5px;margin-bottom:5px; height:auto; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.329);}
+#messagesli{font-weight:bolder;  }
 
     

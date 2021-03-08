@@ -55,7 +55,7 @@ let messagess=document.getElementById("messages");
   
     return(
         <div>
-            <ul id="messages"><div id="messagesli">{messages.map((iteration,index)=>{return(<li id="messageli">User:{iteration.username}<li>{iteration.inputvalue}</li></li>)})}</div></ul>
+            <ul id="messages"><div id="messagesli">{messages.map((iteration,index)=>{return(<li id="username">{iteration.username}<li className="input" id="messageli">{iteration.inputvalue}</li></li>)})}</div></ul>
     <form onSubmit={submitHandler} id="form" action="">
       <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button id="button">Send</button>
       </form>
