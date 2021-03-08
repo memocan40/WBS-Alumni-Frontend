@@ -1,11 +1,23 @@
-import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
+
+//Component imports
+import Header from "../../Components/Header";
+import UserProfileInput from "../../Components/Userprofiledata/input";
+import UserProfileDropdown from "../../Components/Userprofiledata/dropdown";
+import Footer from "../../Components/Footer";
 
 import "./style.css";
 
 export default function Profile({userObject}) {
+
+    const [userData, setUserData] = useState([userObject]);
+
+    
     const { t, i18n } = useTranslation();
+
+    console.log(userData)
+    if(userData) {
     return (
         <>
         <Header />
@@ -16,17 +28,20 @@ export default function Profile({userObject}) {
                 <button className="upload-pic-btn">{t('uploadpicture.label')}</button>
             </div>
             <div className="profile-right-wrapper">
-                <div className="profile-desc">{t('name.label')} <span>data</span></div>
+                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userData[0].first_name} setValue={setUserData}/></span></div>
+                <div className="profile-desc">{t('lastname.label')} <span><UserProfileInput value={userData[0].last_name} setValue={setUserData}/></span></div>
                 <div className="profile-desc">{t('email.label')} <span>data</span></div>
                 <div className="profile-desc">{t('batch.label')} <span>data</span></div>
                 <div className="profile-desc">{t('city.label')} <span>data</span></div>
-                <div className="profile-desc">{t('strengths.label')} <span>data</span></div>
-                <div className="profile-desc">{t('weaknesses.label')} <span>data</span></div>
+                <div className="profile-desc">{t('interests.label')} <span>data</span></div>
+                <div className="profile-desc">{t('github.label')} <span>data</span></div>
                 <div className="profile-desc">{t('workstatus.label')} <span>data</span></div>
                 <button className="profile-edit-btn">{t('editprofile.label')}</button>
             </div>
         </div>
         <Footer />
-        </>
-    )
+        </>  
+    )} else {
+        return (<> loader</>)
+    }
 }

@@ -5,6 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import Api from './Api/Api.js';
 
 import './i18next-config';
+//Components
+import Loader from './Components/Loader';
 
 //Views
 import Profile from './Views/Userprofile';
@@ -45,7 +47,7 @@ function App() {
           
           {/*----user profile route---- */}
           <Route path="/profile/">
-            <Profile />
+            {studentList ? <Profile userObject={studentList} /> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}

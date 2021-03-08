@@ -12,7 +12,7 @@ export default function ReachOut({students}) {
       <Searchbar />
       <div className="search-grid">
         {students ? students.map((student) => {
-          return <UserCard name={student.name} batch={student.batch}/>
+          return <UserCard name={`${student.first_name} ${student.last_name}`} batch={student.batch}/>
         }) : "no data"}
       </div>
       <Footer />
