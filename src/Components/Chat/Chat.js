@@ -1,12 +1,20 @@
 import "./Chat.css";
 import io from "socket.io";
+ import socketClient from "socket.io-client";
 
 import {useState}from "react";
 
 export default function Chat(){
 let[inputvalue,setinputvalue]=useState();
 let[username,setusername]=useState("anonym");
-    var socket = io();
+let[messages,setmessages]=useState([]);
+
+ 
+const SERVER = "http://127.0.0.1:3005";
+
+const socket = socketClient(SERVER);
+
+  
 
   
    //socket.on('chat message', function(msg) {
@@ -14,25 +22,40 @@ let[username,setusername]=useState("anonym");
     //item.textContent = msg;
     //messages.appendChild(item);
     //window.scrollTo(0, document.body.scrollHeight);});
-let messages=document.getElementById("messages");
+
 let textfield=document.getElementById("input");
+let messagess=document.getElementById("messages");
+
+
  
   const submitHandler=(e)=>{
       e.preventDefault();
-    if (inputvalue!=""&&username) {
-      const message={inputvalue,username}
-      socket.emit('chat message', message);
+    if (inputvalue!==""&&username) {
+      const msg={inputvalue,username};
+      socket.emit('chat message', msg);
       setinputvalue("");
-        var item = document.createElement('li');
-        item.textContent = message;
-        messages.appendChild(item);
-        window.scrollTo(0, document.body.scrollHeight);
-        textfield.value=""
+        setmessages([...messages, msg]);
+
+        textfield.value="";
   }}
+
+
+    socket.on('chat message', function(msg) {
+      
+    if (inputvalue!==""&&username) {
+      const msg={inputvalue,username};
+      
+      setinputvalue("");
+        setmessages([...messages, msg]);
+
+        
+    }});
+        
+      ;
   
     return(
         <div>
-            <ul id="messages"></ul>
+            <ul id="messages"><div id="messagesli">{messages.map((iteration,index)=>{return(<li id="username">{iteration.username}<li className="input" id="messageli">{iteration.inputvalue}</li></li>)})}</div></ul>
     <form onSubmit={submitHandler} id="form" action="">
       <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button id="button">Send</button>
       </form>
