@@ -29,7 +29,7 @@ export default function Profile({userObject, setUserObject}) {
                 <button className="upload-pic-btn">{t('uploadpicture.label')}</button>
             </div>
             <div className="profile-right-wrapper">
-                <div className="profile-desc">{t('firstname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.first_name} setValue={setUserObject.first_namex}/></span></div>
+                <div className="profile-desc">{t('firstname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.first_name} setValue={setUserObject.first_name}/></span></div>
                 <div className="profile-desc">{t('lastname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.last_name}/></span></div>
                 <div className="profile-desc">{t('batch.label')} <span className="profile-input-container">data</span></div>
                 <div className="profile-desc">{t('city.label')} <span className="profile-input-container">data</span></div>
