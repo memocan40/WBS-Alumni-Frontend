@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 //Component imports
+import Loader from "../../Components/Loader";
 import Header from "../../Components/Header";
 import UserProfileInput from "../../Components/Userprofiledata/input";
 import UserProfileDropdown from "../../Components/Userprofiledata/dropdown";
@@ -28,20 +29,21 @@ export default function Profile({userObject, setUserObject}) {
                 <button className="upload-pic-btn">{t('uploadpicture.label')}</button>
             </div>
             <div className="profile-right-wrapper">
-                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userObject.first_name} setValue={setUserObject.first_namex}/></span></div>
-                <div className="profile-desc">{t('lastname.label')} <span><UserProfileInput value={userObject.last_name}/></span></div>
-                <div className="profile-desc">{t('email.label')} <span>data</span></div>
-                <div className="profile-desc">{t('batch.label')} <span>data</span></div>
-                <div className="profile-desc">{t('city.label')} <span>data</span></div>
-                <div className="profile-desc">{t('interests.label')} <span>data</span></div>
-                <div className="profile-desc">{t('github.label')} <span>data</span></div>
-                <div className="profile-desc">{t('workstatus.label')} <span>data</span></div>
+                <div className="profile-desc">{t('firstname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.first_name} setValue={setUserObject.first_namex}/></span></div>
+                <div className="profile-desc">{t('lastname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.last_name}/></span></div>
+                <div className="profile-desc">{t('batch.label')} <span className="profile-input-container">data</span></div>
+                <div className="profile-desc">{t('city.label')} <span className="profile-input-container">data</span></div>
+                <div className="profile-desc">{t('interests.label')} <span className="profile-input-container">data</span></div>
+                <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container">data</span></div>
+                <div className="profile-desc">{t('github.label')} <span className="profile-input-container"><UserProfileInput value={userObject.github}/></span></div>
+                <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linked_in}/></span></div>
+                <div className="profile-desc">{t('finalproject.label')} <span className="profile-input-container"><UserProfileInput value={userObject.final_project}/></span></div>
                 <button className="profile-edit-btn">{t('editprofile.label')}</button>
             </div>
         </div>
         <Footer />
         </>  
     )} else {
-        return (<> loader</>)
+        return (<Loader />)
     }
 }

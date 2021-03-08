@@ -21,6 +21,8 @@
     "city.label": "City: ",
     "interests.label": "Interests: ",
     "github.label": "Github: ",
+    "finalproject.label": "Final project: ",
+    "linkedin.label": "Linkedin: ",
     "workstatus.label": "Workstatus: ",
     "editprofile.label": "Edit Profile",
     "uploadpicture.label": "Upload Picture",
