@@ -8,8 +8,7 @@ export default function UserProfileInput({value, setValue}) {
 
     const editBtnHandler = e => {
         if(editMode) {
-            setValue(e.target.value);
-            setInputValue(e.target.value);
+            //setValue(e.target.value);
             setEditMode(false);
         } else {
             setEditMode(true);
@@ -19,7 +18,7 @@ export default function UserProfileInput({value, setValue}) {
     if(editMode){
     return (
         <>
-            <input className="user-profile-input" type="text" maxLength="20" value={value}/>
+            <input className="user-profile-input" type="text" maxLength="20" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
             <button className={editMode ? "far fa-edit user-edit-btn" : "fas fa-check user-edit-btn"} onClick={editBtnHandler}></button>
         </>
     )} else {

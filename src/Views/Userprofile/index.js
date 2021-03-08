@@ -9,7 +9,7 @@ import Footer from "../../Components/Footer";
 
 import "./style.css";
 
-export default function Profile({userObject}) {
+export default function Profile({userObject, setUserObject}) {
 
     //const [userData, setUserData] = useState({userObject});
 
@@ -28,7 +28,7 @@ export default function Profile({userObject}) {
                 <button className="upload-pic-btn">{t('uploadpicture.label')}</button>
             </div>
             <div className="profile-right-wrapper">
-                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userObject.first_name}/></span></div>
+                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userObject.first_name} setValue={setUserObject.first_namex}/></span></div>
                 <div className="profile-desc">{t('lastname.label')} <span><UserProfileInput value={userObject.last_name}/></span></div>
                 <div className="profile-desc">{t('email.label')} <span>data</span></div>
                 <div className="profile-desc">{t('batch.label')} <span>data</span></div>
