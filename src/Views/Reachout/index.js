@@ -1,4 +1,5 @@
 import Header from '../../Components/Header';
+import Loader from "../../Components/Loader";
 import Searchbar from '../../Components/Searchbar';
 import UserCard from '../../Components/StudentCard';
 import Footer from '../../Components/Footer';
@@ -6,6 +7,7 @@ import Footer from '../../Components/Footer';
 import './style.css';
 
 export default function ReachOut({students}) {
+  if(students) {
   return (
     <>
       <Header />
@@ -17,5 +19,9 @@ export default function ReachOut({students}) {
       </div>
       <Footer />
     </>
-  );
+  );} else {
+    return (
+      <Loader />
+    )
+  }
 }

@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 
 import "./style.css";
 
-export default function UserProfileInput({ value, setValue }) {
+export default function UserProfileInput({ value, onSubmit }) {
   const [inputValue, setInputValue] = useState(value);
   const [editMode, setEditMode] = useState(false);
 
   const editBtnHandler = (e) => {
     if (editMode) {
       setEditMode(false);
+      console.log(value);
+      onSubmit(inputValue);
     } else {
       setEditMode(true);
     }
