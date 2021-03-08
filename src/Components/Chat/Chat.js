@@ -1,5 +1,6 @@
 import "./Chat.css";
 import io from "socket.io";
+ import socketClient from "socket.io-client";
 
 import {useState}from "react";
 
@@ -7,7 +8,13 @@ export default function Chat(){
 let[inputvalue,setinputvalue]=useState();
 let[username,setusername]=useState("anonym");
 let[messages,setmessages]=useState([]);
-    var socket = io();
+
+ 
+const SERVER = "http://127.0.0.1:3005";
+
+const socket = socketClient(SERVER);
+
+  
 
   
    //socket.on('chat message', function(msg) {
@@ -17,18 +24,34 @@ let[messages,setmessages]=useState([]);
     //window.scrollTo(0, document.body.scrollHeight);});
 
 let textfield=document.getElementById("input");
+let messagess=document.getElementById("messages");
+
+
  
   const submitHandler=(e)=>{
       e.preventDefault();
     if (inputvalue!==""&&username) {
-      const message={inputvalue,username};
-      socket.emit('chat message', message);
+      const msg={inputvalue,username};
+      socket.emit('chat message', msg);
       setinputvalue("");
-        setmessages([...messages, message]);
-        messages.map((iteration,index)=>{console.log(iteration,index)});
-       window.scrollTo(0,document.querySelector("#messagesli").scrollHeight);
+        setmessages([...messages, msg]);
+
         textfield.value="";
   }}
+
+
+    socket.on('chat message', function(msg) {
+      
+    if (inputvalue!==""&&username) {
+      const msg={inputvalue,username};
+      
+      setinputvalue("");
+        setmessages([...messages, msg]);
+
+        
+    }});
+        
+      ;
   
     return(
         <div>
