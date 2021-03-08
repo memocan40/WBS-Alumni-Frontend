@@ -5,6 +5,6 @@ body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSyst
 #input:focus { outline: none; }
 #button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
 #messages { list-style-type: none; margin: 0; bottom: 0; left: 0; right: 0; overflow:scroll; height:25em; border:solid; position:fixed;  padding: 0; width:35em;}
-#messages:li { padding: 0.5rem 1rem; overflow:auto; }
-#messages li:nth-child(odd) { background: #efefef;  }
+#messageli { padding: 0.5rem 1rem; overflow:auto; border: solid 1px; border-radius:5px;margin-bottom:1px;}
+
     
