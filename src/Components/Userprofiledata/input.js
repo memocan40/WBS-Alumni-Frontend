@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-export default function UserProfileInput(value, setValue ) {
+export default function UserProfileInput({value, setValue}) {
     const [inputValue, setInputValue] = useState(value);
     const [editMode, setEditMode] = useState(false);
 
@@ -19,12 +19,14 @@ export default function UserProfileInput(value, setValue ) {
     if(editMode){
     return (
         <>
-            <input className="user-profile-input" type="text" maxLength="20"/>
-            <button className={editMode ? "far fa-edit" : "fas fa-check"} onClick={editBtnHandler()}></button>
+            <input className="user-profile-input" type="text" maxLength="20" value={value}/>
+            <button className={editMode ? "far fa-edit user-edit-btn" : "fas fa-check user-edit-btn"} onClick={editBtnHandler}></button>
         </>
     )} else {
     return (
-        <>{inputValue}</>
+        <>{inputValue}
+            <button className={editMode ? "far fa-edit user-edit-btn" : "fas fa-check user-edit-btn"} onClick={editBtnHandler}></button>
+        </>
     )}
 }
 

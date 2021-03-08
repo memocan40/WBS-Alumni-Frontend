@@ -28,12 +28,14 @@ function App() {
 
   //state variable for all students
   const [studentList, setStudentList] = useState('');
+  const [loggedUser, setLoggeduser] = useState("");
 
   useEffect(() => {
     Api.getAllUsers()
       .then((res) => {
         console.log(res);
         setStudentList(res);
+        setLoggeduser(res[16]);
       })
       .catch((err) => {
         console.error(err);
@@ -47,7 +49,7 @@ function App() {
           
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={studentList} /> : <Loader /> }
+            {studentList ? <Profile userObject={loggedUser} /> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}

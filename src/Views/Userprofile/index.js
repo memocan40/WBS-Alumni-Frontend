@@ -11,13 +11,13 @@ import "./style.css";
 
 export default function Profile({userObject}) {
 
-    const [userData, setUserData] = useState([userObject]);
+    //const [userData, setUserData] = useState({userObject});
 
     
     const { t, i18n } = useTranslation();
 
-    console.log(userData)
-    if(userData) {
+    console.log(userObject);
+    if(userObject) {
     return (
         <>
         <Header />
@@ -28,8 +28,8 @@ export default function Profile({userObject}) {
                 <button className="upload-pic-btn">{t('uploadpicture.label')}</button>
             </div>
             <div className="profile-right-wrapper">
-                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userData[0].first_name} setValue={setUserData}/></span></div>
-                <div className="profile-desc">{t('lastname.label')} <span><UserProfileInput value={userData[0].last_name} setValue={setUserData}/></span></div>
+                <div className="profile-desc">{t('firstname.label')} <span><UserProfileInput value={userObject.first_name}/></span></div>
+                <div className="profile-desc">{t('lastname.label')} <span><UserProfileInput value={userObject.last_name}/></span></div>
                 <div className="profile-desc">{t('email.label')} <span>data</span></div>
                 <div className="profile-desc">{t('batch.label')} <span>data</span></div>
                 <div className="profile-desc">{t('city.label')} <span>data</span></div>
