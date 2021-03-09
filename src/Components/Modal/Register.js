@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from "axios";
 
 import './style.css';
 
@@ -8,6 +9,11 @@ export default function Register() {
   //const [name, setName] = useState('');
   //const [email, setEmail] = useState('');
   //const [pw, setPw] = useState('');
+  let emailinput=document.getElementById("email").value;
+  let nameinput=document.getElementById("Name").value;
+
+  let data={name:nameinput,email:emailinput}
+  let createuser=axios.post("https://hidden-shelf-31461.herokuapp.com/users/register",data);
   const { t, i18n } = useTranslation();
   return (
     <div className="form-content-container">
@@ -48,7 +54,7 @@ export default function Register() {
           id="psw"
           required></input>
       </div>
-      <button type="submit" className="form-btn">
+      <button type="submit" className="form-btn" onClick={createuser}>
       {t('register.label')}
       </button>
       <div className="form-redirection">
