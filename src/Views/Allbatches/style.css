@@ -1,9 +1,10 @@
 .batch-cards-container {
-    width: 90%;
-    min-height: 10vh;
-    margin: 3rem auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 22rem);
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
 }

@@ -10,6 +10,7 @@
     "logout.label": "Log-out",
     "startdate.label": "Start date: ",
     "visitbatch.label": "Visit batch",
+    "name.label": "Name: ",
     "firstname.label": "First Name: ",
     "lastname.label": "Last Name: ",
     "batch.label": "Batch: ",
@@ -24,7 +25,7 @@
     "finalproject.label": "Final project: ",
     "linkedin.label": "Linkedin: ",
     "workstatus.label": "Workstatus: ",
-    "editprofile.label": "Edit Profile",
+    "confirmchanges.label": "Confirm Changes",
     "uploadpicture.label": "Upload Picture",
     "yourprofile.label": "Your Profile"
   }
