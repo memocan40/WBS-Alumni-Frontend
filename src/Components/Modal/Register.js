@@ -6,13 +6,15 @@ import axios from "axios";
 import './style.css';
 
 export default function Register() {
-  //const [name, setName] = useState('');
-  //const [email, setEmail] = useState('');
-  //const [pw, setPw] = useState('');
-  let emailinput=document.getElementById("email").value;
-  let nameinput=document.getElementById("Name").value;
+  let [name, setName] = useState('');
+  let [email, setEmail] = useState('');
+  let [pw, setPw] = useState('');
+ 
 
-  let data={name:nameinput,email:emailinput}
+ 
+
+  let data={first_name:name,email:email,password:pw};
+   console.log(data);
   let createuser=axios.post("https://hidden-shelf-31461.herokuapp.com/users/register",data);
   const { t, i18n } = useTranslation();
   return (
@@ -28,6 +30,7 @@ export default function Register() {
           placeholder="Enter Name"
           name="Name"
           id="Name"
+          onChange={(event)=>{setName(event.target.value)}}
           required></input>
       </div>
       <div className="form-input-container">
@@ -40,6 +43,7 @@ export default function Register() {
           placeholder="Enter Email"
           name="email"
           id="email"
+          onChange={(event)=>{setEmail(event.target.value)}}
           required></input>
       </div>
       <div className="form-input-container">
@@ -52,6 +56,7 @@ export default function Register() {
           placeholder="Enter Password"
           name="psw"
           id="psw"
+          onChange={(event)=>{setPw(event.target.value)}}
           required></input>
       </div>
       <button type="submit" className="form-btn" onClick={createuser}>
