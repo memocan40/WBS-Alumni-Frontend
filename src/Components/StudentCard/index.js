@@ -6,6 +6,7 @@ import './style.css';
 
 export default function Usercard({ name, batch }) {
   const { t, i18n } = useTranslation();
+  
   return (
       <div className="user-card">
           <div className="user-card-img-wrapper">

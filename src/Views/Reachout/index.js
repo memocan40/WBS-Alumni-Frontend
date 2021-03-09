@@ -1,7 +1,7 @@
 import Header from '../../Components/Header';
 import Loader from "../../Components/Loader";
 import Searchbar from '../../Components/Searchbar';
-import UserCard from '../../Components/StudentCard';
+import StudentCard from '../../Components/StudentCard';
 import Footer from '../../Components/Footer';
 
 import './style.css';
@@ -14,7 +14,7 @@ export default function ReachOut({students}) {
       <Searchbar />
       <div className="search-grid">
         {students ? students.map((student) => {
-          return <UserCard name={`${student.first_name} ${student.last_name}`} batch={student.batch}/>
+          return <StudentCard name={`${student.first_name} ${student.last_name}`} batch={student.batch}/>
         }) : "no data"}
       </div>
       <Footer />

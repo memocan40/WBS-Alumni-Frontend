@@ -3,15 +3,11 @@ import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import Studentprofile from '../../Components/Studentprofile';
 
-
-
 export default function StudentProfile() {
   return (
     <>
       <Header />
-      <div className="profile-wrapper">
-        <Studentprofile />
-      </div>
+      <Studentprofile />
       <Footer />
     </>
   );

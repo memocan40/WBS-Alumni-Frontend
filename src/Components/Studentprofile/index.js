@@ -1,40 +1,37 @@
+import { useTranslation } from 'react-i18next';
+
+
 import './style.css';
 
-export default function Studentprofile() {
+export default function Studentprofile(student) {
+  const { t, i18n } = useTranslation();
   return (
-    <div className="profile">
-      <div className="flex-container">
-        <div className="picture">
-        <img className="user-card-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profilepic" />
+    <div className="student-profile">
+      <div className="student-profile-left">
+        <h1 className="student-profile-name">Name: </h1>
+        <div className="student-profile-img-wrapper">
+        <img className="student-profile-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profilepic" />
         </div>
       </div>
-      <div className="grid-container">
-        <div className="infos">
-          <h5>Forename: </h5>
+      <div className="student-profile-info-container">
+        <div className="student-profile-info">
+          <h5>Batch: </h5><span>data</span>
         </div>
-        <div className="infos">
-          <h5>Last Name: </h5>
+        <div className="student-profile-info">
+          <h5>Interests: </h5>
+          <span>data</span>
         </div>
-        <div className="infos">
-          <h5>Strength: </h5>
+        <div className="student-profile-info">
+          <h5>Work status: </h5><span>data</span>
         </div>
-        <div className="infos">
-          <h5>Weakness: </h5>
+        <div className="student-profile-info">
+          <h5>City: </h5><span>data</span>
         </div>
-        <div className="infos">
-          <h5>Interrests: </h5>
+        <div className="student-profile-info">
+          <h5>Final project: </h5><span>data</span>
         </div>
-        <div className="infos">
-          <h5>Hobbys: </h5>
-        </div>
-        <div className="infos">
-          <h5>Skills: </h5>
-        </div>
-        <div className="infos">
-          <h5>Work Status: </h5>
-        </div>
-        <div className="infos">
-          <h4>Badge: </h4>
+        <div className="student-profile-info">
+          <h5>Github: </h5><span>data</span>
         </div>
       </div>
     </div>
