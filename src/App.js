@@ -72,7 +72,7 @@ function App() {
           </Route>
           
           {/*---- Home Page Route---- */}
-          <Route path={'/home'}>
+          <Route path='/home'>
             <HomePageView />
           </Route>
 

@@ -20,7 +20,7 @@ const Api={
         }
     },
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
-    createNewuser:(requestBody)=>{axios.post(`${baseURL}users/create`,requestBody)}
+    createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody)}
 }
 
 export default Api;
