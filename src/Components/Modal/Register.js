@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from "axios";
+import Api from "../../Api/Api"
 
 import './style.css';
 
@@ -15,7 +16,7 @@ export default function Register() {
 
   let data={first_name:name,email:email,password:pw};
    console.log(data);
-  let createuser=axios.post("https://hidden-shelf-31461.herokuapp.com/users/register",data);
+  let createuser=Api.createNewuser(data);
   const { t, i18n } = useTranslation();
   return (
     <div className="form-content-container">
