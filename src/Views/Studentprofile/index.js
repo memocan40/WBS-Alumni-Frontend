@@ -1,18 +1,13 @@
 //Student profile after clicking on student in batch/search
-
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import Studentprofile from '../../Components/Studentprofile';
 
-
-
-export default function StudentProfile() {
+export default function StudentProfile({obj}) {
   return (
     <>
       <Header />
-      <div className="profile-wrapper">
-        <Studentprofile />
-      </div>
+      <Studentprofile obj={obj}/>
       <Footer />
     </>
   );

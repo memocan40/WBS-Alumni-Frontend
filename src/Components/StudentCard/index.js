@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import {Link} from "react-router-dom";
-import {useparams} from "react";
 
 import './style.css';
 
-export default function Usercard({ name, batch }) {
+export default function Usercard({ name, batch, id }) {
   const { t, i18n } = useTranslation();
+  
   return (
       <div className="user-card">
           <div className="user-card-img-wrapper">
@@ -13,7 +13,7 @@ export default function Usercard({ name, batch }) {
           </div>
           <h1 id="user-card-name">{t('name.label')} {name}</h1>
           <p class="user-card-desc">{t('batch.label')} {batch}</p>
-          <Link to={`/studentprofile`}> <button class="user-card-btn">{t('contact.label')}</button></Link>
+          <Link to={`/studentprofile/${id}`}> <button class="user-card-btn">{t('contact.label')}</button></Link>
       </div>
   );
 }

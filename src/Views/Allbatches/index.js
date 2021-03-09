@@ -18,7 +18,6 @@ export default function AllBatches() {
         <BatchCard batchName="batch7" batchDate=""/>
         <BatchCard batchName="batch8" batchDate=""/>
       </section>
-      
     </div>
   );
 }

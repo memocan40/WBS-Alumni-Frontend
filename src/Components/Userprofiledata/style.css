@@ -1,0 +1,12 @@
+.user-profile-input {
+    width: 80%;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.user-edit-btn {
+    min-width: 3rem;
+    height: 3rem;
+    padding: .1rem;
+    color: #007895;
+}

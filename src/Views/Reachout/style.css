@@ -1,8 +1,11 @@
 .search-grid {
   width: 90%;
-  margin: 5vh auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 35rem);
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: flex-start;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
 }

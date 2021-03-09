@@ -5,6 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import Api from './Api/Api.js';
 
 import './i18next-config';
+//Components
+import Loader from './Components/Loader';
 
 //Views
 import Profile from './Views/Userprofile';
@@ -26,26 +28,33 @@ function App() {
 
   //state variable for all students
   const [studentList, setStudentList] = useState('');
+  const [loggedUser, setLoggedUser] = useState("");
 
   useEffect(() => {
     Api.getAllUsers()
       .then((res) => {
         console.log(res);
         setStudentList(res);
+        setLoggedUser(res[16]);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
 
+
   return (
     <div className="App">
       <Suspense fallback={null}>
         <Switch>
           
+          {/*------ studentprofile route -----*/}
+          <Route path="/studentprofile/:userId">
+            <StudentProfile obj={studentList}/>
+          </Route>
           {/*----user profile route---- */}
           <Route path="/profile/">
-            <Profile />
+            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser}/> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}
@@ -62,11 +71,7 @@ function App() {
           <Route path="/allbatches/">
             <AllBatches />
           </Route>
-          {/*------ studentprofile route -----*/}
-          <Route path="/studentprofile">
-            <StudentProfile/>
-          </Route>
-
+          
           {/*---- Home Page Route---- */}
           <Route path={'/home'}>
             <HomePageView />
