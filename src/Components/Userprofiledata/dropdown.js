@@ -1,16 +1,52 @@
 import React, { useState } from 'react';
 
-export default function UserProfileDropdown({ value, setValue }) {
-    const [inputValue, setInputValue] = useState(value);
-    const [editMode, setEditMode] = useState(false);
+import './style.css';
 
-    if(editMode) {
-        return (
-            <div></div>
-        )
+export default function UserProfileInput({ defValues, onSubmit }) {
+  const [inputValue, setInputValue] = useState("");
+  const [editMode, setEditMode] = useState(false);
+
+  const editBtnHandler = (e) => {
+    if (editMode) {
+      setEditMode(false);
+      onSubmit(inputValue);
     } else {
-        return (
-            <div></div>
-        )
+      setEditMode(true);
     }
+  };
+
+  if (editMode) {
+    return (
+      <>
+        <select>
+        {/*render stuff from values */}
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        <button
+          className={
+            ('user-edit-btn',
+            editMode
+              ? 'fas fa-check user-edit-btn'
+              : 'far fa-edit user-edit-btn')
+          }
+          onClick={editBtnHandler}></button>
+      </>
+    );
+  } else {
+    return (
+      <>
+        {inputValue}
+        <button
+          className={
+            editMode
+              ? 'fas fa-check user-edit-btn'
+              : 'far fa-edit user-edit-btn'
+          }
+          onClick={editBtnHandler}></button>
+      </>
+    );
+  }
 }
