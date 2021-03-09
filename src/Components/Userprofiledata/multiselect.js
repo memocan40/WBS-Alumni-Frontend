@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
+import { Multiselect } from 'multiselect-react-dropdown';
 
-import "./style.css";
-
-export default function UserProfileInput({ value, onSubmit }) {
-  const [inputValue, setInputValue] = useState(value);
+export default function UserProfileMultiselect({ obj, onSubmit }) {
+  const [inputValue, setInputValue] = useState(obj);
   const [editMode, setEditMode] = useState(false);
 
   const editBtnHandler = (e) => {
     if (editMode) {
       setEditMode(false);
-      console.log(value);
-      onSubmit(inputValue);
+      //onSubmit(inputValue);
     } else {
       setEditMode(true);
     }
@@ -19,18 +17,13 @@ export default function UserProfileInput({ value, onSubmit }) {
   if (editMode) {
     return (
       <>
-        <input
-          className="user-profile-input"
-          type="text"
-          maxLength="20"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
+        <Multiselect options={obj} displayValue="key" />
         <button
-          className={"user-edit-btn",
+          className={
+            ('user-edit-btn',
             editMode
               ? 'fas fa-check user-edit-btn'
-              : 'far fa-edit user-edit-btn'
+              : 'far fa-edit user-edit-btn')
           }
           onClick={editBtnHandler}></button>
       </>

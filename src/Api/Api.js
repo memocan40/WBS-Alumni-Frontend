@@ -19,6 +19,22 @@ const Api={
             return [];
         }
     },
+
+    updateUserbyID: async (obj)=>{
+        try{
+            const response = await axios.post(`${baseURL}users/update/${obj.id}`, obj);
+            if(response) {
+                return response;
+            } else {
+                return[];
+            }
+        }catch(e) {
+            console.error("updateUserbyID:", e);
+            return [];
+        }
+    },
+
+
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
     createNewuser:(requestBody)=>{axios.post(`${baseURL}users/create`,requestBody)}
 }

@@ -8,6 +8,7 @@ import './style.css';
 export default function Studentprofile({obj}) {
 
   const { t, i18n } = useTranslation();
+  
   const { userId } = useParams();
 
   console.log(obj)
