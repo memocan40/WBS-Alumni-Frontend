@@ -47,6 +47,10 @@ function App() {
       <Suspense fallback={null}>
         <Switch>
           
+          {/*------ studentprofile route -----*/}
+          <Route path="/studentprofile/:userId">
+            <StudentProfile obj={studentList}/>
+          </Route>
           {/*----user profile route---- */}
           <Route path="/profile/">
             {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser}/> : <Loader /> }
@@ -66,11 +70,7 @@ function App() {
           <Route path="/allbatches/">
             <AllBatches />
           </Route>
-          {/*------ studentprofile route -----*/}
-          <Route path="/studentprofile">
-            <StudentProfile/>
-          </Route>
-
+          
           {/*---- Home Page Route---- */}
           <Route path={'/home'}>
             <HomePageView />
