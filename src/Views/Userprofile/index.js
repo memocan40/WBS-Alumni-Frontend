@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import Api from '../../Api/Api';
 
 //Component imports
 import Loader from "../../Components/Loader";
@@ -13,7 +15,10 @@ import "./style.css";
 export default function Profile({userObject, setUserObject}) {
 
     //const [userData, setUserData] = useState({userObject});
-
+    const dataSubmit = () => {
+        Api.updateUserbyID(userObject);
+    }
+    
     
     const { t, i18n } = useTranslation();
 
@@ -38,7 +43,7 @@ export default function Profile({userObject, setUserObject}) {
                 <div className="profile-desc">{t('github.label')} <span className="profile-input-container"><UserProfileInput value={userObject.github} onSubmit={(valueFromChild)=> setUserObject({...userObject, github : valueFromChild})} /></span></div>
                 <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linked_in} onSubmit={(valueFromChild)=> setUserObject({...userObject, linked_in : valueFromChild})}/></span></div>
                 <div className="profile-desc">{t('finalproject.label')} <span className="profile-input-container"><UserProfileInput value={userObject.final_project} onSubmit={(valueFromChild)=> setUserObject({...userObject, final_project : valueFromChild})}/></span></div>
-                <button className="profile-edit-btn">{t('confirmchanges.label')}</button>
+                <button className="profile-edit-btn" onClick={dataSubmit}>{t('confirmchanges.label')}</button>
             </div>
         </div>
         <Footer />
