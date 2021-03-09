@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import axios from "axios";
+import Api from "../../Api/Api"
 
 import './style.css';
 
 export default function Register() {
-  //const [name, setName] = useState('');
-  //const [email, setEmail] = useState('');
-  //const [pw, setPw] = useState('');
+  let [name, setName] = useState('');
+  let [email, setEmail] = useState('');
+  let [pw, setPw] = useState('');
+ 
+
+ 
+
+  let data={first_name:name,email:email,password:pw};
+   console.log(data);
+  let createuser=Api.createNewuser(data);
   const { t, i18n } = useTranslation();
   return (
     <div className="form-content-container">
@@ -22,6 +31,7 @@ export default function Register() {
           placeholder="Enter Name"
           name="Name"
           id="Name"
+          onChange={(event)=>{setName(event.target.value)}}
           required></input>
       </div>
       <div className="form-input-container">
@@ -34,6 +44,7 @@ export default function Register() {
           placeholder="Enter Email"
           name="email"
           id="email"
+          onChange={(event)=>{setEmail(event.target.value)}}
           required></input>
       </div>
       <div className="form-input-container">
@@ -46,9 +57,10 @@ export default function Register() {
           placeholder="Enter Password"
           name="psw"
           id="psw"
+          onChange={(event)=>{setPw(event.target.value)}}
           required></input>
       </div>
-      <button type="submit" className="form-btn">
+      <button type="submit" className="form-btn" onClick={createuser}>
       {t('register.label')}
       </button>
       <div className="form-redirection">
