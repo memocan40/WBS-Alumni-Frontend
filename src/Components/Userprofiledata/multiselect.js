@@ -22,8 +22,8 @@ export default function UserProfileMultiselect({ obj, onSubmit }) {
           className={
             ('user-edit-btn',
             editMode
-              ? 'far fa-edit user-edit-btn'
-              : 'fas fa-check user-edit-btn')
+              ? 'fas fa-check user-edit-btn'
+              : 'far fa-edit user-edit-btn')
           }
           onClick={editBtnHandler}></button>
       </>
@@ -31,11 +31,12 @@ export default function UserProfileMultiselect({ obj, onSubmit }) {
   } else {
     return (
       <>
+        {inputValue}
         <button
           className={
             editMode
-              ? 'far fa-edit user-edit-btn'
-              : 'fas fa-check user-edit-btn'
+              ? 'fas fa-check user-edit-btn'
+              : 'far fa-edit user-edit-btn'
           }
           onClick={editBtnHandler}></button>
       </>
