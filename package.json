@@ -18,6 +18,7 @@
     "react-i18next": "^11.8.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slideshow-image": "^3.4.3",
     "socket.io": "^3.1.2",
     "socket.io-client": "^3.1.2",
     "web-vitals": "^1.1.0"
