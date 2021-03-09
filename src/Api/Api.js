@@ -22,8 +22,9 @@ const Api={
 
     updateUserbyID: async (obj)=>{
         try{
-            const response = await axios.post(`${baseURL}users/update/${obj.id}`, obj);
+            const response = await axios.put(`${baseURL}users/update/${obj.id}`, obj);
             if(response) {
+                console.log(response)
                 return response;
             } else {
                 return[];

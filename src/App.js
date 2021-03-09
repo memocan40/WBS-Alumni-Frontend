@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 //Api call 
 import Api from './Api/Api.js';
+import Countries from './Api/Countries';
 
 import './i18next-config';
 //Components
@@ -28,7 +29,8 @@ function App() {
 
   //state variable for all students
   const [studentList, setStudentList] = useState('');
-  const [loggedUser, setLoggedUser] = useState("");
+  const [loggedUser, setLoggedUser] = useState('');
+  const [cities, setCities] = useState('');
 
   useEffect(() => {
     Api.getAllUsers()
@@ -40,6 +42,12 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
+    Countries.getAllCities().then((res) => {
+      console.log(res.data);
+      setCities(res);
+    }).catch((err)=> {
+      console.error(err);
+    })
   }, []);
 
 

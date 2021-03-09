@@ -42,7 +42,7 @@ export default function Profile({userObject, setUserObject}) {
                 <div className="profile-desc">{t('interests.label')} <span className="profile-input-container"><UserProfileMultiselect /></span></div>
                 <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container"><UserProfileDropdown /></span></div>
                 <div className="profile-desc">{t('github.label')} <span className="profile-input-container"><UserProfileInput value={userObject.github} onSubmit={(valueFromChild)=> setUserObject({...userObject, github : valueFromChild})} /></span></div>
-                <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linked_in} onSubmit={(valueFromChild)=> setUserObject({...userObject, linked_in : valueFromChild})}/></span></div>
+                <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linkedin} onSubmit={(valueFromChild)=> setUserObject({...userObject, linked_in : valueFromChild})}/></span></div>
                 <div className="profile-desc">{t('finalproject.label')} <span className="profile-input-container"><UserProfileInput value={userObject.final_project} onSubmit={(valueFromChild)=> setUserObject({...userObject, final_project : valueFromChild})}/></span></div>
                 <button className="profile-edit-btn" onClick={dataSubmit}>{t('confirmchanges.label')}</button>
             </div>

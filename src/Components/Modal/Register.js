@@ -15,15 +15,17 @@ export default function Register() {
  
 
   let data={first_name:name,email:email,password:pw};
-   console.log(data);
+  
   let createuser=Api.createNewuser(data);
+
   const { t, i18n } = useTranslation();
+
   return (
     <div className="form-content-container">
       <h1 className="form-heading">Register</h1>
       <div className="form-input-container">
         <label for="Name" id="name" className="form-input-label">
-        {t('name.label')}
+        {t('username.label')}
         </label>
         <input
           className="form-input"
