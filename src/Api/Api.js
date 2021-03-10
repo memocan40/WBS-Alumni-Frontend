@@ -22,8 +22,9 @@ const Api={
 
     updateUserbyID: async (obj)=>{
         try{
-            const response = await axios.post(`${baseURL}users/update/${obj.id}`, obj);
+            const response = await axios.put(`${baseURL}users/update/${obj.id}`, obj);
             if(response) {
+                console.log(response)
                 return response;
             } else {
                 return[];
@@ -35,6 +36,22 @@ const Api={
     },
 
     logIn:(requestBody)=>{axios.post(`${baseURL}user/login`,requestBody)},
+    getInterests: async() => {
+        try{
+            const response = await axios.get(`${baseURL}interests`);
+            if(response) {
+                console.log(response);
+                return response.data.data;
+            }else {
+                return [];
+            }
+        }
+        catch(e) {
+            console.error("getInterests:", e);
+            return [];
+        }
+    },
+
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
     createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody,
     {

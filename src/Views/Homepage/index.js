@@ -9,7 +9,7 @@ export default function HomePageView () {
         <>
             <Header />
             <Welcome/>
-    
+            <Footer />
         </>
     )
 }

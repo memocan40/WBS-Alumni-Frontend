@@ -18,7 +18,7 @@ export default function Login() {
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
           <label for="Name" id="name" className="form-input-label">
-          {t('name.label')}
+          {t('email.label')}
           </label>
           <input
             className="form-input"

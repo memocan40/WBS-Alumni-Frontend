@@ -1,10 +1,10 @@
 .batch-cards-container {
+  width: 90%;
+  margin: 4rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, 22rem);
   grid-gap: 10px;
   justify-content: center;
   align-content: flex-start;
-  margin: 0 auto;
   text-align: center;
-  margin-top: 10px;
 }
