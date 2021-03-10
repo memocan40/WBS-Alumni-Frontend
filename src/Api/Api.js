@@ -36,7 +36,10 @@ const Api={
 
 
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
-    createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody)}
+    createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody,
+    {
+        headers:{'Access-Control-Allow-Origin' : "http://localhost:3000" }})}
 }
 
-export default Api;
+export default Api; 
+    

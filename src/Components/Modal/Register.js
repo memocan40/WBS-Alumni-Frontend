@@ -14,23 +14,23 @@ export default function Register() {
 
  
 
-  let data={first_name:name,email:email,password:pw};
+  let data={user:name,email:email,password:pw};
    console.log(data);
-  let createuser=Api.createNewuser(data);
+  let createuser = () => Api.createNewuser(data);
   const { t, i18n } = useTranslation();
   return (
     <div className="form-content-container">
       <h1 className="form-heading">Register</h1>
       <div className="form-input-container">
-        <label for="Name" id="name" className="form-input-label">
+        <label for="username" id="username" className="form-input-label">
         {t('name.label')}
         </label>
         <input
           className="form-input"
           type="text"
-          placeholder="Enter Name"
-          name="Name"
-          id="Name"
+          placeholder="Enter username"
+          name="username"
+          id="username"
           onChange={(event)=>{setName(event.target.value)}}
           required></input>
       </div>
