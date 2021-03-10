@@ -31,20 +31,36 @@ function App() {
   const [studentList, setStudentList] = useState('');
   const [loggedUser, setLoggedUser] = useState('');
   const [cities, setCities] = useState('');
+  const [interests, setInterests] = useState('');
 
   useEffect(() => {
     Api.getAllUsers()
       .then((res) => {
         console.log(res);
         setStudentList(res);
-        setLoggedUser(res[16]);
+        setLoggedUser(res[2]);
       })
       .catch((err) => {
         console.error(err);
       });
+
+    Api.getInterests()
+    .then((res) => {
+      console.log(res);
+      setInterests(res);
+    })
+    .catch((err) => {
+      console.error(err);
+    });  
+
     Countries.getAllCities().then((res) => {
-      console.log(res.data);
-      setCities(res);
+      //console.log(res.data);
+      const filteredNames = res.data.map((city)=>{
+        return city.city;
+      })
+      console.log(filteredNames);
+      setCities(filteredNames);
+
     }).catch((err)=> {
       console.error(err);
     })
@@ -60,9 +76,10 @@ function App() {
           <Route path="/studentprofile/:userId">
             <StudentProfile obj={studentList}/>
           </Route>
+
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser}/> : <Loader /> }
+            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} interests={interests}/> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}

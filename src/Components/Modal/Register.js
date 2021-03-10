@@ -12,7 +12,6 @@ export default function Register() {
   let [pw, setPw] = useState('');
  
 
- 
 
   let data={first_name:name,email:email,password:pw};
   

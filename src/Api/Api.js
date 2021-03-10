@@ -35,6 +35,21 @@ const Api={
         }
     },
 
+    getInterests: async() => {
+        try{
+            const response = await axios.get(`${baseURL}interests`);
+            if(response) {
+                console.log(response);
+                return response.data.data;
+            }else {
+                return [];
+            }
+        }
+        catch(e) {
+            console.error("getInterests:", e);
+            return [];
+        }
+    },
 
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
     createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody)}
