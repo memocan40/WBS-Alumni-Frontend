@@ -34,7 +34,7 @@ const Api={
         }
     },
 
-
+    logIn:(requestBody)=>{axios.post(`${baseURL}user/login`,requestBody)},
     getUserbyID:(id)=>{axios.get(`${baseURL}users/${id}`)},
     createNewuser:(requestBody)=>{axios.post(`${baseURL}users/register`,requestBody,
     {
