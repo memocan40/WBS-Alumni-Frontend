@@ -1,4 +1,4 @@
-.user-card {
+.student-card {
   min-width: 30rem;
   min-height: 300px;
   margin: 3rem 1rem;
@@ -11,47 +11,75 @@
   border: 3px solid #007895;
 }
 
-.user-card:hover {
+.ustudent-card:hover {
   z-index: 10;
   transform: scale(1.04);
   box-shadow: 5px 5px 8px 5px rgba(0, 0, 0, 0.4);
   transition: all 0.2s;
 }
 
-.user-card-img-wrapper {
+.student-card-img-wrapper {
   width: 60%;
   height: 50%;
   margin: 1rem auto;
   overflow: hidden;
 }
 
-.user-card-img {
+.student-card-img {
   width: 100%;
 }
 
-.user-card-desc {
-  color: grey;
-  font-size: 18px;
-  margin-top: 30px;
+.student-card-name{
+  margin-top: 1.5rem;
+  font-size: 2rem;
 }
 
-.user-card-btn {
-  width: 10rem;
-  height: 3rem;
-  margin-top: 2rem;
-  align-self: center;
+.student-card-desc {
+  color: grey;
+  font-size: 1.7rem;
+  margin-top: 1.5rem; 
+}
+
+.student-card-btn {
+  width: 8rem;
+  height: 2.5rem;
+  padding: .3rem;
+  margin: 1.5rem auto 0 auto;
   background-color: #f8485e;
   color: #fff;
   border: 2px solid #f8485e;
   border-radius: 1rem;
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
-.user-card-btn:hover {
+.student-card-btn:hover {
   background-color: #fff;
   color: #f8485e;
   transition: all 0.2s;
+}
+
+
+/*--------------------*/
+/*---Media queries----*/
+/*--------------------*/
+
+@media (min-width: 320px) and (max-width: 575px) {
+
+  .search-grid {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+
+  .student-card {
+    min-width: 20rem;
+    min-height: 10rem;
+    margin: 1rem auto;
+  }
+
 }
