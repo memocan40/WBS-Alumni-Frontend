@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "dotenv": "^8.2.0",
     "i18next": "^19.9.1",
     "i18next-xhr-backend": "^3.2.2",
     "moment": "^2.29.1",

@@ -1,10 +1,13 @@
 import axios from "axios";
 
+const getCitiesURL = `${process.env.REACT_APP_API_CITIES_URL}`;
+const getCitiesPass = `${process.env.REACT_APP_API_CITIES_PASS}`;
+console.log(getCitiesPass, getCitiesURL);
 const options = {
     method: 'GET',
-    url: 'https://genesis.sofodata.com/v1/wTucJW?limit=100',
+    url: getCitiesURL,
     headers: {
-        'x-api-key': 'PuhgDyJzElVNHwGmxSMvYtkdcCRhCXFzXQtT'
+        'x-api-key': getCitiesPass
     }
 };
 

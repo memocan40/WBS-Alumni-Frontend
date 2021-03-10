@@ -54,7 +54,7 @@ function App() {
     });  
 
     Countries.getAllCities().then((res) => {
-      //console.log(res.data);
+      console.log(res.data);
       const filteredNames = res.data.map((city)=>{
         return city.city;
       })
