@@ -14,16 +14,17 @@ export default function UserProfileInput({ defValues, onSubmit }) {
       setEditMode(true);
     }
   };
-
   if (editMode) {
+    console.log(defValues)
     return (
       <>
-        <select>
-        {/*render stuff from values */}
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+        <select onChange={(e) => {
+            setInputValue(e.target.value)
+        }}>
+        
+        {defValues.map(element => {
+          return <option value={element}>{element}</option>
+          })}
         </select>
         <button
           className={

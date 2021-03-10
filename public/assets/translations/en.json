@@ -10,6 +10,7 @@
     "logout.label": "Log-out",
     "startdate.label": "Start date: ",
     "visitbatch.label": "Visit batch",
+    "username.label": "Username: ",
     "name.label": "Name: ",
     "firstname.label": "First Name: ",
     "lastname.label": "Last Name: ",
