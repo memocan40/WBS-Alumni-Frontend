@@ -9,7 +9,7 @@ export default function Login() {
   let [name, setName] = useState('');
   let [pw, setPw] = useState('');
   const { t, i18n } = useTranslation();
-  let data={user:name,password:pw};
+  let data={email:name,password:pw};
 
   let login=()=>{Api.logIn(data);}
   return (
