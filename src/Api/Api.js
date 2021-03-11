@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL="https://hidden-shelf-31461.herokuapp.com/";
+const baseURL="http://localhost:3000";
 
 
 const Api={
@@ -35,7 +35,8 @@ const Api={
         }
     },
 
-    logIn:(requestBody)=>{axios.post(`${baseURL}users/login`,requestBody)},
+    logIn:(requestBody)=>{axios.post(`${baseURL}users/login`,requestBody,  {
+        headers:{'Access-Control-Allow-Origin' : "http://localhost:3000" }})},
     getInterests: async() => {
         try{
             const response = await axios.get(`${baseURL}interests`);
@@ -58,5 +59,4 @@ const Api={
         headers:{'Access-Control-Allow-Origin' : "http://localhost:3000" }})}
 }
 
-export default Api; 
-    
+export default Api;
