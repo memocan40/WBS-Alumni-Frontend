@@ -1,14 +1,16 @@
 import axios from "axios";
 
+const {REACT_APP_API_CITIES_URL, REACT_APP_API_CITIES_PASS} = process.env;
+console.log(REACT_APP_API_CITIES_URL, REACT_APP_API_CITIES_PASS)
 const options = {
     method: 'GET',
-    url: 'https://genesis.sofodata.com/v1/wTucJW?limit=100',
+    url: REACT_APP_API_CITIES_URL,
     headers: {
-        'x-api-key': 'PuhgDyJzElVNHwGmxSMvYtkdcCRhCXFzXQtT'
+        'x-api-key': REACT_APP_API_CITIES_PASS
     }
 };
 
-const countries = {
+const cities = {
     getAllCities : async() => {
         try{
             const response = axios.request(options);
@@ -22,4 +24,7 @@ const countries = {
     }
 }
 
-export default countries;
+
+
+
+export default cities;

@@ -1,6 +1,125 @@
 .App {
-  
+    min-width: 320px;
+}
+
+/*--------------------*/
+/*---Media queries----*/
+/*--------------------*/
+
+@media (min-width: 320px) and (max-width: 575px) {
+  /*-----Header------*/
+  .header {
+  }
+
+  .header-left {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .landing-page-heading {
+    font-size: 4rem;
+  }
+  /*--------------------*/
+  .header-right {
+    width: 100%;
+  }
+
+  .header-right-top-wrapper {
+    justify-content: space-around;
+  }
+
+  .toggle-btn-wrapper {
+    margin: 0;
+  }
+
+  .toggle-btn-desc {
+    font-size: 1.3rem;
+  }
+
+  .switch {
+    width: 45px;
+    height: 24px;
+  }
+
+  .slider::before {
+    width: 22px;
+    height: 22px;
+    left: 2px;
+    bottom: 1px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  .lang-selector {
+      width: 6rem;
+      height: 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  /*--------------------*/
+  .header-right-bottom-wrapper {
+    justify-content: space-around;
+  }
+
+  .nav-wrapper {
+    width: 70%;
+    margin: 0;
+    padding-top: .5rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+  }
+
+  .dropdown-item {
+      padding: .8rem;
+      font-size: 1.4rem;
+  }
+
+  .log-in-wrapper {
+
+}
+
+.user-profile-img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.dropdown {
+    margin-top: 2rem;
+}
+
+/*---Footer---*/
+
+.footer {
+    min-height: 10rem;
+}
 }
 
 
 
+
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+  /*-----Header------*/
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /*-----Header------*/
+}
+
+@media (min-width: 992px) and (max-width: 1311px) {
+  /*-----Header------*/
+}
+
+@media (min-width: 1312px) {
+}

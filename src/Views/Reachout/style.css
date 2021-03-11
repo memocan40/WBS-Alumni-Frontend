@@ -9,3 +9,31 @@
   text-align: center;
   margin-top: 10px;
 }
+
+.search-bar-wrapper {
+  width: 90%;
+  height: 5rem;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #007895;
+}
+
+.search-bar-btn {
+  height: 3rem;
+  margin-left: 1rem;
+  padding: .1rem .7rem;
+  background-color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F8485E;
+  border: 3px solid #F8485E;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.search-bar-btn:hover {
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
+  transition: all .2s;
+}

@@ -19,9 +19,10 @@
 }
 
 .form-input-container {
-  width: 90%;
+  width: 95%; 
   margin: 3rem auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
 }
@@ -76,4 +77,44 @@
 .form-redirection-link:hover {
   color: #007895;
   transition: all .2s;
+}
+
+/*--------------------*/
+/*---Media queries----*/
+/*--------------------*/
+
+@media (min-width: 320px) and (max-width: 575px) {
+
+  .form-content-container {
+    width: 90%;
+    margin: 25% auto;
+  }
+
+  .form-heading {
+    margin: 2rem 0;
+  }
+
+  .form-input-container{
+    margin: 1.5rem auto;
+  }
+
+  .form-input-label {
+    font-size: 2rem;
+  }
+
+  .form-input {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .form-btn {
+    min-width: 9rem;
+    height: 3.5rem;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .form-redirection {
+    font-size: 1.7rem;
+  }
 }

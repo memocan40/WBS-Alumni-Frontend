@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 //Api call 
 import Api from './Api/Api.js';
-import Countries from './Api/Countries';
+import Countries from './Api/Cities';
 
 import './i18next-config';
 //Components
@@ -32,6 +32,7 @@ function App() {
   const [loggedUser, setLoggedUser] = useState('');
   const [cities, setCities] = useState('');
   const [interests, setInterests] = useState('');
+  const [workStatus, setWorkStatus] = useState('');
 
   useEffect(() => {
     Api.getAllUsers()
@@ -53,8 +54,13 @@ function App() {
       console.error(err);
     });  
 
+    Api.getWorkStatuses()
+    .then((res)=> {
+      setWorkStatus(res.data);
+    });
+
     Countries.getAllCities().then((res) => {
-      //console.log(res.data);
+      console.log(res.data);
       const filteredNames = res.data.map((city)=>{
         return city.city;
       })
@@ -79,7 +85,7 @@ function App() {
 
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} interests={interests}/> : <Loader /> }
+            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} interests={interests} workStatus={workStatus}/> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}
