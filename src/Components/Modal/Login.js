@@ -23,7 +23,7 @@ export default function Login() {
   };
   return (
     <div>
-      <div className="form-content-container">
+      <form className="form-content-container">
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
           <label for="Name" id="name" className="form-input-label">
@@ -57,7 +57,7 @@ export default function Login() {
         <div className="form-redirection">
         {t('donthaveanacc.label')}<Link className="form-redirection-link" to="/register">{t('register.label')}</Link>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
