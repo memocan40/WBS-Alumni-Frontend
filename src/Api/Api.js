@@ -35,7 +35,7 @@ const Api={
         }
     },
 
-    logIn:(requestBody)=>{axios.post(`${baseURL}user/login`,requestBody)},
+    logIn:(requestBody)=>{axios.post(`${baseURL}users/login`,requestBody)},
     getInterests: async() => {
         try{
             const response = await axios.get(`${baseURL}interests`);
