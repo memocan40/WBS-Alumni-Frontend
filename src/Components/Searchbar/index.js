@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import "./style.css";
 
-export default function Searchbar(searchOption) {
+export default function Searchbar({searchOption}) {
     const [option, setOption] = useState(searchOption);
     
     if(searchOption == "name") {
