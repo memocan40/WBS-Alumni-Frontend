@@ -13,17 +13,21 @@ import Footer from "../../Components/Footer";
 
 import "./style.css";
 
-export default function Profile({userObject, setUserObject, cities, interests}) {
+export default function Profile({userObject, setUserObject, cities, interests, workStatus}) {
 
     const dataSubmit = () => {
         Api.updateUserbyID(userObject);
     }
+
+    console.log(cities)
+    console.log(interests)
+    console.log(workStatus)
     
     
     const { t, i18n } = useTranslation();
 
     console.log(userObject);
-    if(userObject) {
+    if(userObject ) {
     return (
         <>
         <Header />
@@ -39,7 +43,7 @@ export default function Profile({userObject, setUserObject, cities, interests}) 
                 <div className="profile-desc">{t('batch.label')} <span className="profile-input-container"><UserProfileDropdown onSubmit={(valueFromChild)=> setUserObject({...userObject, batch : valueFromChild}) }/></span></div>
                 <div className="profile-desc">{t('city.label')} <span className="profile-input-container"><UserProfileInput onSubmit={(valueFromChild)=> setUserObject({...userObject, city_id : valueFromChild}) }/></span></div>
                 <div className="profile-desc">{t('interests.label')} <span className="profile-input-container"><UserProfileMultiselect obj={interests} /></span></div>
-                <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container"><UserProfileDropdown onSubmit={(valueFromChild)=> setUserObject({...userObject, workstatus : valueFromChild}) }/></span></div>
+                <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container"><UserProfileDropdown defValues={workStatus} onSubmit={(valueFromChild)=> setUserObject({...userObject, workstatus : valueFromChild}) }/></span></div>
                 <div className="profile-desc">{t('github.label')} <span className="profile-input-container"><UserProfileInput value={userObject.github} onSubmit={(valueFromChild)=> setUserObject({...userObject, github : valueFromChild})} /></span></div>
                 <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linkedin} onSubmit={(valueFromChild)=> setUserObject({...userObject, linked_in : valueFromChild})}/></span></div>
                 <div className="profile-desc">{t('finalproject.label')} <span className="profile-input-container"><UserProfileInput value={userObject.final_project} onSubmit={(valueFromChild)=> setUserObject({...userObject, final_project : valueFromChild})}/></span></div>

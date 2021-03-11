@@ -1,10 +1,32 @@
+import React, { useState } from 'react';
+
 import "./style.css";
 
-export default function Searchbar() {
-    return (
-        <div className="search-bar-wrapper">
-            <input className="search-bar-input" type="text"/>
-            <button className="search-bar-btn" type="submit">Search</button>
-        </div>
-    )
+export default function Searchbar(searchOption) {
+    const [option, setOption] = useState(searchOption);
+    
+    if(searchOption == "name") {
+
+        return (
+            <>name</>
+        )
+    } else if (searchOption == "batch") {
+
+        return (
+            <>batch</>
+        )
+    } else if (searchOption == "interests") {
+
+        return (
+            <>interests</>
+        )
+    } else if (searchOption == "city") {
+
+        return (
+            <>city</>
+        ) 
+    } else {
+        return <>nothing selected</>
+    }
+    
 }
