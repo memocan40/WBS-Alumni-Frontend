@@ -33,6 +33,7 @@ function App() {
   const [cities, setCities] = useState('');
   const [interests, setInterests] = useState('');
   const [workStatus, setWorkStatus] = useState('');
+  const [batches, setBatches] = useState('');
 
   useEffect(() => {
     Api.getAllUsers()
@@ -59,6 +60,12 @@ function App() {
     Api.getWorkStatuses()
     .then((res)=> {
       setWorkStatus(res.data);
+    });
+
+    Api.getAllBatches()
+    .then((res)=> {
+      console.log(res);
+      setBatches(res.data);
     });
 
     Countries.getAllCities().then((res) => {
@@ -101,7 +108,7 @@ function App() {
 
           {/*----all batches route---- */}
           <Route path="/allbatches/">
-            <AllBatches />
+            <AllBatches obj={batches}/>
           </Route>
           
           {/*---- Home Page Route---- */}

@@ -1,23 +1,26 @@
 import Header from '../../Components/Header';
 import BatchCard from '../../Components/Batchcard';
 import Chat from "../../Components/Chat/Chat";
+import Loader from '../../Components/Loader';
 
 import "./style.css";
 
-export default function AllBatches() {
+export default function AllBatches({obj}) {
+
+  if(obj) {
+  const renderedBatches = obj.map((batch) => {
+      return <BatchCard batchName={batch.name} batchDate={batch.id}/>
+  })
+
   return (
     <div>
       <Header />
       <section className="batch-cards-container">
-        <BatchCard batchName="batch1" batchDate=""/>
-        <BatchCard batchName="batch2" batchDate=""/>
-        <BatchCard batchName="batch3" batchDate=""/>
-        <BatchCard batchName="batch4" batchDate=""/>
-        <BatchCard batchName="batch5" batchDate=""/>
-        <BatchCard batchName="batch6" batchDate=""/>
-        <BatchCard batchName="batch7" batchDate=""/>
-        <BatchCard batchName="batch8" batchDate=""/>
+        {renderedBatches}
       </section>
     </div>
-  );
+  )} else {
+    return <Loader />
+  }
+
 }

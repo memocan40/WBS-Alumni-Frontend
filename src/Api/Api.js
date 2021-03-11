@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-// const baseURL = "http://localhost:3000/";
+//const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+const baseURL = "http://localhost:3001/";
 
 const Api = {
   getAllUsers: async () => {
@@ -9,9 +9,6 @@ const Api = {
       const response = await axios.get(`${baseURL}users`);
       if (response.data) {
         return response.data.data;
-      } else {
-        console.log("no user data");
-        return [];
       }
     } catch (e) {
       console.error("getAllUsers: ", e);
@@ -60,13 +57,25 @@ const Api = {
     }
   },
 
+  getAllBatches: async() => {
+    try{
+      const response = await axios.get(`${baseURL}batches`)
+      if(response) {
+        return response.data;
+      }
+    } catch (e) {
+      console.error(e);
+      return [];
+    }
+  },
+
   logIn: (requestBody) => {
     axios.post(`${baseURL}users/login`, requestBody).then(
       (response) => {
         console.log(response.data);
       },
       (error) => {
-        console.log(error);
+        console.error(error);
       }
     );
   },
@@ -81,7 +90,7 @@ const Api = {
         console.log(response.data);
       },
       (error) => {
-        console.log(error);
+        console.error(error);
       }
     );
   },

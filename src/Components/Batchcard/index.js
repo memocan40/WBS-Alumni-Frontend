@@ -3,12 +3,12 @@ import {Link}from "react-router-dom";
 
 import './style.css';
 
-export default function BatchCard({ batchName, batchDate }) {
+export default function BatchCard({ batchName, batchId }) {
   const { t, i18n } = useTranslation();
   return (
     <div className="batch-card">
       <h1 className="batch-heading">{batchName}</h1>
-      <p className="batch-date">{t('startdate.label')} {batchDate}</p>
+      <p className="batch-date">{t('startdate.label')} {batchId}</p>
       <button className="batch-card-btn">{t('visitbatch.label')}</button>
     </div>
   );
