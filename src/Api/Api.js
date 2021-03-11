@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL="https://hidden-shelf-31461.herokuapp.com/";
+const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
 // const baseURL = "http://localhost:3000/";
 
 const Api = {
@@ -34,11 +34,6 @@ const Api = {
     }
   },
 
-  logIn: (requestBody) => {
-    axios.post(`${baseURL}users/login`, requestBody, {
-      headers: { "Access-Control-Allow-Origin": "http://localhost:3000" },
-    });
-  },
   getInterests: async () => {
     try {
       const response = await axios.get(`${baseURL}interests`);
@@ -54,22 +49,36 @@ const Api = {
     }
   },
 
+  getWorkStatuses: async () => {
+    try {
+      const response = await axios.get(`${baseURL}work_status`);
+      if (response) {
+        console.log(response.data);
+        return response.data;
+      }
+    } catch (e) {
+      console.error(e);
+      return [];
+    }
+  },
+
+  logIn: (requestBody) => {
+    axios.post(`${baseURL}users/login`, requestBody);
+  },
+
   getUserbyID: (id) => {
     axios.get(`${baseURL}users/${id}`);
   },
   createNewuser: (requestBody) => {
-    axios
-      .post(`${baseURL}users/register`, requestBody, {
-        headers: { "Access-Control-Allow-Origin": "http://localhost:3000" },
-      })
-      .then(
-        (response) => {
-          console.log(response.data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    axios.post(`${baseURL}users/register`, requestBody)
+    .then(
+      (response) => {
+        console.log(response.data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   },
 };
 

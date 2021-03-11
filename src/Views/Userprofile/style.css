@@ -98,8 +98,31 @@
 /*--------------------*/
 
 @media (min-width: 320px) and (max-width: 575px) {
+  .profile-wrapper {
+    border: none;
+  }
+
+  .profile-left-wrapper {
+    width: 100%;
+  }
+
+  .profile-heading {
+    text-align: center;
+  }
+
+
   .profile-right-wrapper {
     width: 100%;
-    margin: 0;
+    margin: 1rem 0;
+  }
+
+  .profile-desc {
+    flex-direction: column;
+    font-size: 1.8rem;
+  }
+
+  .profile-input-container{ 
+    width: 100%;
+    margin-top: .5rem;
   }
 }

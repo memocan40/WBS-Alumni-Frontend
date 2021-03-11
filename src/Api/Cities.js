@@ -10,7 +10,7 @@ const options = {
     }
 };
 
-const countries = {
+const cities = {
     getAllCities : async() => {
         try{
             const response = axios.request(options);
@@ -24,4 +24,7 @@ const countries = {
     }
 }
 
-export default countries;
+
+
+
+export default cities;
