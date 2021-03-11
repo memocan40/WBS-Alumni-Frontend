@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const getCitiesURL = `${process.env.REACT_APP_API_CITIES_URL}`;
-const getCitiesPass = `${process.env.REACT_APP_API_CITIES_PASS}`;
-console.log(getCitiesPass, getCitiesURL);
+const {REACT_APP_API_CITIES_URL, REACT_APP_API_CITIES_PASS} = process.env;
+console.log(REACT_APP_API_CITIES_URL, REACT_APP_API_CITIES_PASS)
 const options = {
     method: 'GET',
-    url: getCitiesURL,
+    url: REACT_APP_API_CITIES_URL,
     headers: {
-        'x-api-key': getCitiesPass
+        'x-api-key': REACT_APP_API_CITIES_PASS
     }
 };
 
