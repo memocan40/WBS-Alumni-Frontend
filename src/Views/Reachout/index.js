@@ -11,8 +11,10 @@ import './style.css';
 export default function ReachOut({students, batches, cities}) {
 
   const [dropdownSelected, setDropdownSelected] = useState('batch');
+  let [childValue,setchildValue]                =useState();
   const [filteredStudents, setFilteredStudents] = useState({...students});
   console.log(dropdownSelected);
+  console.log(childValue);
 
   if(filteredStudents) {
   return (
@@ -25,7 +27,7 @@ export default function ReachOut({students, batches, cities}) {
           <option className="search-bar-selection-option" value="name">Name</option>
           <option className="search-bar-selection-option" value="interests">Interests</option>
         </select>
-        <Searchbar searchOption={dropdownSelected} />
+        <Searchbar searchOption={dropdownSelected} inputValue={(valueFromChild)=>{setchildValue(valueFromChild)}} />
         <button className="search-bar-btn" type="submit">Search</button>
       </div>
       <div className="search-grid">
