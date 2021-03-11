@@ -18,7 +18,6 @@ export default function Register() {
   let [loading, setloading] = useState(false);
 
   let data = { user: name, email: email, password: pw };
-  console.log(data);
 
   let createuser = async (e) => {
     e.preventDefault();

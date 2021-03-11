@@ -8,6 +8,8 @@ import './style.css';
 export default function Login() {
   let [name, setName] = useState('');
   let [pw, setPw] = useState('');
+
+
   console.log(name);
   console.log(pw);
   const { t, i18n } = useTranslation();
@@ -16,7 +18,6 @@ export default function Login() {
   let login = async (e) => {
     e.preventDefault();
     try {
-
       await Api.logIn(data);
 
     } catch (err) {
