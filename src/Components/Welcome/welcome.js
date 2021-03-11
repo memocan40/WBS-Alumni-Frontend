@@ -5,6 +5,8 @@ import { Slide } from 'react-slideshow-image';
 
 export default function Welcome(){
 
+//https://secure.meetupstatic.com/photos/event/d/8/b/b/highres_493975483.jpeg
+
 
     const Slideshow = () => {
     return (
@@ -15,16 +17,35 @@ export default function Welcome(){
               <span></span>
             </div>
           </div>
+
           <div className="each-slide">
-            <div className="picture" style={{'backgroundImage': `url("https://www.stoodnt.com/blog/wp-content/uploads/2018/10/Learn-coding-online.jpeg")`}}>
+            <div className="picture" style={{'backgroundImage': `url("https://secure.meetupstatic.com/photos/event/d/8/b/b/highres_493975483.jpeg")`}}>
               <span></span>
             </div>
           </div>
+
           <div className="each-slide">
-            <div className="picture" style={{'backgroundImage': `url("https://www.webconfs.com/wp-content/uploads/2020/07/12825450d41e4fd6d2482c0920b7fe75.jpg")`}}>
+            <div className="picture" style={{'backgroundImage': `url("https://miro.medium.com/max/6984/1*KXzdwIyrB5UIOKOmKddKSQ.jpeg")`}}> 
               <span></span>
             </div>
           </div>
+
+      
+          <div className="each-slide">
+            <div className="picture" style={{'backgroundImage': `url("https://www.wbstraining.de/fileadmin/user_upload/coding-school/wbs-coding-school-wbs-training.jpg")`}}>
+              <span></span>
+            </div>
+          </div>
+
+
+          <div className="each-slide">
+            <div className="picture" style={{'backgroundImage': `url("https://i.ytimg.com/vi/Kgt7iK0rkZY/maxresdefault.jpg")`}}>
+              <span></span>
+            </div>
+          </div>
+
+
+
         </Slide>
       </div>
     )
