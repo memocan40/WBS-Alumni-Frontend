@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-
-import Api from '../../Api/Api';
+import axios from 'axios';
 
 import Loader from '../Loader';
 
@@ -25,10 +24,17 @@ export default function Register() {
     e.preventDefault();
     try {
       setloading(true);
-      await Api.createNewuser(data);
-      history.push("/login");
+      const response = await axios.post(
+        `https://hidden-shelf-31461.herokuapp.com/users/register`,
+        data
+      );
+      if (response) {
+        console.log(response);
+        setloading(false);
+        history.push('/login');
+      }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   };
 

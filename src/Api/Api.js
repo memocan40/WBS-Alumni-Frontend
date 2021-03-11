@@ -1,7 +1,10 @@
 import axios from "axios";
+import { useHistory } from 'react-router-dom';
 
-//const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-const baseURL = "http://localhost:3001/";
+import Loader from '../Components/Loader';
+
+const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+//const baseURL = "http://localhost:3001/";
 
 const Api = {
   getAllUsers: async () => {
@@ -84,16 +87,7 @@ const Api = {
     axios.get(`${baseURL}users/${id}`);
   },
   
-  createNewuser: (requestBody) => {
-    axios.post(`${baseURL}users/register`, requestBody).then(
-      (response) => {
-        console.log(response.data);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  },
+
 };
 
 export default Api;
