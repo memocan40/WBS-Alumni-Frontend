@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 
 import "./style.css";
 
-export default function Searchbar(searchOption) {
+export default function Searchbar({searchOption,inputValue}) {
     const [option, setOption] = useState(searchOption);
+    let [inputvalue,setinputvalue]=useState();
     
+    if(inputvalue){inputValue(inputvalue)}
     if(searchOption == "name") {
 
         return (
-            <>name</>
+            <input type="text" onChange={(e)=>{setinputvalue(e.target.value)}} ></input>
         )
     } else if (searchOption == "batch") {
 
