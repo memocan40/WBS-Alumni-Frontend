@@ -11,10 +11,19 @@ export default function Login() {
   const { t, i18n } = useTranslation();
   let data={email:name,password:pw};
 
-  let login=()=>{Api.logIn(data);}
+  let login = async (e) => {
+    e.preventDefault();
+    try {
+      
+      await Api.logIn(data);
+      
+    } catch (err) {
+      console.error(err)
+    }
+  };
   return (
     <div>
-      <div className="form-content-container">
+      <form className="form-content-container">
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
           <label for="Name" id="name" className="form-input-label">
@@ -39,7 +48,7 @@ export default function Login() {
             placeholder="Enter Password"
             name="psw"
             id="psw"
-            onchange={(event)=>{setPw(event.target.value)}}
+            onChange={(event)=>{setPw(event.target.value)}}
             required></input>
         </div>
         <button type="submit" className="form-btn" onClick={login}>
@@ -48,7 +57,7 @@ export default function Login() {
         <div className="form-redirection">
         {t('donthaveanacc.label')}<Link className="form-redirection-link" to="/register">{t('register.label')}</Link>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
