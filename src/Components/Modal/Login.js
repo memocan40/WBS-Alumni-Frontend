@@ -39,7 +39,7 @@ export default function Login() {
             placeholder="Enter Password"
             name="psw"
             id="psw"
-            onchange={(event)=>{setPw(event.target.value)}}
+            onChange={(event)=>{setPw(event.target.value)}}
             required></input>
         </div>
         <button type="submit" className="form-btn" onClick={login}>
