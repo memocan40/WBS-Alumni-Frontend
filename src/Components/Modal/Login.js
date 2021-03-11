@@ -11,7 +11,16 @@ export default function Login() {
   const { t, i18n } = useTranslation();
   let data={email:name,password:pw};
 
-  let login=()=>{Api.logIn(data);}
+  let login = async (e) => {
+    e.preventDefault();
+    try {
+      
+      await Api.logIn(data);
+      
+    } catch (err) {
+      console.error(err)
+    }
+  };
   return (
     <div>
       <div className="form-content-container">
