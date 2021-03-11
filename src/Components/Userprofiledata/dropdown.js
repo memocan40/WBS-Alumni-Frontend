@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './style.css';
 
-export default function UserProfileInput({ defValues, onSubmit }) {
+export default function UserProfileInput({ defValues, onSubmit}) {
   const [inputValue, setInputValue] = useState("");
   const [editMode, setEditMode] = useState(false);
 
@@ -23,8 +23,9 @@ export default function UserProfileInput({ defValues, onSubmit }) {
         }}>
         
         {defValues.map(element => {
-          return <option value={element}>{element}</option>
-          })}
+          console.log(element);
+          return <option key={element.name} value={element.name}>{element.name}</option>
+        })}
         </select>
         <button
           className={

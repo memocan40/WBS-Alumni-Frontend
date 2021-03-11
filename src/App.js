@@ -47,8 +47,10 @@ function App() {
 
     Api.getInterests()
     .then((res) => {
-      console.log(res);
-      setInterests(res);
+      const filteredInterests = res.map((int)=> {
+        return  int.name;
+      })
+      setInterests(filteredInterests);
     })
     .catch((err) => {
       console.error(err);
@@ -60,9 +62,8 @@ function App() {
     });
 
     Countries.getAllCities().then((res) => {
-      console.log(res.data);
       const filteredNames = res.data.map((city)=>{
-        return city.city;
+        return {name : city.city};
       })
       console.log(filteredNames);
       setCities(filteredNames);

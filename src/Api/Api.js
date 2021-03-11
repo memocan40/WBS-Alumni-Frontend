@@ -37,7 +37,6 @@ const Api = {
     try {
       const response = await axios.get(`${baseURL}interests`);
       if (response) {
-        console.log(response);
         return response.data.data;
       } else {
         return [];
@@ -52,7 +51,6 @@ const Api = {
     try{
       const response = await axios.get(`${baseURL}work_status`)
       if(response) {
-        console.log(response.data);
         return response.data;
       }
     }catch(e) {
@@ -68,6 +66,7 @@ const Api = {
   getUserbyID: (id) => {
     axios.get(`${baseURL}users/${id}`);
   },
+  
   createNewuser: (requestBody) => {
     const response =axios.post(`${baseURL}users/register`, requestBody);
     if(response) {

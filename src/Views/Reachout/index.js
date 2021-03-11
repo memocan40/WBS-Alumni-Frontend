@@ -12,6 +12,7 @@ export default function ReachOut({students, batches, cities}) {
 
   const [dropdownSelected, setDropdownSelected] = useState('batch');
   const [filteredStudents, setFilteredStudents] = useState({...students});
+  
   console.log(dropdownSelected);
 
   if(filteredStudents) {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Api from '../../Api/Api';
@@ -8,7 +8,6 @@ import Loader from "../../Components/Loader";
 import Header from "../../Components/Header";
 import UserProfileInput from "../../Components/Userprofiledata/input";
 import UserProfileDropdown from "../../Components/Userprofiledata/dropdown";
-import UserProfileMultiselect from "../../Components/Userprofiledata/multiselect";
 import Footer from "../../Components/Footer";
 
 import "./style.css";
@@ -41,9 +40,9 @@ export default function Profile({userObject, setUserObject, cities, interests, w
                 <div className="profile-desc">{t('firstname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.first_name} onSubmit={(valueFromChild)=> setUserObject({...userObject, first_name : valueFromChild}) } /></span></div>
                 <div className="profile-desc">{t('lastname.label')} <span className="profile-input-container"><UserProfileInput value={userObject.last_name} onSubmit={(valueFromChild)=> setUserObject({...userObject, last_name : valueFromChild}) }/></span></div>
                 <div className="profile-desc">{t('batch.label')} <span className="profile-input-container"><UserProfileDropdown onSubmit={(valueFromChild)=> setUserObject({...userObject, batch : valueFromChild}) }/></span></div>
-                <div className="profile-desc">{t('city.label')} <span className="profile-input-container"><UserProfileInput onSubmit={(valueFromChild)=> setUserObject({...userObject, city_id : valueFromChild}) }/></span></div>
-                <div className="profile-desc">{t('interests.label')} <span className="profile-input-container"><UserProfileMultiselect obj={interests} /></span></div>
-                <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container"><UserProfileDropdown defValues={workStatus} onSubmit={(valueFromChild)=> setUserObject({...userObject, workstatus : valueFromChild}) }/></span></div>
+                <div className="profile-desc">{t('city.label')} <span className="profile-input-container"><UserProfileDropdown defValues={cities} onSubmit={(valueFromChild)=> setUserObject({...userObject, city_id : valueFromChild})} /></span></div>
+                <div className="profile-desc">{t('interests.label')} <span className="profile-input-container"><UserProfileInput value={userObject.interests} onSubmit={(valueFromChild)=> setUserObject({...userObject, interests : valueFromChild}) }/></span></div>
+                <div className="profile-desc">{t('workstatus.label')} <span className="profile-input-container"><UserProfileDropdown defValues={workStatus} onSubmit={(valueFromChild)=> setUserObject({...userObject, workstatus : valueFromChild}) } /></span></div>
                 <div className="profile-desc">{t('github.label')} <span className="profile-input-container"><UserProfileInput value={userObject.github} onSubmit={(valueFromChild)=> setUserObject({...userObject, github : valueFromChild})} /></span></div>
                 <div className="profile-desc">{t('linkedin.label')} <span className="profile-input-container"><UserProfileInput value={userObject.linkedin} onSubmit={(valueFromChild)=> setUserObject({...userObject, linked_in : valueFromChild})}/></span></div>
                 <div className="profile-desc">{t('finalproject.label')} <span className="profile-input-container"><UserProfileInput value={userObject.final_project} onSubmit={(valueFromChild)=> setUserObject({...userObject, final_project : valueFromChild})}/></span></div>
