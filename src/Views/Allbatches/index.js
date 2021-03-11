@@ -9,7 +9,7 @@ export default function AllBatches({obj}) {
 
   if(obj) {
   const renderedBatches = obj.map((batch) => {
-      return <BatchCard batchName={batch.name} batchDate={batch.id}/>
+      return <BatchCard batchName={batch.name}/>
   })
 
   return (

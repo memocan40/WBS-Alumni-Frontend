@@ -8,7 +8,6 @@ export default function BatchCard({ batchName, batchId }) {
   return (
     <div className="batch-card">
       <h1 className="batch-heading">{batchName}</h1>
-      <p className="batch-date">{t('startdate.label')} {batchId}</p>
       <button className="batch-card-btn">{t('visitbatch.label')}</button>
     </div>
   );
