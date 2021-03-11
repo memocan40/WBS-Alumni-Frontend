@@ -63,15 +63,21 @@ const Api = {
   },
 
   logIn: (requestBody) => {
-    axios.post(`${baseURL}users/login`, requestBody);
+    axios.post(`${baseURL}users/login`, requestBody).then(
+      (response) => {
+        console.log(response.data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   },
 
   getUserbyID: (id) => {
     axios.get(`${baseURL}users/${id}`);
   },
   createNewuser: (requestBody) => {
-    axios.post(`${baseURL}users/register`, requestBody)
-    .then(
+    axios.post(`${baseURL}users/register`, requestBody).then(
       (response) => {
         console.log(response.data);
       },
