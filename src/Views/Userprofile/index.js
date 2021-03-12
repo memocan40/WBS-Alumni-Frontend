@@ -21,8 +21,10 @@ export default function Profile({userObject, setUserObject, cities, interests, w
     }
 
     const uploadPic = async() => {
+        const profile_pic = new FormData()
+        profile_pic.append('data', pic)
         try{
-            const res = await axios.post(`https://hidden-shelf-31461.herokuapp.com/users/upload-profile-pic/${userObject.id}`, pic)
+            const res = await axios.post(`http://localhost:3000/users/upload-profile-pic/${userObject.id}`, profile_pic);
             if(res) {
                 console.log(res)
             }
@@ -35,7 +37,6 @@ export default function Profile({userObject, setUserObject, cities, interests, w
     console.log(interests)
     console.log(workStatus)
     
-    console.log(pic);
 
     const { t, i18n } = useTranslation();
 
@@ -48,8 +49,8 @@ export default function Profile({userObject, setUserObject, cities, interests, w
             <div className="profile-left-wrapper">
                 <h1 className="profile-heading">{t('yourprofile.label')}</h1>
                 <div className="profile-img-wrapper"><img className="profile-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" placeholder="user-profile"></img></div>
-                <form method="POST" encType="multipart/form-data">
-                    <input type="file" id="profile_pic_select" onChange={(e)=>setPic(e.target.files[0])}/>
+                <form method="POST" encType="multipart/form-data" >
+                    <input type="file" id="profile_pic" name="profile_pic" onChange={(e)=>setPic(e.target.files[0])}/>
                     <button className="upload-pic-btn" onClick={uploadPic}>{t('uploadpicture.label')}</button>
                 </form>
             </div>
