@@ -11,6 +11,7 @@ const Api = {
     try {
       const response = await axios.get(`${baseURL}users`);
       if (response.data) {
+        console.log(response.data.data)
         return response.data.data;
       }
     } catch (e) {

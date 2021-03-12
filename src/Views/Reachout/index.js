@@ -24,6 +24,7 @@ export default function ReachOut({students, batches, cities, workstatus}) {
       const response = await axios.get(`https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`)
       if(response) {
         console.log(response)
+        setFilteredStudents({...response.data.data});
       }
     }catch(e){
       console.error(e);
