@@ -8,7 +8,7 @@ import Footer from '../../Components/Footer';
 
 import './style.css';
 
-export default function ReachOut({students, batches, cities}) {
+export default function ReachOut({students, batches, cities, workstatus}) {
 
   const [dropdownSelected, setDropdownSelected] = useState('batch');
   let [childValue,setchildValue]                =useState();
@@ -25,10 +25,10 @@ export default function ReachOut({students, batches, cities}) {
         <select className="reach-out-select" onChange={(e)=> setDropdownSelected(e.target.value)}>
           <option className="reach-out-option" value="batch">Batch</option>
           <option className="reach-out-option" value="city">City</option>
-          <option className="reach-out-option" value="name">Name</option>
+          <option className="reach-out-option" value="workstatus">Workstatus</option>
           <option className="reach-out-option" value="interests">Interests</option>
         </select>
-        <Searchbar searchOption={dropdownSelected} inputValue={(valueFromChild)=>{setchildValue(valueFromChild)}} batches={batches} cities={cities} />
+        <Searchbar searchOption={dropdownSelected} inputValue={(valueFromChild)=>{setchildValue(valueFromChild)}} batches={batches} cities={cities} workstatus={workstatus} />
         <button className="search-bar-btn" type="submit">Search</button>
       </div>
       <div className="search-grid">

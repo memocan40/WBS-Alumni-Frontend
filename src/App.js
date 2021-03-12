@@ -103,7 +103,7 @@ function App() {
 
           {/*----reach out route---- */}
           <Route path="/reachout/">
-            { batches && cities ? <ReachOutView students={studentList} batches={batches} cities={cities}/> : <Loader/>}
+            { batches && cities && workStatus ? <ReachOutView students={studentList} batches={batches} cities={cities} workstatus={workStatus}/> : <Loader/>}
           </Route>
 
           {/*----all batches route---- */}
