@@ -40,7 +40,10 @@ function App() {
       .then((res) => {
         console.log(res);
         setStudentList(res);
-        setLoggedUser(res[2]);
+        const userLogged= res.filter((user)=> {
+          return user.id === 558;
+        })
+        setLoggedUser(userLogged);
       })
       .catch((err) => {
         console.error(err);

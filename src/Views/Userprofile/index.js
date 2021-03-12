@@ -16,15 +16,18 @@ import "./style.css";
 export default function Profile({userObject, setUserObject, cities, interests, workStatus, batches}) {
     const [pic, setPic] = useState("");
 
+    const placeholderPic = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
+
     const dataSubmit = () => {
         Api.updateUserbyID(userObject);
     }
-
+    console.log(pic)
     const uploadPic = async() => {
-        const profile_pic = new FormData()
-        profile_pic.append('data', pic)
+        
         try{
-            const res = await axios.post(`http://localhost:3000/users/upload-profile-pic/${userObject.id}`, profile_pic);
+            const data = new FormData() 
+            data.append('profile_pic', pic)
+            const res = await axios.post(`http://localhost:3003/users/upload-profile-pic/${userObject.id}`, data);
             if(res) {
                 console.log(res)
             }
@@ -48,10 +51,12 @@ export default function Profile({userObject, setUserObject, cities, interests, w
         <div className="profile-wrapper">
             <div className="profile-left-wrapper">
                 <h1 className="profile-heading">{t('yourprofile.label')}</h1>
-                <div className="profile-img-wrapper"><img className="profile-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" placeholder="user-profile"></img></div>
+                <div className="profile-img-wrapper"><img className="profile-img" src={userObject.picture ? userObject.picture : placeholderPic} placeholder="user-profile"></img></div>
                 <form method="POST" encType="multipart/form-data" >
                     <input type="file" id="profile_pic" name="profile_pic" onChange={(e)=>setPic(e.target.files[0])}/>
-                    <button className="upload-pic-btn" onClick={uploadPic}>{t('uploadpicture.label')}</button>
+                    <button className="upload-pic-btn" onClick={(e) =>{
+                        e.preventDefault()
+                        uploadPic()}}>{t('uploadpicture.label')}</button>
                 </form>
             </div>
             <div className="profile-right-wrapper">
