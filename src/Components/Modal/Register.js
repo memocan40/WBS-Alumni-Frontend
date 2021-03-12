@@ -55,6 +55,7 @@ export default function Register() {
             placeholder="Enter username"
             name="username"
             id="username"
+            required
             onChange={(event) => {
               setName(event.target.value);
             }}
@@ -70,6 +71,7 @@ export default function Register() {
             placeholder="Enter Email"
             name="email"
             id="email"
+            required
             onChange={(event) => {
               setEmail(event.target.value);
             }}
@@ -85,6 +87,7 @@ export default function Register() {
             placeholder="Enter Password"
             name="psw"
             id="psw"
+            required
             onChange={(event) => {
               setPw(event.target.value);
             }}

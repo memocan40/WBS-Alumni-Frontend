@@ -93,7 +93,7 @@ function App() {
 
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} interests={interests} workStatus={workStatus} batches={batches}/> : <Loader /> }
+            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
           </Route>
 
           {/*----lets code route---- */}
@@ -103,12 +103,12 @@ function App() {
 
           {/*----reach out route---- */}
           <Route path="/reachout/">
-            <ReachOutView students={studentList}/>
+            { batches && cities ? <ReachOutView students={studentList} batches={batches} cities={cities}/> : <Loader/>}
           </Route>
 
           {/*----all batches route---- */}
           <Route path="/allbatches/">
-            <AllBatches obj={batches}/>
+            {batches ? <AllBatches obj={batches} /> : <Loader/>}
           </Route>
           
           {/*---- Home Page Route---- */}

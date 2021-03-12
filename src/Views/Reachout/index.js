@@ -22,13 +22,13 @@ export default function ReachOut({students, batches, cities}) {
     <>
       <Header />
       <div className="search-bar-wrapper">
-        <select className="search-bar-selection" onChange={(e)=> setDropdownSelected(e.target.value)}>
-          <option className="search-bar-selection-option" value="batch">Batch</option>
-          <option className="search-bar-selection-option" value="city">City</option>
-          <option className="search-bar-selection-option" value="name">Name</option>
-          <option className="search-bar-selection-option" value="interests">Interests</option>
+        <select className="reach-out-select" onChange={(e)=> setDropdownSelected(e.target.value)}>
+          <option className="reach-out-option" value="batch">Batch</option>
+          <option className="reach-out-option" value="city">City</option>
+          <option className="reach-out-option" value="name">Name</option>
+          <option className="reach-out-option" value="interests">Interests</option>
         </select>
-        <Searchbar searchOption={dropdownSelected} inputValue={(valueFromChild)=>{setchildValue(valueFromChild)}} />
+        <Searchbar searchOption={dropdownSelected} inputValue={(valueFromChild)=>{setchildValue(valueFromChild)}} batches={batches} cities={cities} />
         <button className="search-bar-btn" type="submit">Search</button>
       </div>
       <div className="search-grid">
