@@ -108,7 +108,7 @@
 
 
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 575px) and (max-width: 767px) {
   /*-----Header------*/
   .header-left {
     width: 100%;
