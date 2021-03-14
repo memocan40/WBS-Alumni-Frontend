@@ -11,7 +11,6 @@ import Loader from './Components/Loader';
 
 //Views
 import Profile from './Views/Userprofile';
-import LetsCodeView from './Views/Letscode';
 import AllBatches from './Views/Allbatches';
 import ReachOutView from './Views/Reachout';
 import Login from './Views/Login';
@@ -97,11 +96,6 @@ function App() {
           {/*----user profile route---- */}
           <Route path="/profile/">
             {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
-          </Route>
-
-          {/*----lets code route---- */}
-          <Route path="/letscode/">
-            <LetsCodeView />
           </Route>
 
           {/*----reach out route---- */}

@@ -1,6 +1,6 @@
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
-import Welcome from "../../Components/Welcome/welcome";
+import Welcome from "../../Components/Welcomeslide/welcome";
 
 import "./style.css";
 

@@ -1,0 +1,19 @@
+.slide-container {
+  height: 70rem;
+  width: 60%;
+  margin: 9rem auto;
+  overflow: hidden;
+}
+
+.each-slide {
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.slider-img {
+  width: 100%;
+  margin: 0 auto;
+}
