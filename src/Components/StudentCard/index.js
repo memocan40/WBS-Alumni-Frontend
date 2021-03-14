@@ -7,7 +7,7 @@ export default function Studentcard({ name, batch, id }) {
   const { t, i18n } = useTranslation();
   
   return (
-      <div className="student-card">
+      <div className="student-card" key={id}>
           <div className="student-card-img-wrapper">
             <img className="student-card-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profilepic" />
           </div>

@@ -21,7 +21,7 @@ export default function UserProfileInput({ defValues, currentValue, onSubmit}) {
         <select onChange={(e) => {
             setInputValue(e.target.value)
         }}>
-        
+        <option value="" selected disabled hidden>Choose here</option> 
         {defValues.map(element => {
           console.log(element);
           return <option key={element.name} value={element.name}>{element.name}</option>

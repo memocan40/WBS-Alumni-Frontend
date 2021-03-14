@@ -1,5 +1,6 @@
 .search-grid {
   width: 90%;
+  min-height: 50vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, 35rem);
   grid-gap: 10px;
