@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from '../../Components/Header';
 import Loader from "../../Components/Loader";
 import Searchbar from '../../Components/Searchbar';
-import StudentCard from '../../Components/StudentCard';
+import Searchgrid from '../../Components/Searchgrid';
 import Footer from '../../Components/Footer';
 
 import './style.css';
@@ -14,31 +14,28 @@ export default function ReachOut({students, batches, cities, workstatus}) {
   const [typeOfSearch, setTypeOfSearch] = useState('batch');
   const [childValue,setchildValue]=useState("");
   const [filteredStudents, setFilteredStudents] = useState(students);
+  const [loading, setLoading] = useState(false);
   
   console.log(typeOfSearch);
   console.log(childValue);
-  console.log(filteredStudents);
-
-
-
 
   const searchController = async () => {
     //e.preventDefault();
     try{
+      setLoading(true);
       const response = await axios.get(`https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`)
       if(response) {
         console.log(response)
+        setLoading(false);
         setFilteredStudents(response.data.data);
-        console.log("render")
-        console.log(filteredStudents)
       }
     }catch(e){
       console.error(e);
+      setLoading(false);
     }
   }
 
-
-  if(filteredStudents) {
+  if(students) {
   return (
     <>
       <Header />
@@ -52,11 +49,7 @@ export default function ReachOut({students, batches, cities, workstatus}) {
         <Searchbar searchOption={typeOfSearch} inputValue={setchildValue} batches={batches} cities={cities} workstatus={workstatus} />
         <button className="search-bar-btn" onClick={searchController}>Search</button>
       </div>
-      <div className="search-grid">
-        {filteredStudents.map((filteredStudent) => {
-          return <StudentCard name={`${filteredStudent.first_name} ${filteredStudent.last_name}`} batch={filteredStudent.batch} id={filteredStudent.id}/>
-        })}
-      </div>
+      <Searchgrid filteredStudents={filteredStudents} loading={loading}/>
       <Footer />
     </>
   );} else {
