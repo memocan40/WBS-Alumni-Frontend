@@ -35,3 +35,8 @@
 .dropdown-item:hover {
     background-color: #ebebeb;
 }
+
+.dropdown-link {
+    color: #007895;
+    text-decoration: none;
+}

@@ -1,11 +1,8 @@
 import axios from "axios";
-import { useHistory } from 'react-router-dom';
-
-import Loader from '../Components/Loader';
 
 const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
 //const baseURL = "http://localhost:3001/";
-
+  
 const Api = {
   getAllUsers: async () => {
     try {
@@ -88,7 +85,6 @@ const Api = {
     axios.get(`${baseURL}users/${id}`);
   },
   
-
 };
 
 export default Api;

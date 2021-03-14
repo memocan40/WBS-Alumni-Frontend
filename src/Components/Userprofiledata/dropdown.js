@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import './style.css';
 
-export default function UserProfileInput({ defValues, currentValue, onSubmit}) {
+export default function UserProfileInput({
+  defValues,
+  currentValue,
+  onSubmit,
+}) {
   const [inputValue, setInputValue] = useState(currentValue);
   const [editMode, setEditMode] = useState(false);
 
@@ -15,17 +19,24 @@ export default function UserProfileInput({ defValues, currentValue, onSubmit}) {
     }
   };
   if (editMode) {
-    console.log(defValues)
+    console.log(defValues);
     return (
       <>
-        <select onChange={(e) => {
-            setInputValue(e.target.value)
-        }}>
-        <option value="" selected disabled hidden>Choose here</option> 
-        {defValues.map(element => {
-          console.log(element);
-          return <option key={element.name} value={element.name}>{element.name}</option>
-        })}
+        <select
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}>
+          <option value="" selected disabled hidden>
+            Choose here
+          </option>
+          {defValues.map((element) => {
+            console.log(element);
+            return (
+              <option key={element.name} value={element.name}>
+                {element.name}
+              </option>
+            );
+          })}
         </select>
         <button
           className={

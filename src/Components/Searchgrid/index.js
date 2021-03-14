@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Loader from '../../Components/Loader';
 import StudentCard from '../../Components/StudentCard';
