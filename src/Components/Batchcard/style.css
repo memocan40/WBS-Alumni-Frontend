@@ -27,15 +27,17 @@
 }
 
 .batch-card-btn {
-  height: 3rem;
+  height: 2.6rem;
   width: 9rem;
   margin: 1rem auto;
+  padding-top: .5rem;
   background-color: #f8485e;
   border: 2px solid #f8485e;
   border-radius: 1rem;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .batch-card-btn:hover {

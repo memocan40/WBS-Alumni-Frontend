@@ -1,8 +1,7 @@
-import Loader from '../Loader';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
 import './welcome.css';
-import 'react-slideshow-image/dist/styles.css';
-import { Slide } from 'react-slideshow-image';
 
 export default function Welcome() {
   const images = [

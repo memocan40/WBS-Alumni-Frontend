@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import "./style.css";
+import './style.css';
 
 export default function UserProfileInput({ value, onSubmit }) {
   const [inputValue, setInputValue] = useState(value);
@@ -27,10 +27,11 @@ export default function UserProfileInput({ value, onSubmit }) {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button
-          className={"user-edit-btn",
+          className={
+            ('user-edit-btn',
             editMode
               ? 'fas fa-check user-edit-btn'
-              : 'far fa-edit user-edit-btn'
+              : 'far fa-edit user-edit-btn')
           }
           onClick={editBtnHandler}></button>
       </>

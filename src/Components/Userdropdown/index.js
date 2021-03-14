@@ -14,10 +14,16 @@ export default function UserDropdown() {
       className="user-dropdown"
       title="&#9660;">
       <Dropdown.Item>
-        <Link to="/profile"><i class="far fa-user-circle"></i>{t('profile.label')}</Link>
+        <Link className="dropdown-link" to="/profile">
+          <i class="far fa-user-circle"></i>
+          {t('profile.label')}
+        </Link>
       </Dropdown.Item>
       <Dropdown.Item>
-        <Link to="/"><i class="fas fa-sign-out-alt"></i>{t('logout.label')}</Link>
+        <Link className="dropdown-link" to="/">
+          <i class="fas fa-sign-out-alt"></i>
+          {t('logout.label')}
+        </Link>
       </Dropdown.Item>
     </DropdownButton>
   );

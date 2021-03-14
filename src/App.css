@@ -8,8 +8,6 @@
 
 @media (min-width: 320px) and (max-width: 575px) {
   /*-----Header------*/
-  .header {
-  }
 
   .header-left {
     width: 100%;
@@ -19,6 +17,7 @@
   .landing-page-heading {
     font-size: 4rem;
   }
+
   /*--------------------*/
   .header-right {
     width: 100%;
@@ -111,15 +110,84 @@
 
 @media (min-width: 576px) and (max-width: 767px) {
   /*-----Header------*/
+  .header-left {
+    width: 100%;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .header-right-top-wrapper {
+    justify-content: center;
+  }
+
+  .nav-wrapper {
+    width: 80%;
+    margin: 0;
+  }
+
+  .nav-item {
+    font-size: 2.5rem;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 767px) and (max-width: 991px) {
   /*-----Header------*/
+  .header-left {
+    width: 100%;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .header-right-top-wrapper {
+    justify-content: center;
+  }
+
+  .nav-wrapper {
+    width: 70%;
+    margin: 0 5%;
+  }
+
+  .nav-item {
+    padding: 1rem;
+  }
 }
 
-@media (min-width: 992px) and (max-width: 1311px) {
+@media (min-width: 991px) and (max-width: 1311px) {
   /*-----Header------*/
+  .header-left {
+    width: 25%;
+    margin-left: 5%;
+  }
+
+  .landing-page-heading {
+    font-size: 6.5rem;
+  }
+
+  .header-right-top-wrapper {
+    padding-top: 1.5rem;
+  }
+
+  .nav-wrapper {
+    width: 80%;
+    margin: 0;
+  }
+  
+  .nav-item {
+    padding-top: 4.1rem;
+  }
+
+  .user-profile-img {
+    margin-top: 4.5rem;
+  }
+
+  .user-dropdown {
+    margin-top: 5.7rem;
+  }
 }
 
-@media (min-width: 1312px) {
+@media (min-width: 1311px) {
 }

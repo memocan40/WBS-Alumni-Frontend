@@ -23,10 +23,8 @@ import StudentProfile from "./Views/Studentprofile";
 import './App.css';
 
 function App() {
-  //state variable for logged user
-  //const [user, setUser] = useState('');
 
-  //state variable for all students
+  //all students object
   const [studentList, setStudentList] = useState('');
   const [loggedUser, setLoggedUser] = useState('');
   const [cities, setCities] = useState('');
@@ -40,7 +38,7 @@ function App() {
         console.log(res);
         setStudentList(res);
         const userLogged= res.filter((user)=> {
-          return user.id === 558;
+          return user.id === 557;
         })
         setLoggedUser(userLogged[0]);
       })
