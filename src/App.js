@@ -42,7 +42,7 @@ function App() {
         const userLogged= res.filter((user)=> {
           return user.id === 558;
         })
-        setLoggedUser(userLogged);
+        setLoggedUser(userLogged[0]);
       })
       .catch((err) => {
         console.error(err);
