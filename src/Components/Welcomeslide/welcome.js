@@ -1,3 +1,5 @@
+import Loader from '../Loader';
+
 import './welcome.css';
 import 'react-slideshow-image/dist/styles.css';
 import { Slide } from 'react-slideshow-image';
@@ -21,7 +23,6 @@ export default function Welcome() {
       </div>
     );
   };
-
 
   return (
     <div className="slideshow-wrapper">
