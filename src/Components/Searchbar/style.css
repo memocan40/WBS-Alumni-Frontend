@@ -1,7 +1,15 @@
-.search-bar-input {
-    height: 3rem;
-    width: 45%;
+.reach-out-input {
+    width: 40%;
+    height: 2.4rem;
+    padding: .4rem;
     font-size: 2rem;
-    outline: none;
 }
 
+.reach-out-select {
+    width: 20%;
+    font-size: 2rem;
+}
+
+.reach-out-option {
+    font-size: 1.5rem;
+}

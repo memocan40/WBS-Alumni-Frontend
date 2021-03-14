@@ -87,3 +87,28 @@
 .register-btn:hover {
     box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
+
+
+/*--------------------*/
+/*---Media queries----*/
+/*--------------------*/
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .landing-page-content-wrapper{
+        margin: 0 0 25% 0;
+    }
+
+    .landing-page-subheading {
+        font-size: 2.5rem;
+    }
+
+    .landing-page-btn-wrapper {
+        width: 90%;
+    }
+
+    .log-in-btn,
+    .register-btn {
+        font-size: 2rem;
+        height: 3rem;
+    }
+}

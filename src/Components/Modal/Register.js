@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-
-import Api from '../../Api/Api';
+import axios from 'axios';
 
 import Loader from '../Loader';
 
@@ -19,16 +18,22 @@ export default function Register() {
   let [loading, setloading] = useState(false);
 
   let data = { user: name, email: email, password: pw };
-  console.log(data);
 
   let createuser = async (e) => {
     e.preventDefault();
     try {
       setloading(true);
-      await Api.createNewuser(data);
-      history.push("/login");
+      const response = await axios.post(
+        `https://hidden-shelf-31461.herokuapp.com/users/register`,
+        data
+      );
+      if (response) {
+        console.log(response);
+        setloading(false);
+        history.push('/login');
+      }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   };
 
@@ -50,6 +55,7 @@ export default function Register() {
             placeholder="Enter username"
             name="username"
             id="username"
+            required
             onChange={(event) => {
               setName(event.target.value);
             }}
@@ -65,6 +71,7 @@ export default function Register() {
             placeholder="Enter Email"
             name="email"
             id="email"
+            required
             onChange={(event) => {
               setEmail(event.target.value);
             }}
@@ -80,6 +87,7 @@ export default function Register() {
             placeholder="Enter Password"
             name="psw"
             id="psw"
+            required
             onChange={(event) => {
               setPw(event.target.value);
             }}

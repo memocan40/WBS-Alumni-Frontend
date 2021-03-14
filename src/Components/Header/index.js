@@ -21,9 +21,9 @@ export default function Header() {
                 </div>
                 <div className="header-right-bottom-wrapper">
                     <nav className="nav-wrapper">
+                        <Link to="/home/" className="nav-item">{t('home.label')}</Link>
                         <Link to="/allbatches/" className="nav-item">{t('allbatches.label')}</Link>
                         <Link to="/reachout/" className="nav-item">{t('reachout.label')}</Link>
-                        <Link to="/letscode/" className="nav-item">{t('letscode.label')}</Link>
                     </nav>
                     <div className="log-in-wrapper">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="user-profile-img" />

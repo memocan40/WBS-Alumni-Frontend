@@ -1,4 +1,8 @@
-.dropdown {
+.user-dropdown {
+    margin-top: 2.5rem
+}
+
+.dropdown-user {
     width: 2rem;
     height: 2rem;
     margin-top: 3rem;

@@ -5,10 +5,11 @@ import io from "socket.io";
 import {useState,useEffect}from "react";
 
 export default function Chat(){
-let[inputvalue,setinputvalue]=useState();
+let[inputvalue,setinputvalue]=useState("");
 let[username,setusername]=useState("anonym");
 let[messages,setmessages]=useState([]);
-let[chat,setchat]=useState([]);
+let[mouseclick,setmouseclick]=useState();
+
 
  
 const SERVER = "http://127.0.0.1:3005";
@@ -53,14 +54,19 @@ let messagess=document.getElementById("messages");
     
   }
 
+  function updateScroll(){
+    var element = document.getElementById("messages");
+    element.scrollTop = element.scrollHeight;
+}
 
-    
+  if(mouseclick===false){updateScroll()}
+
+
       
-      console.log(messages);
-  
+    console.log(mouseclick);
     return(
-        <div>
-            <ul id="messages"><div id="messagesli">{messages.map((iteration,index)=>{return(<li id="username">{iteration.username}<li className="input" id="messageli">{iteration.inputvalue}</li></li>)})}</div></ul>
+        <div onMouseDown={()=>{setmouseclick(true)}} onMouseUp={()=>{setmouseclick(false)}} onMouseOver={()=>{setmouseclick(false)}}>
+            <ul id="messages" ><div id="messagesli" >{messages.map((iteration,index)=>{return(<li id="username">{iteration.username}<li className="input" id="messageli">{iteration.inputvalue}</li></li>)})}</div></ul>
     <form onSubmit={submitHandler} id="form" action="">
       <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button id="button">Send</button>
       </form>

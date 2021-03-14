@@ -11,7 +11,6 @@ import Loader from './Components/Loader';
 
 //Views
 import Profile from './Views/Userprofile';
-import LetsCodeView from './Views/Letscode';
 import AllBatches from './Views/Allbatches';
 import ReachOutView from './Views/Reachout';
 import Login from './Views/Login';
@@ -33,13 +32,17 @@ function App() {
   const [cities, setCities] = useState('');
   const [interests, setInterests] = useState('');
   const [workStatus, setWorkStatus] = useState('');
+  const [batches, setBatches] = useState('');
 
   useEffect(() => {
     Api.getAllUsers()
       .then((res) => {
         console.log(res);
         setStudentList(res);
-        setLoggedUser(res[2]);
+        const userLogged= res.filter((user)=> {
+          return user.id === 558;
+        })
+        setLoggedUser(userLogged);
       })
       .catch((err) => {
         console.error(err);
@@ -47,8 +50,10 @@ function App() {
 
     Api.getInterests()
     .then((res) => {
-      console.log(res);
-      setInterests(res);
+      const filteredInterests = res.map((int)=> {
+        return  int.name;
+      })
+      setInterests(filteredInterests);
     })
     .catch((err) => {
       console.error(err);
@@ -59,10 +64,15 @@ function App() {
       setWorkStatus(res.data);
     });
 
+    Api.getAllBatches()
+    .then((res)=> {
+      console.log(res);
+      setBatches(res.data);
+    });
+
     Countries.getAllCities().then((res) => {
-      console.log(res.data);
       const filteredNames = res.data.map((city)=>{
-        return city.city;
+        return {name : city.city};
       })
       console.log(filteredNames);
       setCities(filteredNames);
@@ -85,22 +95,17 @@ function App() {
 
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} interests={interests} workStatus={workStatus}/> : <Loader /> }
-          </Route>
-
-          {/*----lets code route---- */}
-          <Route path="/letscode/">
-            <LetsCodeView />
+            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
           </Route>
 
           {/*----reach out route---- */}
           <Route path="/reachout/">
-            <ReachOutView students={studentList}/>
+            { batches && cities && workStatus ? <ReachOutView students={studentList} batches={batches} cities={cities} workstatus={workStatus}/> : <Loader/>}
           </Route>
 
           {/*----all batches route---- */}
           <Route path="/allbatches/">
-            <AllBatches />
+            {batches ? <AllBatches obj={batches} /> : <Loader/>}
           </Route>
           
           {/*---- Home Page Route---- */}
