@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
 import Api from '../../Api/Api';
@@ -16,6 +17,12 @@ import "./style.css";
 export default function Profile({userObject, setUserObject, cities, interests, workStatus, batches}) {
     const [pic, setPic] = useState("");
 
+    const location = useLocation();
+
+    useEffect(() => {
+       console.log(location.state.detail); // result: 'some_value'
+    }, [location]);
+
     const placeholderPic = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
 
     const dataSubmit = () => {
@@ -23,9 +30,9 @@ export default function Profile({userObject, setUserObject, cities, interests, w
     }
     console.log(pic)
     const uploadPic = async() => {
-        
+
         try{
-            const data = new FormData() 
+            const data = new FormData()
             data.append('profile_pic', pic)
             const res = await axios.post(`http://localhost:3003/users/upload-profile-pic/${userObject.id}`, data);
             if(res) {
@@ -39,7 +46,7 @@ export default function Profile({userObject, setUserObject, cities, interests, w
     console.log(cities)
     console.log(interests)
     console.log(workStatus)
-    
+
 
     const { t, i18n } = useTranslation();
 
@@ -73,7 +80,7 @@ export default function Profile({userObject, setUserObject, cities, interests, w
             </div>
         </div>
         <Footer />
-        </>  
+        </>
     )} else {
         return (<Loader />)
     }

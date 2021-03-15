@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import Loader from '../Components/Loader';
 
-const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-//const baseURL = "http://localhost:3001/";
+// const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+const baseURL = "http://localhost:3000/";
 
 const Api = {
   getAllUsers: async () => {
@@ -87,7 +87,7 @@ const Api = {
   getUserbyID: (id) => {
     axios.get(`${baseURL}users/${id}`);
   },
-  
+
 
 };
 

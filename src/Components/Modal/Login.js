@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Api from "../../Api/Api";
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+
 
 import './style.css';
 
 export default function Login() {
   let [name, setName] = useState('');
   let [pw, setPw] = useState('');
+  const history = useHistory();
+
 
 
   console.log(name);
@@ -18,13 +23,23 @@ export default function Login() {
   let login = async (e) => {
     e.preventDefault();
     try {
-      await Api.logIn(data);
+      const response = await axios.post(
+        `http://localhost:3000/users/login`,
+        data
+      );
+      if (response) {
+        console.log(response);
+        history.push({
+          pathname: '/profile',
+          state: { detail: response.data }
+      });
 
+      }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   };
-  
+
   return (
     <div>
       <form className="form-content-container">
