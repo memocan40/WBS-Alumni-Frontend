@@ -21,28 +21,34 @@ export default function Profile({
   workStatus,
   batches,
 }) {
-  const [pic, setPic] = useState('');
+  const baseUrl = `https://hidden-shelf-31461.herokuapp.com`;
 
   const placeholderPic =
-    'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
+  'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
+
+
+  const [pic, setPic] = useState('');
+  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.picture}`);
+
 
   const dataSubmit = () => {
     Api.updateUserbyID(userObject);
   };
-  console.log(pic);
+
   const uploadPic = async () => {
     try {
       const data = new FormData();
       data.append('profile_pic', pic);
       const res = await axios.post(
-        `http://localhost:3003/users/upload-profile-pic/${userObject.id}`,
+        `${baseUrl}/users/upload-profile-pic/${userObject.id}`,
         data
       );
       if (res) {
-        console.log(res);
+        setPicUrl(`${baseUrl}/images/${userObject.picture}`);
+        console.log(res)
       }
     } catch (e) {
-      console.error(e);
+      console.error(e); 
     }
   };
 
@@ -63,7 +69,7 @@ export default function Profile({
             <div className="profile-img-wrapper">
               <img
                 className="profile-img"
-                src={userObject.picture ? userObject.picture : placeholderPic}
+                src={userObject.picture ? picUrl : placeholderPic}
                 placeholder="user-profile"></img>
             </div>
             <form method="POST" encType="multipart/form-data">
