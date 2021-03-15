@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Api from "../../Api/Api";
 import { useHistory } from 'react-router-dom';
-import Api from '../../Api/Api';
+import axios from 'axios';
+
 
 import './style.css';
 
-export default function Login() {
+export default function Login({setLoggedUser, loggedUser}) {
   let [name, setName] = useState('');
   let [pw, setPw] = useState('');
 
@@ -20,9 +22,16 @@ export default function Login() {
   let login = async (e) => {
     e.preventDefault();
     try {
-      const response = await Api.logIn(data);
+      const response = await axios.post(
+        `http://localhost:3003/users/login`,
+        data
+      );
       if (response) {
-        history.push('/home');
+        setLoggedUser( response.data);
+        console.log(loggedUser);
+        console.log(response);
+        history.push('/profile');
+
       }
     } catch (err) {
       console.error(err);

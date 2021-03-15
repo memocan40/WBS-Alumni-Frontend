@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
 import Api from '../../Api/Api';
@@ -21,7 +22,7 @@ export default function Profile({
   workStatus,
   batches,
 }) {
-  const baseUrl = `https://hidden-shelf-31461.herokuapp.com`;
+  const baseUrl = `http://localhost:3003`;
 
   const placeholderPic =
   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
@@ -58,8 +59,8 @@ export default function Profile({
 
   const { t, i18n } = useTranslation();
 
-  console.log(userObject);
-  if (userObject) {
+    console.log(userObject.data);
+    if(userObject ) {
     return (
       <>
         <Header />
@@ -117,7 +118,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={batches}
-                  currentValue={userObject.batch}
+                  currentValue={userObject.data.batch}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, batch: valueFromChild })
                   }
@@ -129,7 +130,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={cities}
-                  currentValue={userObject.city}
+                  currentValue={userObject.data.city}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, city: valueFromChild })
                   }
@@ -140,7 +141,7 @@ export default function Profile({
               {t('interests.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.interests}
+                  value={userObject.data.interests}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, interests: valueFromChild })
                   }
@@ -152,7 +153,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={workStatus}
-                  currentValue={userObject.work_status}
+                  currentValue={userObject.data.work_status}
                   onSubmit={(valueFromChild) =>
                     setUserObject({
                       ...userObject,
@@ -166,7 +167,7 @@ export default function Profile({
               {t('github.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.github}
+                  value={userObject.data.github}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, github: valueFromChild })
                   }
@@ -177,7 +178,7 @@ export default function Profile({
               {t('linkedin.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.linkedin}
+                  value={userObject.data.linkedin}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, linkedin: valueFromChild })
                   }
@@ -188,7 +189,7 @@ export default function Profile({
               {t('finalproject.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.final_project}
+                  value={userObject.data.final_project}
                   onSubmit={(valueFromChild) =>
                     setUserObject({
                       ...userObject,
