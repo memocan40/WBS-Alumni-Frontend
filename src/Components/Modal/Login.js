@@ -27,7 +27,7 @@ export default function Login({setLoggedUser, loggedUser}) {
         data
       );
       if (response) {
-        setLoggedUser( response.data);
+        setLoggedUser(response.data.data);
         console.log(loggedUser);
         console.log(response);
         history.push('/profile');
