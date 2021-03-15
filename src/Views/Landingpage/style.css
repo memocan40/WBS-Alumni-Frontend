@@ -40,14 +40,17 @@
 }
 
 .landing-page-heading {
-    display:grid;
-    grid-template-columns: 290px 200px;
-    margin: 1.5rem 0;
-    font-size: 8rem;
-    color: #007895;
-    letter-spacing: .2rem;
-}
+  border-radius:5px;
 
+}
+#logo{
+    border-radius:5px;
+    height:140px;
+    float:left;
+    position:relative;
+    right:100px;
+
+}
 .lighter-font {
     font-weight: 10;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
