@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import './style.css';
 
-export default function Login() {
+export default function Login({setLoggedUser, loggedUser}) {
   let [name, setName] = useState('');
   let [pw, setPw] = useState('');
   const history = useHistory();
@@ -28,11 +28,10 @@ export default function Login() {
         data
       );
       if (response) {
+        setLoggedUser( response.data);
+        console.log(loggedUser);
         console.log(response);
-        history.push({
-          pathname: '/profile',
-          state: { detail: response.data }
-      });
+        history.push('/profile');
 
       }
     } catch (err) {
