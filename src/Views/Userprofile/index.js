@@ -29,7 +29,7 @@ export default function Profile({
 
 
   const [pic, setPic] = useState('');
-  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.picture}`);
+  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.data.picture}`);
 
 
   const dataSubmit = () => {
@@ -45,7 +45,7 @@ export default function Profile({
         data
       );
       if (res) {
-        setPicUrl(`${baseUrl}/images/${userObject.picture}`);
+        setPicUrl(`${baseUrl}/images/${userObject.data.picture}`);
         console.log(res)
       }
     } catch (e) {
@@ -70,7 +70,7 @@ export default function Profile({
             <div className="profile-img-wrapper">
               <img
                 className="profile-img"
-                src={userObject.picture ? picUrl : placeholderPic}
+                src={userObject.data.picture ? picUrl : placeholderPic}
                 placeholder="user-profile"></img>
             </div>
             <form method="POST" encType="multipart/form-data">
@@ -95,7 +95,7 @@ export default function Profile({
               {t('firstname.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.first_name}
+                  value={userObject.data.first_name}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, first_name: valueFromChild })
                   }
@@ -106,7 +106,7 @@ export default function Profile({
               {t('lastname.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.last_name}
+                  value={userObject.data.last_name}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, last_name: valueFromChild })
                   }
