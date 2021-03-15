@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-//Api call 
+//Api call
 import Api from './Api/Api.js';
 import Countries from './Api/Cities';
 
@@ -37,10 +37,6 @@ function App() {
       .then((res) => {
         console.log(res);
         setStudentList(res);
-        const userLogged= res.filter((user)=> {
-          return user.id === 557;
-        })
-        setLoggedUser(userLogged[0]);
       })
       .catch((err) => {
         console.error(err);
@@ -55,7 +51,7 @@ function App() {
     })
     .catch((err) => {
       console.error(err);
-    });  
+    });
 
     Api.getWorkStatuses()
     .then((res)=> {
@@ -85,7 +81,7 @@ function App() {
     <div className="App">
       <Suspense fallback={null}>
         <Switch>
-          
+
           {/*------ studentprofile route -----*/}
           <Route path="/studentprofile/:userId">
             <StudentProfile obj={studentList}/>
@@ -105,7 +101,7 @@ function App() {
           <Route path="/allbatches/">
             {batches ? <AllBatches obj={batches} /> : <Loader/>}
           </Route>
-          
+
           {/*---- Home Page Route---- */}
           <Route path='/home'>
             <HomePageView />
@@ -118,7 +114,7 @@ function App() {
 
           {/*---- Log-in Route---- */}
           <Route path={'/login'}>
-            <Login />
+            <Login setLoggedUser={setLoggedUser} loggedUser={loggedUser} />
           </Route>
 
           {/*---- Landing Page Route---- */}
