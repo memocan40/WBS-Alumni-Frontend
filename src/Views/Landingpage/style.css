@@ -57,8 +57,8 @@
     font-size: 35px;
     color:black;
     position:relative;
-    top:53px;
-    right:55px;
+    bottom:90px;
+    left:240px;
 }
 
 .landing-page-btn-wrapper {
@@ -101,7 +101,7 @@
     box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 
-.logo{
+.logo1{
     margin-left:10%;
     width:250px;
     height:100px;
