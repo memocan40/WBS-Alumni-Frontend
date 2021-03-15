@@ -1,8 +1,10 @@
 .slide-container {
   min-height: 70rem;
-  width: 85%;
+  width: 75%;
+  height:50%;
   margin: 9rem auto;
   overflow: hidden;
+  border-radius:25px;
 }
 
 .each-slide {
