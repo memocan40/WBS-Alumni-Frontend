@@ -22,7 +22,7 @@ export default function Profile({
   workStatus,
   batches,
 }) {
-  const baseUrl = `http://localhost:3003`;
+  const baseUrl = `https://hidden-shelf-31461.herokuapp.com`;
 
   const placeholderPic =
   'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
@@ -49,7 +49,7 @@ export default function Profile({
         console.log(res)
       }
     } catch (e) {
-      console.error(e); 
+      console.error(e);
     }
   };
 
