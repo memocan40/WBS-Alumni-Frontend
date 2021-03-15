@@ -14,9 +14,9 @@ export default function LandingPageView() {
         <LanguageSelector />
       </div>
       <div className="landing-page-content-wrapper">
-        <h3 className="landing-page-subheading">{t('welcome.label')}</h3>
+        
         <h1 className="landing-page-heading">
-          WBS <span class="lighter-font">Alumni</span>
+          <img className="logo" src="https://chancen-eg.de/wp-content/uploads/2020/01/HP_Boxelement-WBS.jpg"></img> <span className="lighter-font">Alumni</span>
         </h1>
         <div className="landing-page-btn-wrapper">
           <Link to="/login" class="log-in-btn">

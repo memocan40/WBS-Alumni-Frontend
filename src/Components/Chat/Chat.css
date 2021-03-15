@@ -5,5 +5,5 @@
 #messages { list-style-type:none; background-color:rgba(109, 109, 116, 0.116); border-radius:5px; margin: 0; bottom: 0; left: 0; right: 0; overflow:auto; height:25em; border:solid; position:fixed;  padding: 0; width:34.5em;}
 #messageli { padding: 0.5rem 1rem; overflow:auto; border: solid 1px; border-radius:5px;margin-bottom:30px;  height:auto; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.329);}
 #messagesli{font-weight:bolder;  }
-
+.logo{height:40px; width:30px;}
     
