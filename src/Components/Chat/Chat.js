@@ -65,7 +65,7 @@ let messagess=document.getElementById("messages");
       
     console.log(mouseclick);
     return(
-        <div onMouseDown={()=>{setmouseclick(true)}} onMouseUp={()=>{setmouseclick(false)}} onMouseOver={()=>{setmouseclick(false)}}>
+        <div className="Chat" onMouseDown={()=>{setmouseclick(true)}} onMouseUp={()=>{setmouseclick(false)}} onMouseOver={()=>{setmouseclick(false)}}>
             <ul id="messages" ><div id="messagesli" >{messages.map((iteration,index)=>{return(<li id="username">{iteration.username}<li className="input" id="messageli">{iteration.inputvalue}</li></li>)})}</div></ul>
     <form onSubmit={submitHandler} id="form" action="">
       <input id="input" autocomplete="off" onChange={(event)=>{setinputvalue(event.target.value)}}/><button id="button">Send</button>

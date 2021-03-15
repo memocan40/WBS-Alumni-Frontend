@@ -1,9 +1,13 @@
-#form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); width:35em;}
+#form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem;  bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); width:35em;}
 #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
 #input:focus { outline: none; }
 #button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-#messages { list-style-type:none; background-color:rgba(109, 109, 116, 0.116); border-radius:5px; margin: 0; bottom: 0; left: 0; right: 0; overflow:auto; height:25em; border:solid; position:fixed;  padding: 0; width:34.5em;}
+#messages { list-style-type:none; background-color:rgba(109, 109, 116, 0.116); border-radius:5px; margin: 0; bottom: 0; left: 0; right: 0; overflow:auto; height:25em; border:solid;   padding: 0; width:34.5em;}
 #messageli { padding: 0.5rem 1rem; overflow:auto; border: solid 1px; border-radius:5px;margin-bottom:30px;  height:auto; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.329);}
 #messagesli{font-weight:bolder;  }
 .logo{height:40px; width:30px;}
+.Chat{
+    position:absolute;
+    top:775px;
+}
     
