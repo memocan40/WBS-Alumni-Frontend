@@ -13,7 +13,7 @@ export default function Header() {
     <header className="header">
       <div className="header-left">
         <h1 className="landing-page-heading">
-          WBS <span className="lighter-font">Alumni</span>
+          <img id="logo" src="https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS-CODING-SCHOOL-logo-square.png"></img>
         </h1>
       </div>
       <div className="header-right">

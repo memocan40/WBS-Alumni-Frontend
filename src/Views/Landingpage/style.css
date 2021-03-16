@@ -2,6 +2,8 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    background-image: url("https://www.krenerbookkeeping.com/wp-content/uploads/2018/07/computer-blue-opacity-background.jpg");
+    background-size:cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,14 +40,25 @@
 }
 
 .landing-page-heading {
-    margin: 1.5rem 0;
-    font-size: 8rem;
-    color: #007895;
-    letter-spacing: .2rem;
-}
+  border-radius:5px;
 
+}
+#logo{
+    border-radius:5px;
+    height:140px;
+    float:left;
+    position:relative;
+    right:100px;
+
+}
 .lighter-font {
-    font-weight: 300;
+    font-weight: 10;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
+    color:black;
+    position:relative;
+    bottom:90px;
+    left:240px;
 }
 
 .landing-page-btn-wrapper {
@@ -86,6 +99,13 @@
 .log-in-btn:hover,
 .register-btn:hover {
     box-shadow: 2px 2px 5px rgb(82, 82, 82);
+}
+
+.logo1{
+    margin-left:10%;
+    width:250px;
+    height:100px;
+    border-radius:5px;
 }
 
 
