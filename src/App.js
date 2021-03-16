@@ -95,7 +95,7 @@ function App() {
 
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
+            {loggedUser ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
           </Route>
 
           {/*----reach out route---- */}

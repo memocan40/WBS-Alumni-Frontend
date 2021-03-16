@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Api from "../../Api/Api";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,7 +22,7 @@ export default function Login({setLoggedUser, loggedUser}) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:3000/users/login`,
+        `http://hidden-shelf-31461.herokuapp.com/users/login`,
         data
       );
       if (response) {

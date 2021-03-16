@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-const baseURL = "http://localhost:3000/";
+const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+//const baseURL = "http://localhost:3000/";
 
 const Api = {
   getAllUsers: async () => {
@@ -87,7 +87,7 @@ const Api = {
 
   getUserByBatch:(batch)=> {
 
-      const response = axios.get(`http://hidden-shelf-31461.herokuapp.com/users/batch/${batch}`)
+      const response = axios.get(`${baseURL}users/batch/${batch}`)
       if(response) {
         return response;
       }
