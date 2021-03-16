@@ -33,6 +33,12 @@ export default function Profile({
 
 
   const dataSubmit = () => {
+    if (userObject.first_login) {
+      setUserObject({
+        ...userObject,
+        first_login: false,
+      })
+    }
     Api.updateUserbyID(userObject);
   };
 
@@ -52,7 +58,7 @@ export default function Profile({
       console.error(e);
     }
   };
-  
+
   const { t, i18n } = useTranslation();
 
     console.log(userObject);
