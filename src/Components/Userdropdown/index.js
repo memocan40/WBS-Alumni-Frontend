@@ -20,7 +20,7 @@ export default function UserDropdown() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://hidden-shelf-31461.herokuapp.com/users/logout`
+        `https://hidden-shelf-31461.herokuapp.com/users/logout`
       );
       if (response) {
         console.log(response);
