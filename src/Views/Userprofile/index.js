@@ -29,7 +29,7 @@ export default function Profile({
 
 
   const [pic, setPic] = useState('');
-  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.data.picture}`);
+  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.picture}`);
 
 
   const dataSubmit = () => {
@@ -45,21 +45,17 @@ export default function Profile({
         data
       );
       if (res) {
-        setPicUrl(`${baseUrl}/images/${userObject.data.picture}`);
-        console.log(res)
+        console.log(res);
+        setPicUrl(res.data.image);
       }
     } catch (e) {
       console.error(e);
     }
   };
-
-  console.log(cities);
-  console.log(interests);
-  console.log(workStatus);
-
+  
   const { t, i18n } = useTranslation();
 
-    console.log(userObject.data);
+    console.log(userObject);
     if(userObject ) {
     return (
       <>
@@ -70,7 +66,7 @@ export default function Profile({
             <div className="profile-img-wrapper">
               <img
                 className="profile-img"
-                src={userObject.data.picture ? picUrl : placeholderPic}
+                src={userObject.picture ? picUrl : placeholderPic}
                 placeholder="user-profile"></img>
             </div>
             <form method="POST" encType="multipart/form-data">
@@ -95,7 +91,7 @@ export default function Profile({
               {t('firstname.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.first_name}
+                  value={userObject.first_name}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, first_name: valueFromChild })
                   }
@@ -106,7 +102,7 @@ export default function Profile({
               {t('lastname.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.last_name}
+                  value={userObject.last_name}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, last_name: valueFromChild })
                   }
@@ -118,7 +114,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={batches}
-                  currentValue={userObject.data.batch}
+                  currentValue={userObject.batch}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, batch: valueFromChild })
                   }
@@ -130,7 +126,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={cities}
-                  currentValue={userObject.data.city}
+                  currentValue={userObject.city}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, city: valueFromChild })
                   }
@@ -141,7 +137,7 @@ export default function Profile({
               {t('interests.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.interests}
+                  value={userObject.interests}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, interests: valueFromChild })
                   }
@@ -153,7 +149,7 @@ export default function Profile({
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={workStatus}
-                  currentValue={userObject.data.work_status}
+                  currentValue={userObject.work_status}
                   onSubmit={(valueFromChild) =>
                     setUserObject({
                       ...userObject,
@@ -167,7 +163,7 @@ export default function Profile({
               {t('github.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.github}
+                  value={userObject.github}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, github: valueFromChild })
                   }
@@ -178,7 +174,7 @@ export default function Profile({
               {t('linkedin.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.linkedin}
+                  value={userObject.linkedin}
                   onSubmit={(valueFromChild) =>
                     setUserObject({ ...userObject, linkedin: valueFromChild })
                   }
@@ -189,8 +185,10 @@ export default function Profile({
               {t('finalproject.label')}{' '}
               <span className="profile-input-container">
                 <UserProfileInput
-                  value={userObject.data.final_project}
+
+                  value={userObject.final_project}
                   onSubmit={(valueFromChild) =>
+
                     setUserObject({
                       ...userObject,
                       final_project: valueFromChild,
