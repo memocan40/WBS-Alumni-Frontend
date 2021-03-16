@@ -22,7 +22,7 @@ export default function Login({setLoggedUser, loggedUser}) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://hidden-shelf-31461.herokuapp.com/users/login`,
+        `https://hidden-shelf-31461.herokuapp.com/users/login`,
         data
       );
       if (response) {
