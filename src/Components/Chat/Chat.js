@@ -4,13 +4,13 @@ import io from "socket.io";
 
 import {useState,useEffect}from "react";
 
-export default function Chat(){
+export default function Chat({UserName}){
 let[inputvalue,setinputvalue]=useState("");
 let[username,setusername]=useState("anonym");
 let[messages,setmessages]=useState([]);
 let[mouseclick,setmouseclick]=useState();
 
-
+setusername(UserName);
  
 const SERVER = "http://127.0.0.1:3005";
 const socket = socketClient(SERVER);
