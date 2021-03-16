@@ -85,6 +85,13 @@ const Api = {
     axios.get(`${baseURL}users/${id}`);
   },
 
-};
+  getUserByBatch:(batch)=> {
+
+      const response = axios.get(`http://hidden-shelf-31461.herokuapp.com/users/batch/${batch}`)
+      if(response) {
+        return response;
+      }
+    }
+}
 
 export default Api;

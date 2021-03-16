@@ -31,7 +31,6 @@ export default function Login({setLoggedUser, loggedUser}) {
         console.log(loggedUser);
         console.log(response);
         history.push('/profile');
-
       }
     } catch (err) {
       console.error(err);
