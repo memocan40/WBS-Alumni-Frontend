@@ -27,13 +27,26 @@ export default function Register() {
         `https://hidden-shelf-31461.herokuapp.com/users/register`,
         data
       );
-      if (response) {
+
         console.log(response);
-        setloading(false);
-        history.push('/login');
-      }
+        console.log(response.data.constraint);
+        if(response.data.constraint === 'users_email_key') {
+          setloading(false);
+          alert('Email already exists');
+          history.push('/register');
+        }else if (response.data.constraint === 'users_username_key') {
+          setloading(false);
+          alert('Username already exists');
+          history.push('/register');
+        } else {
+          setloading(false);
+          history.push('/login');
+        }
+
+
     } catch (err) {
       console.error(err);
+
     }
   };
 
