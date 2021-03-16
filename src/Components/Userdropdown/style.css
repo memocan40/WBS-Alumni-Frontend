@@ -39,4 +39,5 @@
 .dropdown-link {
     color: #007895;
     text-decoration: none;
+    text-align: start;
 }

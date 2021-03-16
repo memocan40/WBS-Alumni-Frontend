@@ -12,6 +12,7 @@ import Loader from './Components/Loader';
 //Views
 import Profile from './Views/Userprofile';
 import AllBatches from './Views/Allbatches';
+import BatchView from './Views/Batchview';
 import ReachOutView from './Views/Reachout';
 import Login from './Views/Login';
 import Register from './Views/Register';
@@ -82,6 +83,11 @@ function App() {
       <Suspense fallback={null}>
         <Switch>
 
+          {/*------ batch filter route -----*/}
+          <Route path="/allbatches/:batchname">
+            <BatchView />
+          </Route>
+
           {/*------ studentprofile route -----*/}
           <Route path="/studentprofile/:userId">
             <StudentProfile obj={studentList}/>
@@ -89,7 +95,7 @@ function App() {
 
           {/*----user profile route---- */}
           <Route path="/profile/">
-            {studentList ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
+            {loggedUser ? <Profile userObject={loggedUser} setUserObject={setLoggedUser} cities={cities} workStatus={workStatus} batches={batches}/> : <Loader /> }
           </Route>
 
           {/*----reach out route---- */}
@@ -104,7 +110,7 @@ function App() {
 
           {/*---- Home Page Route---- */}
           <Route path='/home'>
-            <HomePageView />
+            <HomePageView userName={loggedUser.username}/>
           </Route>
 
           {/*---- Register Route---- */}

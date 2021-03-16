@@ -14,9 +14,11 @@ export default function LandingPageView() {
         <LanguageSelector />
       </div>
       <div className="landing-page-content-wrapper">
-        <h3 className="landing-page-subheading">{t('welcome.label')}</h3>
-        <h1 className="landing-page-heading">
-          WBS <span class="lighter-font">Alumni</span>
+        <h1 className="landing-page-heading-wrapper">
+          <img
+            className="landing-page-logo"
+            src="https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS-CODING-SCHOOL-logo-square.png"></img>{' '}
+          <h1 className="landing-page-heading">WBS Alumni</h1>
         </h1>
         <div className="landing-page-btn-wrapper">
           <Link to="/login" class="log-in-btn">
@@ -25,7 +27,6 @@ export default function LandingPageView() {
           <Link to="/register" className="register-btn">
             {t('register.label')}
           </Link>
-          <Link to="/home">home temporary</Link>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-// const baseURL = "http://localhost:3000/";
+//const baseURL = "http://localhost:3000/";
 
 const Api = {
   getAllUsers: async () => {
@@ -19,7 +19,7 @@ const Api = {
 
   updateUserbyID: async (obj) => {
     try {
-      const response = await axios.put(`${baseURL}users/update/${obj.data.id}`, obj);
+      const response = await axios.put(`${baseURL}users/update/${obj.id}`, obj);
       if (response) {
         console.log(response);
         return response;
@@ -85,6 +85,13 @@ const Api = {
     axios.get(`${baseURL}users/${id}`);
   },
 
-};
+  getUserByBatch:(batch)=> {
+
+      const response = axios.get(`${baseURL}users/batch/${batch}`)
+      if(response) {
+        return response;
+      }
+    }
+}
 
 export default Api;

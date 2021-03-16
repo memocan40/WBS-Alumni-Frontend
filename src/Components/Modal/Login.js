@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Api from "../../Api/Api";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -27,11 +26,10 @@ export default function Login({setLoggedUser, loggedUser}) {
         data
       );
       if (response) {
-        setLoggedUser( response.data);
+        setLoggedUser(response.data.data);
         console.log(loggedUser);
         console.log(response);
         history.push('/profile');
-
       }
     } catch (err) {
       console.error(err);
@@ -39,7 +37,7 @@ export default function Login({setLoggedUser, loggedUser}) {
   };
 
   return (
-    <div>
+    <>
       <form className="form-content-container">
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
@@ -82,6 +80,6 @@ export default function Login({setLoggedUser, loggedUser}) {
           </Link>
         </div>
       </form>
-    </div>
+    </>
   );
 }

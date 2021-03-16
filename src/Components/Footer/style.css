@@ -13,4 +13,8 @@
 .footer-left {
   width: 50%;
   height: inherit;
+  margin:5px;
+}
+a{
+  padding:10px;
 }

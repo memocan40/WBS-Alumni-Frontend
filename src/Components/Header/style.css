@@ -13,8 +13,12 @@
   min-width: 20rem;
   height: inherit;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.header-logo {
+
 }
 
 .header-right {
