@@ -22,7 +22,7 @@ export default function UserProfileInput({ value, onSubmit }) {
         <input
           className="user-profile-input"
           type="text"
-          maxLength="20"
+          maxLength="50"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />

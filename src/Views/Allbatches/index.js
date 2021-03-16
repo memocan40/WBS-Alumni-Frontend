@@ -7,8 +7,8 @@ import './style.css';
 
 export default function AllBatches({ obj }) {
   if (obj) {
-    const renderedBatches = obj.map((batch) => {
-      return <BatchCard batchName={batch.name} />;
+    const renderedBatches = obj.map((batch, index) => {
+      return <BatchCard batchName={batch.name} batchNum={index+1}/>;
     });
 
     return (

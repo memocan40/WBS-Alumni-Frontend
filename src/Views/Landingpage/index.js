@@ -14,9 +14,11 @@ export default function LandingPageView() {
         <LanguageSelector />
       </div>
       <div className="landing-page-content-wrapper">
-        
-        <h1 className="landing-page-heading">
-          <img className="logo1" src="https://images-ext-1.discordapp.net/external/FaoDRqQ9jGvnDT5nh2rMzKCCOhwOwg08pjggeLuhkrg/%3Fwidth%3D1440%26height%3D379/https/media.discordapp.net/attachments/781868539765063711/814832419270164510/standard_colour_cutout_text_icon.png?width=1025&height=270"></img> <span className="lighter-font">Alumni</span>
+        <h1 className="landing-page-heading-wrapper">
+          <img
+            className="landing-page-logo"
+            src="https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS-CODING-SCHOOL-logo-square.png"></img>{' '}
+          <h1 className="landing-page-heading">WBS Alumni</h1>
         </h1>
         <div className="landing-page-btn-wrapper">
           <Link to="/login" class="log-in-btn">
