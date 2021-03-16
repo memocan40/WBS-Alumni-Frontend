@@ -20,7 +20,7 @@ export default function Chat({username}) {
   }, []);
 
   let textfield = document.getElementById('input');
-  let messagess = document.getElementById('messages');
+  
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -38,9 +38,11 @@ export default function Chat({username}) {
     element.scrollTop = element.scrollHeight;
   }
 
-  if (mouseclick === false) {
-    updateScroll();
-  }
+ 
+    if (mouseclick === false) {
+		updateScroll();
+	}
+
 
   console.log(mouseclick);
   return (
