@@ -8,7 +8,7 @@
     height: 3rem;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
-    width: 35em;
+    width: 54.5em;
 }
 
 #input {
@@ -42,10 +42,17 @@
     left: 0;
     right: 0;
     overflow: auto;
-    height: 25em;
+    height: 55em;
     border: solid;
     padding: 0;
-    width: 34.5em;
+    width: 54.5em;
+    
+}
+#chatwindowbutton{
+  float:left;
+  border-radius:500px;
+  padding:3px;
+  background-color:transparent;
 }
 
 #messageli {
@@ -68,8 +75,24 @@
 }
 
 .Chat {
-    position: absolute;
-    top: 690px;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   align-content: center;
+   float:left;
+   margin-top:200px;
+   margin-bottom:200px;
     z-index: 10;
-    background: #ebebeb;
+   
+}
+.Chatclosed{
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+     align-content: center;
+     display:none;
+     float:left;
+     margin-top:200px;
+     margin-bottom:200px;
+     z-index: 10;
 }
