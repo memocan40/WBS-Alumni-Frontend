@@ -1,0 +1,10 @@
+.login-page-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url("https://www.krenerbookkeeping.com/wp-content/uploads/2018/07/computer-blue-opacity-background.jpg");
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

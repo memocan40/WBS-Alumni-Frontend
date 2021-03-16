@@ -12,9 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-left">
-        <h1 className="landing-page-heading">
-          <img id="logo" src="https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS-CODING-SCHOOL-logo-square.png"></img>
-        </h1>
+          <img className="header-logo" src="https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS-CODING-SCHOOL-logo-square.png"></img>
       </div>
       <div className="header-right">
         <div className="header-right-top-wrapper">

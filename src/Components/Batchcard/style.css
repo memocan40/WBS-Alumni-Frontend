@@ -3,12 +3,12 @@
   height: 15rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   margin: 2rem .5rem;
   padding: 0.5rem;
-  border: 2px solid #007895;
+  background-color: #fff;
   border-radius: 0.5rem;
 }
 
@@ -22,15 +22,19 @@
   font-size: 2.2rem;
 }
 
+.batch-subheading {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 .batch-date {
   font-size: 1.5rem;
 }
 
 .batch-card-btn {
-  height: 2.6rem;
+  height: 2rem;
   width: 9rem;
   margin: 1rem auto;
-  padding-top: .5rem;
   background-color: #f8485e;
   border: 2px solid #f8485e;
   border-radius: 1rem;
