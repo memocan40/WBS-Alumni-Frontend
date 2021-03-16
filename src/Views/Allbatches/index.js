@@ -14,7 +14,7 @@ export default function AllBatches({ obj }) {
     return (
       <div className="AllBatches">
         <Header />
-        <section className="batch-cards-container">{renderedBatches}</section>
+          <section className="batch-cards-container">{renderedBatches}</section>
         <Footer />
       </div>
     );

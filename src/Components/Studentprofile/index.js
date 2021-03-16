@@ -11,6 +11,10 @@ export default function Studentprofile({obj}) {
   
   const { userId } = useParams();
 
+  const placeholderURL ="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
+  const baseUrl ="https://hidden-shelf-31461.herokuapp.com";
+
+
   if(obj) {
   const userObj = obj.filter((user)=> {
     return userId == user.id;
@@ -22,7 +26,7 @@ export default function Studentprofile({obj}) {
       <div className="student-profile-left">
         <h1 className="student-profile-name">{userObj[0].username}</h1>
         <div className="student-profile-img-wrapper">
-        <img className="student-profile-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profilepic" />
+        <img className="student-profile-img" src={userObj[0].picture ? `${baseUrl}/images/${userObj[0].picture}` : placeholderURL} alt="Profilepic" />
         </div>
       </div>
       <div className="student-profile-info-container">

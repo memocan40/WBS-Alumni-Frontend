@@ -25,7 +25,6 @@ export default function LandingPageView() {
           <Link to="/register" className="register-btn">
             {t('register.label')}
           </Link>
-          <Link to="/home">home temporary</Link>
         </div>
       </div>
     </div>
