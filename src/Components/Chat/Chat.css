@@ -8,7 +8,7 @@
     height: 3rem;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
-    width: 54.5em;
+    width: 95vw;
 }
 
 #input {
@@ -45,7 +45,7 @@
     height: 55em;
     border: solid;
     padding: 0;
-    width: 54.5em;
+    width: 95vw;
     
 }
 #chatwindowbutton{
@@ -82,6 +82,7 @@
    float:left;
    margin-top:200px;
    margin-bottom:200px;
+   
     z-index: 10;
    
 }
