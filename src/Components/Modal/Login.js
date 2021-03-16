@@ -37,7 +37,7 @@ export default function Login({setLoggedUser, loggedUser}) {
   };
 
   return (
-    <div>
+    <>
       <form className="form-content-container">
         <h1 className="form-heading">Log in</h1>
         <div className="form-input-container">
@@ -80,6 +80,6 @@ export default function Login({setLoggedUser, loggedUser}) {
           </Link>
         </div>
       </form>
-    </div>
+    </>
   );
 }

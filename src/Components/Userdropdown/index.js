@@ -20,7 +20,7 @@ export default function UserDropdown() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://hidden-shelf-31461.herokuapp.com/users/logout`
+        `https://hidden-shelf-31461.herokuapp.com/users/logout`
       );
       if (response) {
         console.log(response);
@@ -45,10 +45,10 @@ export default function UserDropdown() {
         </Link>
       </Dropdown.Item>
       <Dropdown.Item>
-        <button onClick={logout} className="dropdown-link">
+        <div onClick={logout} className="dropdown-link">
           <i class="fas fa-sign-out-alt"></i>
           {t('logout.label')}
-        </button>
+        </div>
       </Dropdown.Item>
     </DropdownButton>
   );} else {
