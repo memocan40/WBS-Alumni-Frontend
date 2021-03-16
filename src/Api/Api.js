@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-// const baseURL = "http://localhost:3000/";
+// const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+const baseURL = "http://localhost:3000/";
 
 const Api = {
   getAllUsers: async () => {
