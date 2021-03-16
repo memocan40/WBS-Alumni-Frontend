@@ -6,10 +6,11 @@ import { useState, useEffect } from 'react';
 
 export default function Chat({username}) {
   let [inputvalue, setinputvalue] = useState('');
+  let[name,setname]=useState(username);
   let [messages, setmessages] = useState([]);
   let [mouseclick, setmouseclick] = useState();
 
-  const SERVER = 'http://127.0.0.1:3005';
+  const SERVER = 'http://localhost:3005/';
   const socket = socketClient(SERVER);
 
   useEffect(() => {
@@ -20,12 +21,12 @@ export default function Chat({username}) {
   }, []);
 
   let textfield = document.getElementById('input');
-  let messagess = document.getElementById('messages');
+  if(name===undefined){setname("anonymous")};
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const msg = { inputvalue, username };
+    const msg = { inputvalue, name };
     socket.emit('chat message', msg);
 
     setmessages([...messages, msg]);
@@ -38,11 +39,13 @@ export default function Chat({username}) {
     element.scrollTop = element.scrollHeight;
   }
 
-  if (mouseclick === false) {
-    updateScroll();
-  }
+ 
+    if (mouseclick === false) {
+		updateScroll();
+	}
 
-  console.log(mouseclick);
+
+  console.log(messages);
   return (
     <div
       className="Chat"
@@ -60,7 +63,7 @@ export default function Chat({username}) {
           {messages.map((iteration, index) => {
             return (
               <li id="username">
-                {iteration.username}
+                {iteration.name}
                 <li className="input" id="messageli">
                   {iteration.inputvalue}
                 </li>
