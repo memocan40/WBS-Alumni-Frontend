@@ -5,11 +5,11 @@ import Chat from "../../Components/Chat/Chat";
 
 import './style.css';
 
-export default function HomePageView() {
+export default function HomePageView({userName}) {
   return (
     <div className="Homepage">
       <Header />
-      <Chat/>
+      <Chat username={userName}/>
       <Welcome />
       <Footer />
     </div>

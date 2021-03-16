@@ -110,7 +110,7 @@ function App() {
 
           {/*---- Home Page Route---- */}
           <Route path='/home'>
-            <HomePageView />
+            <HomePageView userName={loggedUser.username}/>
           </Route>
 
           {/*---- Register Route---- */}
