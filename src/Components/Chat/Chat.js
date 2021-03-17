@@ -1,15 +1,13 @@
 import './Chat.css';
-import io from 'socket.io';
 import socketClient from 'socket.io-client';
 
 import { useState, useEffect } from 'react';
 
 export default function Chat({ username }) {
-	let [inputvalue, setinputvalue] = useState('');
-	let [name, setname] = useState(username);
-	let [messages, setmessages] = useState([]);
-	let [mouseclick, setmouseclick] = useState();
-  let[chatwindow,setchatwindow]=useState("Chat");
+	const [inputvalue, setinputvalue] = useState('');
+	const [messages, setmessages] = useState([]);
+	const [mouseclick, setmouseclick] = useState();
+  	const [chatwindow,setchatwindow]=useState("chat-wrapper-invisible");
 
 	const SERVER = 'https://hidden-shelf-31461.herokuapp.com';
 	const socket = socketClient(SERVER);
@@ -21,15 +19,12 @@ export default function Chat({ username }) {
 		});
 	}, []);
 
-	let textfield = document.getElementById('input');
-	if (name === undefined) {
-		setname('anonymous');
-	}
+	let textfield = document.getElementById('chat-input');
 
 	const submitHandler = (e) => {
 		e.preventDefault();
 		if(inputvalue){
-		const msg = { inputvalue, name };
+		const msg = { inputvalue, username };
 		socket.emit('chat message', msg);
 
 		setmessages([...messages, msg]);
@@ -39,17 +34,16 @@ export default function Chat({ username }) {
 	};
 
   const Chatbutton=()=>{
-    if(chatwindow==="Chat"){
-      setchatwindow("Chatclosed")
-      console.log("chat closed")
+    if(chatwindow==="chat-wrapper"){
+      setchatwindow("chat-wrapper-closed")
     }
-    else if(chatwindow==="Chatclosed"){
-      setchatwindow("Chat")
+    else if(chatwindow==="chat-wrapper-closed" || chatwindow === "chat-wrapper-invisible"){
+      setchatwindow("chat-wrapper")
     }
   }
 
 	function updateScroll() {
-		var element = document.getElementById('messages');
+		var element = document.getElementById('messages-wrapper');
 		element.scrollTop = element.scrollHeight;
 	}
 
@@ -60,8 +54,7 @@ export default function Chat({ username }) {
 	console.log(messages);
 	return (
 		<div>
-		
-			<button id="chatwindowbutton" onClick={Chatbutton}>
+			<button id="chat-window-button" onClick={Chatbutton}>
 				Chat
 			</button>
 			<div
@@ -76,23 +69,21 @@ export default function Chat({ username }) {
 					setmouseclick(false);
 				}}
 			>
-				<ul id="messages">
-					<div id="messagesli">
+				<ul id="messages-wrapper">
 						{messages.map((iteration, index) => {
 							return (
-								<li id="username">
-									{iteration.name}
-									<li className="input" id="messageli">
+								<li id="chat-username">
+									{iteration.username}
+									<li className="chat-message">
 										{iteration.inputvalue}
 									</li>
 								</li>
 							);
 						})}
-					</div>
 				</ul>
-				<form onSubmit={submitHandler} id="form" action="">
+				<form onSubmit={submitHandler} className="chat-input-wrapper" action="">
 					<input
-						id="input"
+						id="chat-input"
 						autocomplete="off"
 						onChange={(event) => {
 							setinputvalue(event.target.value);
