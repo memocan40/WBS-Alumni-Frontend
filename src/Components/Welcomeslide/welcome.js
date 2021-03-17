@@ -1,9 +1,11 @@
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import {useState} from "react";
 
 import './welcome.css';
 
-export default function Welcome() {
+export default function Welcome({displaybool}) {
+  let [display,setdisplay]=useState({displaybool})
   const images = [
     'https://www.webconfs.com/wp-content/uploads/2020/07/12825450d41e4fd6d2482c0920b7fe75.jpg',
     'https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:392/h:261/q:90/dpr:2.6/https://www.wbscodingschool.com/files/WBS_CODING_SCHOOL_team.jpg',
