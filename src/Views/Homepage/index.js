@@ -9,8 +9,8 @@ export default function HomePageView({userName}) {
   return (
     <div className="Homepage">
       <Header />
-      <Chat username={userName}/>
       <Welcome />
+      <Chat username={userName}/>
       <Footer />
     </div>
   );

@@ -17,10 +17,6 @@
   align-items: center;
 }
 
-.header-logo {
-
-}
-
 .header-right {
   width: 70%;
   min-width: 20rem;
@@ -92,4 +88,11 @@
 .nav-item:hover {
   color: #007895;
   transition: all 0.2s;
+}
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .header {
+    height: 20vh  ;
+  }
 }

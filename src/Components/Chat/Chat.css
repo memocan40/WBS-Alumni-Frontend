@@ -148,3 +148,22 @@
     opacity: 1;
   }
 }
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .chat-wrapper {
+    width: 90%;
+    margin: 4rem auto;
+    position: static;
+    animation: none;
+    border: none;
+  }
+
+  #chat-window-button {
+    display: none;
+  }
+
+  #chat-input {
+    width: 74%;
+  }
+}
