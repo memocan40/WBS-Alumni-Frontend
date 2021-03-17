@@ -28,13 +28,14 @@ export default function Chat({ username }) {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-
+		if(inputvalue){
 		const msg = { inputvalue, name };
 		socket.emit('chat message', msg);
 
 		setmessages([...messages, msg]);
 
 		textfield.value = '';
+		setinputvalue("");}
 	};
 
   const Chatbutton=()=>{
