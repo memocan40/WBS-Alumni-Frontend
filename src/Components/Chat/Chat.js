@@ -9,7 +9,7 @@ export default function Chat({ username }) {
 	const [mouseclick, setmouseclick] = useState();
   	const [chatwindow,setchatwindow]=useState("chat-wrapper-invisible");
 
-	const SERVER = 'http://localhost:3005/';
+	const SERVER = 'https://hidden-shelf-31461.herokuapp.com';
 	const socket = socketClient(SERVER);
 
 	useEffect(() => {
@@ -23,13 +23,14 @@ export default function Chat({ username }) {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-
+		if(inputvalue){
 		const msg = { inputvalue, username };
 		socket.emit('chat message', msg);
 
 		setmessages([...messages, msg]);
 
 		textfield.value = '';
+		setinputvalue("");}
 	};
 
   const Chatbutton=()=>{
