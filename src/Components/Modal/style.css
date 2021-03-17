@@ -80,6 +80,23 @@
   transition: all .2s;
 }
 
+
+.username-alert, 
+.email-alert {
+  width: 70%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  background-color: rgb(255, 180, 180);
+  color: rgb(255, 83, 83);
+  border: 1px solid rgb(255, 83, 83);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.not-alert {
+  display: none;
+}
+
 /*--------------------*/
 /*---Media queries----*/
 /*--------------------*/

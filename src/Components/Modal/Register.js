@@ -14,6 +14,8 @@ export default function Register() {
   let [name, setName] = useState('');
   let [email, setEmail] = useState('');
   let [pw, setPw] = useState('');
+  let [showAlertEm, setShowAlertEm] = useState(false);
+  let [showAlertUn, setShowAlertUn] = useState(false);
 
   let [loading, setloading] = useState(false);
 
@@ -27,8 +29,14 @@ export default function Register() {
         `https://hidden-shelf-31461.herokuapp.com/users/register`,
         data
       );
-      if (response) {
-        console.log(response);
+      console.log(response.data.constraint);
+      if (response.data.constraint === 'users_email_key') {
+        setloading(false);
+        setShowAlertEm(true);
+      } else if (response.data.constraint === 'users_username_key') {
+        setloading(false);
+        setShowAlertUn(true);
+      } else {
         setloading(false);
         history.push('/login');
       }
@@ -45,6 +53,12 @@ export default function Register() {
     return (
       <form className="form-content-container">
         <h1 className="form-heading">Register</h1>
+        <div class={showAlertUn ? "username-alert" : "not-alert"}>
+          Username is already taken
+        </div>
+        <div class={showAlertEm ? "email-alert" : "not-alert"}>
+          Email is already taken
+        </div>
         <div className="form-input-container">
           <label for="username" id="username" className="form-input-label">
             {t('name.label')}

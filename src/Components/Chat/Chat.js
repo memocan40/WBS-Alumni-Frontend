@@ -9,7 +9,7 @@ export default function Chat({ username }) {
 	let [name, setname] = useState(username);
 	let [messages, setmessages] = useState([]);
 	let [mouseclick, setmouseclick] = useState();
-  let[chatwindow,setchatwindow]=useState("Chat");
+  	let[chatwindow,setchatwindow]=useState("Chat");
 
 	const SERVER = 'http://localhost:3005/';
 	const socket = socketClient(SERVER);
@@ -60,7 +60,7 @@ export default function Chat({ username }) {
 	return (
 		<div>
 		
-			<button id="chatwindowbutton" onClick={Chatbutton}>
+			<button id="chat-window-button" onClick={Chatbutton}>
 				Chat
 			</button>
 			<div

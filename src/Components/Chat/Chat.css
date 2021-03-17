@@ -1,5 +1,4 @@
 #form {
-    background: rgba(0, 0, 0, 0.15);
     padding: 0.25rem;
     bottom: 0;
     left: 0;
@@ -20,7 +19,7 @@
 }
 
 #input:focus {
-    outline: none;
+    outline: #ebebeb;
 }
 
 #button {
@@ -48,11 +47,15 @@
     width: 95vw;
     
 }
-#chatwindowbutton{
-  float:left;
-  border-radius:500px;
-  padding:3px;
-  background-color:transparent;
+#chat-window-button{
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  padding: 1rem;
+  background-color:#fff;
+  border: 2px solid #000;
+  border-radius:3rem;
+  z-index: 10;
 }
 
 #messageli {
@@ -75,15 +78,16 @@
 }
 
 .Chat {
+    bottom: 1rem;
+    position: fixed;
    display:flex;
    flex-direction: column;
    align-items: center;
    align-content: center;
-   float:left;
    margin-top:200px;
    margin-bottom:200px;
-   
-    z-index: 10;
+   background: #fff;
+    z-index: 25;
    
 }
 .Chatclosed{
@@ -92,7 +96,6 @@
      align-items: center;
      align-content: center;
      display:none;
-     float:left;
      margin-top:200px;
      margin-bottom:200px;
      z-index: 10;
