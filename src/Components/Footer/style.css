@@ -5,16 +5,41 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  background-color: #ebebeb;
+  background-color: #3b3b3b;
   box-shadow: 0 -4px 4px 0 rgb(172 172 172);
+  
 }
 
 .footer-right,
 .footer-left {
-  width: 50%;
+  width: 60%;
   height: inherit;
   margin:5px;
+  color:white;
 }
 a{
-  padding:10px;
+  color:white;
+}
+#left-header{
+  font-weight: bolder;
+  font-size:20px;
+}
+.left-part{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns: 70px 70px;
+  grid-template-rows: 50px;
+}
+
+#right-header {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.right-part {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 70px ;
+   grid-template-rows: 30px 30px 30px;
+ 
 }
