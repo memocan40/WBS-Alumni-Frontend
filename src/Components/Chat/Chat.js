@@ -11,7 +11,7 @@ export default function Chat({ username }) {
 	let [mouseclick, setmouseclick] = useState();
   let[chatwindow,setchatwindow]=useState("Chat");
 
-	const SERVER = 'http://localhost:3005/';
+	const SERVER = 'https://hidden-shelf-31461.herokuapp.com';
 	const socket = socketClient(SERVER);
 
 	useEffect(() => {
