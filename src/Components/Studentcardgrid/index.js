@@ -8,7 +8,7 @@ import './style.css';
 export default function SearchGrid({ filteredStudents, loading }) {
   console.log(filteredStudents);
   if (loading) {
-    return <Loader />;
+    return <div className="loader-wrapper-sg"><Loader /></div>;
   } else if(filteredStudents.length === 0) {
     return <h1 className="no-results-headline">No Results</h1>
   }else {

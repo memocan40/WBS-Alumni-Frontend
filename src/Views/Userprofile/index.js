@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
@@ -31,6 +31,10 @@ export default function Profile({
   const [pic, setPic] = useState('');
   const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.picture}`);
 
+  useEffect(()=>{
+    setPicUrl(`${baseUrl}/images/${userObject.picture}`)
+  }, [userObject]);
+
 
   const dataSubmit = () => {
     if (userObject.first_login) {
@@ -52,7 +56,7 @@ export default function Profile({
       );
       if (res) {
         console.log(res);
-        setPicUrl(res.data.image);
+        setUserObject({...userObject, picture: res.data.image});
       }
     } catch (e) {
       console.error(e);
@@ -72,7 +76,7 @@ export default function Profile({
             <div className="profile-img-wrapper">
               <img
                 className="profile-img"
-                src={userObject.picture ? picUrl : placeholderPic}
+                src={userObject.picture !== null ? picUrl : placeholderPic}
                 placeholder="user-profile"></img>
             </div>
             <form method="POST" encType="multipart/form-data">

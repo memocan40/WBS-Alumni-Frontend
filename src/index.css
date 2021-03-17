@@ -7,6 +7,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
+  background-image:url("http://favorpartners.com/wp-content/uploads/2017/08/module-25.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 
