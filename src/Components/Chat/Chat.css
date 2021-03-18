@@ -167,7 +167,7 @@
   }
 
   #chat-window-button {
-    margin: 1rem auto;
+    margin: 1rem auto 6rem auto;
     display: flex;
     position: static;
   }

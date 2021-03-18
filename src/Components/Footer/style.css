@@ -18,9 +18,11 @@
   margin:5px;
   color:white;
 }
+
 a{
   color:white;
 }
+
 #left-header{
   font-weight: bolder;
   font-size:20px;
@@ -54,4 +56,9 @@ a{
   grid-template-columns: 70px ;
    grid-template-rows: 30px 30px 30px;
  
+}
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+
 }
