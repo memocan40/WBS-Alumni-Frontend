@@ -17,8 +17,6 @@ export default function Login({ setLoggedUser, loggedUser }) {
 
   const history = useHistory();
 
-  console.log(name);
-  console.log(pw);
   const { t, i18n } = useTranslation();
   let data = { email: name, password: pw };
 
@@ -30,13 +28,10 @@ export default function Login({ setLoggedUser, loggedUser }) {
         `https://hidden-shelf-31461.herokuapp.com/users/login`,
         data
       );
-
-      console.log(response.data.constraint);
+      
       if (response.data.code === 401) {
         setloading(false);
         setShowAlertUn(true);
-        console.log(loggedUser);
-        console.log(response);
       } else {
         setLoggedUser(response.data.data);
         setloading(false);

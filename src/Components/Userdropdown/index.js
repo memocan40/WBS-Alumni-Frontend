@@ -23,7 +23,6 @@ export default function UserDropdown() {
         `https://hidden-shelf-31461.herokuapp.com/users/logout`
       );
       if (response) {
-        console.log(response);
         history.push('/');
       }
     } catch (err) {

@@ -60,7 +60,7 @@
 
 
 .loader-wrapper-ro {
-  min-height: 55vh;
+  min-height: 70vh;
 }
 
 @media (min-width: 320px) and (max-width: 575px) {

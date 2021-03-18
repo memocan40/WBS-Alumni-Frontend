@@ -8,7 +8,6 @@ const Api = {
     try {
       const response = await axios.get(`${baseURL}users`);
       if (response.data) {
-        console.log(response.data.data)
         return response.data.data;
       }
     } catch (e) {
@@ -21,7 +20,6 @@ const Api = {
     try {
       const response = await axios.put(`${baseURL}users/update/${obj.id}`, obj);
       if (response) {
-        console.log(response);
         return response;
       } else {
         return [];

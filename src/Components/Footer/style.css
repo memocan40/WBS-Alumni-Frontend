@@ -5,6 +5,8 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: #3b3b3b;
   box-shadow: 0 -4px 4px 0 rgb(172 172 172);
   
@@ -13,9 +15,10 @@
 .footer-right,
 .footer-mid,
 .footer-left {
-  width: 70%;
+  width: 33%;
   height: inherit;
-  margin:5px;
+  display: flex;
+  justify-content: center;
   color:white;
 }
 
