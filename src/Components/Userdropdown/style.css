@@ -1,5 +1,6 @@
 .user-dropdown {
-    margin-top: 2.5rem
+    margin-top: 2.5rem;
+    z-index: 30;
 }
 
 .dropdown-user {
@@ -41,3 +42,4 @@
     text-decoration: none;
     text-align: start;
 }
+

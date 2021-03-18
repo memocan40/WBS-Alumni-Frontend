@@ -67,12 +67,37 @@
   }
 
   .student-profile-info-container {
-    width: 80%;
+    width: 90%;
     margin: .5rem auto;
   }
 
   .student-profile-info {
     margin: .5rem 0;
     font-size: 1.4rem;
+  }
+
+  .student-profile-name {
+    text-align: center;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+
+  .student-profile{
+    width: 85%;
+    border: none;
+  }
+  
+  .student-profile-name {
+    text-align: center;
+  }
+
+  .student-profile-left {
+    width: 100%;
+  }
+
+  .student-profile-info-container {
+    width: 90%;
+    margin: 0 auto;
   }
 }

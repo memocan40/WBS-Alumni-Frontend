@@ -17,10 +17,6 @@
   align-items: center;
 }
 
-.header-logo {
-
-}
-
 .header-right {
   width: 70%;
   min-width: 20rem;
@@ -72,11 +68,11 @@
 
 /*---- Nav menu wrapper ----*/
 .nav-wrapper {
-  width: 60%;
+  width: 65%;
   height: 100%;
   margin-left: 20%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -93,3 +89,4 @@
   color: #007895;
   transition: all 0.2s;
 }
+
