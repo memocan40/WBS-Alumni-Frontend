@@ -11,8 +11,9 @@
 }
 
 .footer-right,
+.footer-mid,
 .footer-left {
-  width: 60%;
+  width: 70%;
   height: inherit;
   margin:5px;
   color:white;
@@ -29,6 +30,17 @@ a{
   display:grid;
   grid-template-columns: 70px 70px;
   grid-template-rows: 50px;
+}
+#header-mid{
+  font-weight: bolder;
+  font-size:20px;
+}
+
+.mid-part{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns: 70px 70px 70px;
+  
 }
 
 #right-header {

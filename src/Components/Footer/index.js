@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<footer className="footer">
 			<div className="footer-right">
-				<div id="left-header">Collaborators:</div>
+				<div id="left-header">Collaborators</div>
 				<div className="left-part">
 					<div>
 						<a className="nametags" href="https://www.linkedin.com/in/mehmet-can-580742168/">
@@ -28,6 +28,16 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
+			<div className="footer-mid">
+				<div id="header-mid">Special thanks so</div>{' '}
+				<div>
+					<div className="mid-part">
+						<div>Aria </div>
+						<div>Donald</div>
+						<div>Victor</div>
+					</div>
+				</div>
+			</div>
 			<div className="footer-left">
 				<div id="right-header">WBS</div>
 				<div className="right-part">
@@ -40,11 +50,11 @@ export default function Footer() {
 						<a href="https://www.wbscodingschool.com/campus-berlin/">The Campus</a>
 					</div>
 					<div>
-						
 						<a href="https://www.wbscodingschool.com/apply/">Apply now</a>
 					</div>
 				</div>
 			</div>
+			<div className="icons"></div>
 		</footer>
 	);
 }
