@@ -36,7 +36,6 @@ function App() {
   useEffect(() => {
     Api.getAllUsers()
       .then((res) => {
-        console.log(res);
         setStudentList(res);
       })
       .catch((err) => {
@@ -61,7 +60,6 @@ function App() {
 
     Api.getAllBatches()
     .then((res)=> {
-      console.log(res);
       setBatches(res.data);
     });
 
@@ -69,7 +67,6 @@ function App() {
       const filteredNames = res.data.map((city)=>{
         return {name : city.city};
       })
-      console.log(filteredNames);
       setCities(filteredNames);
 
     }).catch((err)=> {
@@ -90,7 +87,7 @@ function App() {
 
           {/*------ studentprofile route -----*/}
           <Route path="/studentprofile/:userId">
-            <StudentProfile obj={studentList}/>
+            <StudentProfile />
           </Route>
 
           {/*----user profile route---- */}

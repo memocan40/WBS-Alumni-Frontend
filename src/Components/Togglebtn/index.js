@@ -4,6 +4,7 @@ import './style.css';
 
 export default function ToggleBtn() {
   const { t, i18n } = useTranslation();
+  
   return (
     <div className="toggle-btn-wrapper">
       <span className="toggle-btn-desc">{t('theme.label')}</span>

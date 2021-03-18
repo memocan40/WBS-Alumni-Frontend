@@ -1,5 +1,5 @@
 .slide-container {
-  min-height: 60rem;
+  min-height: 50vh;
   width: 70%;
   height:30%;
   margin: 9rem auto;
@@ -38,6 +38,22 @@
 @media (min-width: 575px) and (max-width: 767px) {
   .slideshow-wrapper {
     max-height: 40rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+  }
+
+  .slide-container {
+    width: 90%;
+    height: 50vh;
+    min-height: 18rem;
+    margin: 5rem auto;
+  }
+
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .slideshow-wrapper {
+    max-height: 50rem;
     border-radius: 1rem;
     margin: 2rem auto;
   }

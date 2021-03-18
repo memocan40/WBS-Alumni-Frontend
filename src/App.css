@@ -138,6 +138,8 @@
   /*-----Header------*/
   .header-left {
     width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .header-right {
@@ -162,7 +164,6 @@
   /*-----Header------*/
   .header-left {
     width: 25%;
-    margin-left: 5%;
   }
 
   .landing-page-heading {

@@ -29,7 +29,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="footer-mid">
-				<div id="header-mid">Special thanks so</div>{' '}
+				<div id="header-mid">Special thanks to</div>{' '}
 				<div>
 					<div className="mid-part">
 						<div>Aria </div>

@@ -51,6 +51,12 @@
   font-size: 2.5rem;
 }
 
+.loader-wrapper-sp {
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+}
+
 /*--------------------*/
 /*---Media queries----*/
 /*--------------------*/
@@ -79,7 +85,10 @@
   .student-profile-name {
     text-align: center;
   }
+
 }
+
+
 
 @media (min-width: 575px) and (max-width: 767px) {
 

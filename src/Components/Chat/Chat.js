@@ -50,8 +50,7 @@ export default function Chat({ username }) {
 	if (mouseclick === false) {
 		updateScroll();
 	}
-
-	console.log(messages);
+	
 	return (
 		<div>
 			<button id="chat-window-button" onClick={Chatbutton}>

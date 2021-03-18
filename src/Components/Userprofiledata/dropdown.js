@@ -19,7 +19,6 @@ export default function UserProfileInput({
     }
   };
   if (editMode) {
-    console.log(defValues);
     return (
       <>
         <select
@@ -30,7 +29,6 @@ export default function UserProfileInput({
             Choose here
           </option>
           {defValues.map((element) => {
-            console.log(element);
             return (
               <option key={element.name} value={element.name}>
                 {element.name}

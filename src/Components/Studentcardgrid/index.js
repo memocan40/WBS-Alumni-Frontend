@@ -6,7 +6,7 @@ import StudentCard from '../StudentCard';
 import './style.css';
 
 export default function SearchGrid({ filteredStudents, loading }) {
-  console.log(filteredStudents);
+  
   if (loading) {
     return <div className="loader-wrapper-sg"><Loader /></div>;
   } else if(filteredStudents.length === 0) {
