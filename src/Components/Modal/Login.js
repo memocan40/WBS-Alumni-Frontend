@@ -31,13 +31,16 @@ export default function Login({ setLoggedUser, loggedUser }) {
         data
       );
 
-      console.log(response.data.constraint);
+      console.log(response.data);
       if (response.data.code === 401) {
         setloading(false);
         setShowAlertUn(true);
         console.log(loggedUser);
         console.log(response);
-      } else {
+      }else if(response.data.verified_user === false) {
+        console.log('User is not verified')
+      }
+      else {
         setLoggedUser(response.data.data);
         setloading(false);
         history.push('/profile');
