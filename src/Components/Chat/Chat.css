@@ -11,7 +11,7 @@
   background: #ebebeb;
   border: 2px solid rgb(99, 99, 99);
   border-radius: 2rem 0 0 2rem;
-  z-index: 25;
+  z-index: 300;
   overflow: auto;
   opacity: 1;
   animation: appear 1s linear 1;
@@ -151,19 +151,70 @@
 
 
 @media (min-width: 320px) and (max-width: 575px) {
+
   .chat-wrapper {
     width: 90%;
     margin: 4rem auto;
     position: static;
     animation: none;
     border: none;
+    display: flex;
+    animation: none;
+  }
+
+  .chat-wrapper-closed {
+    animation: none;
   }
 
   #chat-window-button {
-    display: none;
+    margin: 1rem auto;
+    display: flex;
+    position: static;
   }
 
   #chat-input {
     width: 74%;
+  }
+
+
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .chat-wrapper {
+    width: 50%;
+  }
+
+  #chat-input {
+    width: 75%;
+  }
+
+
+  @keyframes disappear {
+    0% {
+      width: 50%;
+      opacity: 1;
+    }
+    50% {
+      width: 25%;
+    }
+    100% {
+      width: 0;
+      display: none;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes appear {
+    0% {
+      width: 0;
+      display: none;
+    }
+    50% {
+      width: 25%;
+    }
+    100% {
+      width: 50%;
+      opacity: 1;
+    }
   }
 }

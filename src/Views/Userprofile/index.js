@@ -37,7 +37,7 @@ export default function Profile({
 
 
   const dataSubmit = () => {
-    if (userObject.first_login) {
+    if (userObject.first_login === true) {
       setUserObject({
         ...userObject,
         first_login: false,

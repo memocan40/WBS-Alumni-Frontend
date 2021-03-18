@@ -136,3 +136,18 @@
     font-size: 1.7rem;
   }
 }
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .form-content-container {
+    width: 90%;
+  }
+
+  .form-input-container {
+    margin: 1.5rem auto;
+  }
+
+  .form-input {
+    width: 90%;
+  }
+
+}

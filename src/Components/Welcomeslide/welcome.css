@@ -23,13 +23,29 @@
 
 @media (min-width: 320px) and (max-width: 575px) {
   .slideshow-wrapper {
-    max-height: 25rem;
+    max-height: 30rem;
     border-radius: 1rem;
+    margin: 2rem auto;
   }
 
   .slide-container {
     width: 90%;
     min-height: 18rem;
-    margin: 7rem auto;
+    margin: 5rem auto;
   }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .slideshow-wrapper {
+    max-height: 40rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+  }
+
+  .slide-container {
+    width: 90%;
+    min-height: 18rem;
+    margin: 5rem auto;
+  }
+
 }

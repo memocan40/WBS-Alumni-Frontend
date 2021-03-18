@@ -7,3 +7,11 @@
     font-size: 4rem;
 }
 
+@media (min-width: 320px) and (max-width: 575px) {
+
+    .search-grid {
+      display: flex !important;
+      flex-direction: column;
+    }
+  
+}  

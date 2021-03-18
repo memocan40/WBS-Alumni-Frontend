@@ -70,16 +70,19 @@
 
 @media (min-width: 320px) and (max-width: 575px) {
 
-  .search-grid {
-    display: flex !important;
-    flex-direction: column;
-  }
-
-
   .student-card {
-    min-width: 20rem;
+    min-width: 90%;
     min-height: 10rem;
     margin: 1rem auto;
   }
+  
+}
 
+@media (min-width: 575px) and (max-width: 767px) {
+
+  .student-card {
+    min-width: 23rem;
+    min-height: 10rem;
+    margin: 1rem auto;
+  }
 }

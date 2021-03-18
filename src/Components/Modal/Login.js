@@ -40,7 +40,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
       } else {
         setLoggedUser(response.data.data);
         setloading(false);
-        history.push('/profile');
+        response.data.data.first_login ? history.push('/profile') : history.push('/home');
       }
     } catch (err) {
       console.error(err);

@@ -12,7 +12,7 @@
 
 .search-bar-wrapper {
   width: 80%;
-  height: 6rem;
+  min-height: 6rem;
   background-color: #ebebeb;
   margin: 4rem auto;
   display: flex;
@@ -47,7 +47,7 @@
 }
 
 .reach-out-select {
-  width: 20%;
+  min-width: 20%;
   margin: 0 1rem;
   height: 3rem;
   font-size: 2rem;
@@ -61,4 +61,42 @@
 
 .loader-wrapper-ro {
   min-height: 55vh;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+
+  .search-grid {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .search-bar-wrapper {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+
+  .reach-out-select {
+    width: 40%;
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .search-bar-btn {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .search-grid {
+    width: 95%;
+    grid-template-columns: repeat(auto-fill, 25rem);
+  }
+  
+  .search-bar-wrapper {
+    width: 95%;
+  }
+
+  .reach-out-select {
+    width: 35%;
+  }
 }
