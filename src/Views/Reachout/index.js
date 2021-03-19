@@ -24,6 +24,7 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
       );
       if (response) {
         setLoading(false);
+        console.log(response)
         setFilteredStudents(response.data.data);
       }
     } catch (e) {
@@ -49,7 +50,7 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
             <option className="reach-out-option" value="workstatus">
               Workstatus
             </option>
-            <option className="reach-out-option" value="interests">
+            <option className="reach-out-option" value="interest">
               Interests
             </option>
           </select>
