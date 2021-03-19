@@ -43,7 +43,7 @@ export default function Searchbar({
         {batchesOptions}
       </select>
     );
-  } else if (searchOption == 'interests') {
+  } else if (searchOption == 'interest') {
     return (
       <input
         className="reach-out-input"

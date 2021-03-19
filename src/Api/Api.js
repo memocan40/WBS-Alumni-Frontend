@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
+const baseURL = 'https://hidden-shelf-31461.herokuapp.com/';
 //const baseURL = "http://localhost:3000/";
 
 const Api = {
@@ -11,7 +11,7 @@ const Api = {
         return response.data.data;
       }
     } catch (e) {
-      console.error("getAllUsers: ", e);
+      console.error('getAllUsers: ', e);
       return [];
     }
   },
@@ -25,7 +25,7 @@ const Api = {
         return [];
       }
     } catch (e) {
-      console.error("updateUserbyID:", e);
+      console.error('updateUserbyID:', e);
       return [];
     }
   },
@@ -39,15 +39,15 @@ const Api = {
         return [];
       }
     } catch (e) {
-      console.error("getInterests:", e);
+      console.error('getInterests:', e);
       return [];
     }
   },
 
-  getWorkStatuses: async() => {
-    try{
-      const response = await axios.get(`${baseURL}work_status`)
-      if(response) {
+  getWorkStatuses: async () => {
+    try {
+      const response = await axios.get(`${baseURL}work_status`);
+      if (response) {
         return response.data;
       }
     } catch (e) {
@@ -56,10 +56,10 @@ const Api = {
     }
   },
 
-  getAllBatches: async() => {
-    try{
-      const response = await axios.get(`${baseURL}batches`)
-      if(response) {
+  getAllBatches: async () => {
+    try {
+      const response = await axios.get(`${baseURL}batches`);
+      if (response) {
         return response.data;
       }
     } catch (e) {
@@ -79,17 +79,34 @@ const Api = {
     );
   },
 
-  getUserbyID: (id) => {
-    axios.get(`${baseURL}users/${id}`);
+  getUserbyID: async (id) => {
+    try {
+      const res = await axios.get(`${baseURL}users/${id}`);
+      if (res) {
+        return res.data.data;
+      }
+    } catch (e) {
+      console.error(e);
+    }
   },
 
-  getUserByBatch:(batch)=> {
-
-      const response = axios.get(`${baseURL}users/batch/${batch}`)
-      if(response) {
-        return response;
-      }
+  getUserByBatch: (batch) => {
+    const response = axios.get(`${baseURL}users/batch/${batch}`);
+    if (response) {
+      return response;
     }
-}
+  },
+
+  getUserByInterest: async(interest) => {
+    try{
+      const res = await axios.get(`${baseURL}interest/${interest}`)
+      if(res) {
+        return res;
+      }
+    } catch(e) {
+      console.error(e);
+    }
+  }
+};
 
 export default Api;
