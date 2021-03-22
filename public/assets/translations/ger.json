@@ -1,6 +1,6 @@
 {
     "welcome.label": "willkommen bei",
-    "login.label": "Log-in",
+    "login.label": "Einloggen",
     "register.label": "Registrieren",
     "allbatches.label": "Alle Batches",
     "reachout.label": "Kontaktieren",
@@ -16,7 +16,7 @@
     "contact.label": "Kontakt",
     "password.label": "Passwort: ",
     "email.label": "E-mail: ",
-    "haveanacc.label": "Account vorhanden ",
+    "haveanacc.label": "hast du einen Konto? ",
     "donthaveanacc.label": "Account nicht vorhanden ",
     "city.label": "Stadt: ",
     "github.label": "Github: ",
@@ -24,5 +24,8 @@
     "finalproject.label": "Abschlussprojekt: ",
     "confirmchanges.label": "Änderung bestätigt",
     "uploadpicture.label": "Bild hochladen",
-    "yourprofile.label": "Eigenes Profil"
+    "yourprofile.label": "Eigenes Profil",
+    "entername.label": "Benutzername eingeben",
+    "enteremail.label": "Email eingeben",
+    "enterpassword.label": "Passwort eingeben"
   }

@@ -28,5 +28,8 @@
     "workstatus.label": "Workstatus: ",
     "confirmchanges.label": "Confirm Changes",
     "uploadpicture.label": "Upload Picture",
-    "yourprofile.label": "Your Profile"
+    "yourprofile.label": "Your Profile",
+    "entername.label": "Enter Username",
+    "enteremail.label": "Enter Email",
+    "enterpassword.label": "Enter Password"
   }

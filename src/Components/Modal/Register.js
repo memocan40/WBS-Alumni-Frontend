@@ -50,8 +50,8 @@ export default function Register() {
     return <Loader />;
   } else {
     return (
-      <form className="form-content-container">
-        <h1 className="form-heading">Register</h1>
+      <form className="form-content-container"> 
+        <h1 className="form-heading">{t('register.label')}</h1>
         <div class={showAlertUn ? "username-alert" : "not-alert"}>
           Username is already taken
         </div>
@@ -65,14 +65,13 @@ export default function Register() {
           <input
             className="form-input"
             type="text"
-            placeholder="Enter username"
+            placeholder={t('entername.label')}
             name="username"
             id="username"
-            required
             onChange={(event) => {
               setName(event.target.value);
             }}
-            required></input>
+            required="required"/>
         </div>
         <div className="form-input-container">
           <label for="email" className="form-input-label">
@@ -81,14 +80,13 @@ export default function Register() {
           <input
             className="form-input"
             type="text"
-            placeholder="Enter Email"
+            placeholder={t('enteremail.label')}
             name="email"
             id="email"
-            required
             onChange={(event) => {
               setEmail(event.target.value);
             }}
-            required></input>
+            required="required"/>
         </div>
         <div className="form-input-container">
           <label for="psw" className="form-input-label">
@@ -97,16 +95,15 @@ export default function Register() {
           <input
             className="form-input"
             type="password"
-            placeholder="Enter Password"
+            placeholder={t('enterpassword.label')}
             name="psw"
             id="psw"
-            required
             onChange={(event) => {
               setPw(event.target.value);
             }}
-            required></input>
+            required="required"/>
         </div>
-        <button type="post" className="form-btn" onClick={createuser}>
+        <button type="submit" className="form-btn" onClick={createuser}>
           {t('register.label')}
         </button>
         <div className="form-redirection">
