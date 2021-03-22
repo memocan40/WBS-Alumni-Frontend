@@ -20,7 +20,7 @@
 }
 
 .form-input-container {
-  width: 95%; 
+  width: 95%;
   margin: 3rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -33,10 +33,10 @@
   font-weight: 500;
 }
 
-.form-input{
+.form-input {
   width: 70%;
   height: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 2.3rem;
   border: 2px solid #007895;
   outline: none;
@@ -44,25 +44,25 @@
 
 .form-input:hover {
   box-shadow: 2px 2px 5px rgb(82, 82, 82);
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
 .form-btn {
-    min-width: 12rem;
-    height: 5rem;
-    margin-top: 2rem;
-    color: #fff;
-    background-color: #F8485E;
-    border: 2px solid #F8485E;
-    border-radius: 1rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    transition: all .2s;
-    outline: none;
+  min-width: 12rem;
+  height: 5rem;
+  margin-top: 2rem;
+  color: #fff;
+  background-color: #f8485e;
+  border: 2px solid #f8485e;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: all 0.2s;
+  outline: none;
 }
 
 .form-btn:hover {
-    box-shadow: 2px 2px 5px rgb(82, 82, 82);
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 
 .form-redirection {
@@ -77,11 +77,10 @@
 
 .form-redirection-link:hover {
   color: #007895;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
-
-.username-alert, 
+.username-alert,
 .email-alert {
   width: 70%;
   margin: 0 auto;
@@ -97,12 +96,43 @@
   display: none;
 }
 
+.back-btn,
+.register-btn {
+  min-width: 8rem;
+  height: 4rem;
+  margin: 2rem 1rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.back-btn {
+  color: #fff;
+  background-color: #f8485e;
+  border: 2px solid #f8485e;
+}
+
+.register-btn {
+  color: #f8485e;
+  background-color: #fff;
+  border: 2px solid #f8485e;
+}
+
+.back-btn:hover,
+.register-btn:hover {
+  box-shadow: 2px 2px 5px rgb(82, 82, 82);
+}
+
 /*--------------------*/
 /*---Media queries----*/
 /*--------------------*/
 
 @media (min-width: 320px) and (max-width: 575px) {
-
   .form-content-container {
     width: 90%;
     margin: 25% auto;
@@ -112,7 +142,7 @@
     margin: 2rem 0;
   }
 
-  .form-input-container{
+  .form-input-container {
     margin: 1.5rem auto;
   }
 
@@ -149,5 +179,4 @@
   .form-input {
     width: 90%;
   }
-
 }

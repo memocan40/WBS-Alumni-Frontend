@@ -7,6 +7,7 @@ import axios from 'axios';
 import Loader from '../Loader';
 
 import './style.css';
+  
 
 export default function Register() {
   const history = useHistory();
@@ -103,9 +104,19 @@ export default function Register() {
             }}
             required="required"/>
         </div>
-        <button type="submit" className="form-btn" onClick={createuser}>
-          {t('register.label')}
-        </button>
+
+
+        <div className="landing-page-btn-wrapper">  {/* Register Button*/}
+          <button type="submit" className="back-btn" onClick={createuser}>
+           {t('register.label')}
+          </button>
+        <Link className="form-redirection-link" to="/">    {/* Back Button*/}
+          <button type="submit" className="register-btn" >
+          {t('back.label')}
+          </button>
+         </Link>
+       </div>
+       
         <div className="form-redirection">
           {t('haveanacc.label')}{' '}
           <Link className="form-redirection-link" to="/login">
