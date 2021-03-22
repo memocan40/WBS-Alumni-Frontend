@@ -65,7 +65,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
             <input
               className="form-input"
               type="text"
-              placeholder="Enter Name"
+              placeholder={t('enteremail.label')}
               name="Name"
               id="Name"
               onChange={(event) => {
@@ -80,7 +80,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
             <input
               className="form-input"
               type="password"
-              placeholder="Enter Password"
+              placeholder={t('enterpassword.label')}
               name="psw"
               id="psw"
               onChange={(event) => {
