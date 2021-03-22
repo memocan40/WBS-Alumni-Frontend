@@ -27,5 +27,6 @@
     "yourprofile.label": "Eigenes Profil",
     "entername.label": "Benutzername eingeben",
     "enteremail.label": "Email eingeben",
-    "enterpassword.label": "Passwort eingeben"
+    "enterpassword.label": "Passwort eingeben",
+    "back.label":"Zurück"
   }

@@ -31,5 +31,6 @@
     "yourprofile.label": "Your Profile",
     "entername.label": "Enter Username",
     "enteremail.label": "Enter Email",
-    "enterpassword.label": "Enter Password"
+    "enterpassword.label": "Enter Password",
+    "back.label":"Back"
   }
