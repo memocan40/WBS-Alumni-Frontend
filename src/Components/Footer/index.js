@@ -3,46 +3,62 @@ import './style.css';
 export default function Footer() {
 	return (
 		<footer className="footer">
-			<div className="footer-right">
-				<div id="left-header">Collaborators:</div>
-				<div className="left-part">
-					<div>
-						<a className="nametags" href="https://www.linkedin.com/in/mehmet-can-580742168/">
+			<div className="footer-left">
+				<div className="footer-header">Made by:</div>
+				<div className="left-content">
+					<div className="footer-collaborator-wrapper">
+						<span className="footer-name">
 							Mehmet Can
-						</a>
+						</span>
+						<div className="footer-link-wrapper">
+							<a href="https://github.com/memocan40/" className="fab fa-github footer-link"></a>
+							<a href="https://www.linkedin.com/in/mehmet-can-580742168/" className="fab fa-linkedin footer-link"></a>
+						</div>
 					</div>
-					<div>
-						<a className="nametags" href="https://www.linkedin.com/in/elie-soued-70017358/">
+					<div className="footer-collaborator-wrapper">
+						<span className="footer-name">
 							Elie Soued
-						</a>
+						</span>
+						<div className="footer-link-wrapper">
+							<a href="https://github.com/Elie-Soued/" className="fab fa-github footer-link"></a>
+							<a href="https://www.linkedin.com/in/elie-soued-70017358/" className="fab fa-linkedin footer-link"></a>
+						</div>
 					</div>
-					<div>
-						<a className="nametags" href="https://www.linkedin.com/in/dsurina/">
+					<div className="footer-collaborator-wrapper">
+						<span className="nametags">
 							David Surina
-						</a>
-					</div>
-					<div>
-						<a className="nametags" href="https://github.com/olkhon">
+						</span>
+						<div className="footer-link-wrapper">
+							<a href="https://github.com/DavidSurina/" className="fab fa-github footer-link"></a>
+							<a href="https://www.linkedin.com/in/dsurina/" className="fab fa-linkedin footer-link" target="_blank"></a>
+						</div>
+					</div>			
+					<div className="footer-collaborator-wrapper">
+						<span className="nametags">
 							Alex Stapel
-						</a>
+						</span>
+						<div className="footer-link-wrapper">
+							<a href="https://github.com/olkhon" className="fab fa-github footer-link" target="_blank"></a>
+							<a href="#" className="fab fa-linkedin footer-link" target="_blank"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div className="footer-left">
-				<div id="right-header">WBS</div>
-				<div className="right-part">
-					<div>
-						<a href="https://www.wbscodingschool.com/?utm_term=%2Bwbs.coding.school&utm_campaign=DE%20%7C%20Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=1582954711&hsa_cam=11301459240&hsa_grp=110494639133&hsa_ad=501195315800&hsa_src=g&hsa_tgt=kwd-938326359588&hsa_kw=%2Bwbs.coding.school&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjw0caCBhCIARIsAGAfuMxpLbCwc8WfWSdBAQc8gaAAvgyVrDsJ43ZY9-ALthnsm8LATFscE7saApR9EALw_wcB">
-							Homepage
-						</a>
+			<div className="footer-middle">
+				<div className="footer-header">Special thanks to</div>{' '}
+				<div>
+					<div className="footer-name-container">
+						<div className="footer-middle-name">--- Aria ---</div>
+						<div className="footer-middle-name">--- Donald ---</div>
+						<div className="footer-middle-name">--- Victor ---</div>
 					</div>
-					<div>
-						<a href="https://www.wbscodingschool.com/campus-berlin/">The Campus</a>
-					</div>
-					<div>
-						
-						<a href="https://www.wbscodingschool.com/apply/">Apply now</a>
-					</div>
+				</div>
+			</div>
+			<div className="footer-right">
+				<div className="footer-header">Project repos</div>
+				<div className="project-repos-container">
+					<a href="" className="footer-repo-link">Front End</a>
+					<a href="" className="footer-repo-link">Back End</a>
 				</div>
 			</div>
 		</footer>

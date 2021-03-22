@@ -15,8 +15,6 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [loading, setLoading] = useState(false);
 
-  console.log(typeOfSearch);
-  console.log(childValue);
 
   const searchController = async () => {
     try {
@@ -25,8 +23,8 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
         `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`
       );
       if (response) {
-        console.log(response);
         setLoading(false);
+        console.log(response)
         setFilteredStudents(response.data.data);
       }
     } catch (e) {
@@ -52,7 +50,7 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
             <option className="reach-out-option" value="workstatus">
               Workstatus
             </option>
-            <option className="reach-out-option" value="interests">
+            <option className="reach-out-option" value="interest">
               Interests
             </option>
           </select>
@@ -72,6 +70,6 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
       </>
     );
   } else {
-    return <Loader />;
+    return <Loader />
   }
 }

@@ -7,3 +7,17 @@
     font-size: 4rem;
 }
 
+.loader-wrapper-sg {
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+
+    .search-grid {
+      display: flex !important;
+      flex-direction: column;
+    }
+  
+}  

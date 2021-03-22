@@ -37,7 +37,7 @@ export default function Profile({
 
 
   const dataSubmit = () => {
-    if (userObject.first_login) {
+    if (userObject.first_login === true) {
       setUserObject({
         ...userObject,
         first_login: false,
@@ -55,7 +55,6 @@ export default function Profile({
         data
       );
       if (res) {
-        console.log(res);
         setUserObject({...userObject, picture: res.data.image});
       }
     } catch (e) {
@@ -65,7 +64,6 @@ export default function Profile({
 
   const { t, i18n } = useTranslation();
 
-    console.log(userObject);
     if(userObject ) {
     return (
       <>

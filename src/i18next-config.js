@@ -9,7 +9,7 @@ i18n
     lng: 'en',
     backend: {
       /* translation file path */
-      loadPath: '/assets/translations/{{lng}}.json'
+      loadPath: '/assets/translations/{{lng}}.json',
     },
     fallbackLng: 'en',
     debug: true,
@@ -19,11 +19,11 @@ i18n
     keySeparator: false,
     interpolation: {
       escapeValue: false,
-      formatSeparator: ','
+      formatSeparator: ',',
     },
     react: {
-      wait: true
-    }
-  })
+      wait: true,
+    },
+  });
 
 export default i18n;

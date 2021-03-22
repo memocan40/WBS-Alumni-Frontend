@@ -98,6 +98,7 @@
 /*--------------------*/
 
 @media (min-width: 320px) and (max-width: 575px) {
+
   .profile-wrapper {
     border: none;
   }
@@ -125,4 +126,28 @@
     width: 100%;
     margin-top: .5rem;
   }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+
+  .profile-wrapper {
+    width: 95%;
+    padding: 3%;
+    border: none;
+  }
+
+  .profile-heading {
+    text-align: center;
+  }
+
+  .profile-left-wrapper {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .profile-right-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
 }

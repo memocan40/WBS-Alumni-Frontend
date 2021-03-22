@@ -115,3 +115,9 @@
         height: 3rem;
     }
 }
+
+@media (min-width: 575px) and (max-width: 767px) {
+    .landing-page-btn-wrapper {
+        width: 60%;
+    }
+}

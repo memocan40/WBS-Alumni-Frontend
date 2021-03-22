@@ -9,7 +9,6 @@ export default function UserProfileInput({ value, onSubmit }) {
   const editBtnHandler = (e) => {
     if (editMode) {
       setEditMode(false);
-      console.log(value);
       onSubmit(inputValue);
     } else {
       setEditMode(true);

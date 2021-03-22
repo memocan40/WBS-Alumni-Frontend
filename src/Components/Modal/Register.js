@@ -29,7 +29,6 @@ export default function Register() {
         `https://hidden-shelf-31461.herokuapp.com/users/register`,
         data
       );
-      console.log(response.data.constraint);
       if (response.data.constraint === 'users_email_key') {
         setloading(false);
         setShowAlertEm(true);

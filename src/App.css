@@ -1,5 +1,9 @@
 .App {
-    min-width: 320px;
+  min-width: 320px;
+}
+
+.body {
+  min-width: 320px;
 }
 
 /*--------------------*/
@@ -11,11 +15,12 @@
 
   .header-left {
     width: 100%;
-    font-size: 2rem;
+    justify-content: center;
   }
 
-  .landing-page-heading {
-    font-size: 4rem;
+  .header-logo {
+    width: 9rem;
+    height: 9rem;
   }
 
   /*--------------------*/
@@ -54,8 +59,8 @@
   }
 
   .lang-selector {
-      width: 6rem;
-      height: 1.8rem;
+    width: 6rem;
+    height: 1.8rem;
     font-size: 1.3rem;
   }
 
@@ -65,9 +70,9 @@
   }
 
   .nav-wrapper {
-    width: 70%;
+    width: 80%;
     margin: 0;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
     justify-content: space-around;
     align-items: center;
   }
@@ -79,35 +84,31 @@
   }
 
   .dropdown-item {
-      padding: .8rem;
-      font-size: 1.4rem;
+    padding: 1.2rem;
+    font-size: 1.4rem;
   }
 
-  .log-in-wrapper {
-
-}
-
-.user-profile-img {
+  .user-profile-img {
     width: 2.5rem;
     height: 2.5rem;
-}
+  }
 
-.dropdown {
+  .dropdown {
     margin-top: 2rem;
+  }
 }
-
-/*---Footer---*/
-
-.footer {
-    min-height: 10rem;
-}
-}
-
 
 @media (min-width: 575px) and (max-width: 767px) {
   /*-----Header------*/
   .header-left {
     width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .header-logo {
+    width: 13rem;
+    height: 13rem;
   }
 
   .header-right {
@@ -118,13 +119,18 @@
     justify-content: center;
   }
 
+  .toggle-btn-wrapper {
+    margin-right: 7%;
+  }
+
   .nav-wrapper {
     width: 80%;
     margin: 0;
   }
 
   .nav-item {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -132,6 +138,8 @@
   /*-----Header------*/
   .header-left {
     width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .header-right {
@@ -156,7 +164,6 @@
   /*-----Header------*/
   .header-left {
     width: 25%;
-    margin-left: 5%;
   }
 
   .landing-page-heading {
@@ -171,7 +178,7 @@
     width: 80%;
     margin: 0;
   }
-  
+
   .nav-item {
     padding-top: 4.1rem;
   }
