@@ -12,9 +12,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
   const [name, setName] = useState('');
   const [pw, setPw] = useState('');
   const [showAlertUn, setShowAlertUn] = useState(false);
-
   const [loading, setloading] = useState(false);
-
   const history = useHistory();
 
   const { t, i18n } = useTranslation();

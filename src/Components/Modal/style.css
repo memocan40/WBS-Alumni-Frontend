@@ -81,7 +81,8 @@
 }
 
 .username-alert,
-.email-alert {
+.email-alert,
+.empty-alert {
   width: 70%;
   margin: 0 auto;
   padding: 1rem 0;
@@ -97,7 +98,7 @@
 }
 
 .back-btn,
-.register-btn {
+.regist-btn {
   min-width: 8rem;
   height: 4rem;
   margin: 2rem 1rem;
@@ -117,14 +118,15 @@
   border: 2px solid #f8485e;
 }
 
-.register-btn {
+.regist-btn {
   color: #f8485e;
   background-color: #fff;
   border: 2px solid #f8485e;
+  padding: 0.5rem 0.5rem 3.5rem;
 }
 
 .back-btn:hover,
-.register-btn:hover {
+.regist-btn:hover {
   box-shadow: 2px 2px 5px rgb(82, 82, 82);
 }
 
