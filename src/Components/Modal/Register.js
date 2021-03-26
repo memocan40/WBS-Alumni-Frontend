@@ -31,7 +31,7 @@ export default function Register() {
 
   // Declaring the onSubmit function
   const onSubmit = (data) => {
-    if (data.user && data.emai && data.password) {
+    if (data.user && data.email && data.password) {
       createuser();
     }
   };
@@ -68,7 +68,7 @@ export default function Register() {
     return (
       <form
         className="form-content-container"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(createuser)}
       >
         <h1 className="form-heading">{t("register.label")}</h1>
         {/*Server side valiation errors*/}
