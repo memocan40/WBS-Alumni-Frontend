@@ -70,7 +70,7 @@ export default function Register() {
     return (
       <form
         className="form-content-container"
-        onSubmit={handleSubmit(createuser)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="form-heading">{t("register.label")}</h1>
         {/*Server side valiation errors*/}
