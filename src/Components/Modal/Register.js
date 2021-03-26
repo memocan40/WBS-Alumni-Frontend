@@ -31,13 +31,6 @@ export default function Register() {
   //Initializing useTranslation
   const { t } = useTranslation();
 
-  // Declaring the onSubmit function
-  const onSubmit = (data) => {
-    if (data.user && data.email && data.password) {
-      createuser();
-    }
-  };
-
   //Declaring the createuser function
   let createuser = async () => {
     try {
@@ -70,7 +63,7 @@ export default function Register() {
     return (
       <form
         className="form-content-container"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(createuser)}
       >
         <h1 className="form-heading">{t("register.label")}</h1>
         {/*Server side valiation errors*/}
@@ -98,9 +91,7 @@ export default function Register() {
             ref={register({ required: true })}
           />
 
-          {errors.username && (
-            <div className="empty-alert">Please enter your username</div>
-          )}
+          {errors.username && <div className="empty-alert">Required Field</div>}
         </div>
 
         {/*Email Input*/}
@@ -117,11 +108,17 @@ export default function Register() {
             onChange={(event) => {
               setEmail(event.target.value);
             }}
-            ref={register({ required: true })}
+            ref={register({
+              required: "Required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "invalid email address",
+              },
+            })}
           />
 
           {errors.email && (
-            <div className="empty-alert">Please enter email</div>
+            <div className="empty-alert"> Valid Email Required</div>
           )}
         </div>
 
@@ -143,9 +140,7 @@ export default function Register() {
             ref={register({ required: true })}
           />
 
-          {errors.psw && (
-            <div className="empty-alert">Please enter your password</div>
-          )}
+          {errors.psw && <div className="empty-alert">Required Field</div>}
         </div>
 
         <div className="landing-page-btn-wrapper">
