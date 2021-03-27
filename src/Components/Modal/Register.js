@@ -91,7 +91,9 @@ export default function Register() {
             ref={register({ required: true })}
           />
 
-          {errors.username && <div className="empty-alert">Required Field</div>}
+          {errors.username && (
+            <div className="empty-alert">{t("requiredfield.label")}</div>
+          )}
         </div>
 
         {/*Email Input*/}
@@ -118,7 +120,7 @@ export default function Register() {
           />
 
           {errors.email && (
-            <div className="empty-alert"> Valid Email Required</div>
+            <div className="empty-alert"> {t("requiredemail.label")}</div>
           )}
         </div>
 
@@ -140,7 +142,9 @@ export default function Register() {
             ref={register({ required: true })}
           />
 
-          {errors.psw && <div className="empty-alert">Required Field</div>}
+          {errors.psw && (
+            <div className="empty-alert">{t("requiredfield.label")}</div>
+          )}
         </div>
 
         <div className="landing-page-btn-wrapper">
