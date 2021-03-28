@@ -23,7 +23,6 @@ export default function Login({ setLoggedUser, loggedUser }) {
   const { register, handleSubmit, errors } = useForm();
 
   let login = async (e) => {
-    e.preventDefault();
     setloading(true);
     try {
       const response = await axios.post(
