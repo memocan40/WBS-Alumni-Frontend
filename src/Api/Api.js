@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-const baseURL = 'https://hidden-shelf-31461.herokuapp.com/';
-//const baseURL = "http://localhost:3000/";
+// const baseURL = 'https://hidden-shelf-31461.herokuapp.com/';
+const baseURL = "http://localhost:4000/";
 
 const Api = {
   getAllUsers: async () => {
@@ -11,7 +11,7 @@ const Api = {
         return response.data.data;
       }
     } catch (e) {
-      console.error('getAllUsers: ', e);
+      console.error("getAllUsers: ", e);
       return [];
     }
   },
@@ -25,7 +25,7 @@ const Api = {
         return [];
       }
     } catch (e) {
-      console.error('updateUserbyID:', e);
+      console.error("updateUserbyID:", e);
       return [];
     }
   },
@@ -39,7 +39,7 @@ const Api = {
         return [];
       }
     } catch (e) {
-      console.error('getInterests:', e);
+      console.error("getInterests:", e);
       return [];
     }
   },
@@ -97,16 +97,16 @@ const Api = {
     }
   },
 
-  getUserByInterest: async(interest) => {
-    try{
-      const res = await axios.get(`${baseURL}interest/${interest}`)
-      if(res) {
+  getUserByInterest: async (interest) => {
+    try {
+      const res = await axios.get(`${baseURL}interest/${interest}`);
+      if (res) {
         return res;
       }
-    } catch(e) {
+    } catch (e) {
       console.error(e);
     }
-  }
+  },
 };
 
 export default Api;
