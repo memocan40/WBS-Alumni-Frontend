@@ -10,14 +10,14 @@ import Loader from "../Loader";
 import "./style.css";
 
 export default function Login({ setLoggedUser, loggedUser }) {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
   const [showAlertUn, setShowAlertUn] = useState(false);
   const [loading, setloading] = useState(false);
   const history = useHistory();
 
-  const { t, i18n } = useTranslation();
-  let data = { email: name, password: pw };
+  const { t } = useTranslation();
+  let data = { email: email, password: pw };
 
   //Initializing useForm
   const { register, handleSubmit, errors } = useForm();
@@ -27,7 +27,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
     setloading(true);
     try {
       const response = await axios.post(
-        `http://localhost:3000/users/login`,
+        `https://hidden-shelf-31461.herokuapp.com/users/login`,
         data
       );
 
@@ -74,7 +74,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
               name="email"
               id="email"
               onChange={(event) => {
-                setName(event.target.value);
+                setEmail(event.target.value);
               }}
               ref={register({ required: true })}
             />
