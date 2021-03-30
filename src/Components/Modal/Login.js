@@ -30,7 +30,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
         data,
         {
           headers: {
-            "Access-Control-Allow-Origin": "https://wbs-alumni.netlify.app",
+            "Access-Control-Allow-Origin": "https://wbs-alumni.netlify.app/",
           },
         }
       );
