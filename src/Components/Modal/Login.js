@@ -28,7 +28,11 @@ export default function Login({ setLoggedUser, loggedUser }) {
       const response = await axios.post(
         `https://hidden-shelf-31461.herokuapp.com/users/login`,
         data,
-        Access - Control - Allow - Origin
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "https://wbs-alumni.netlify.app",
+          },
+        }
       );
 
       console.log(response.data);
