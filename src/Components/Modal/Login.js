@@ -27,7 +27,8 @@ export default function Login({ setLoggedUser, loggedUser }) {
     try {
       const response = await axios.post(
         `https://hidden-shelf-31461.herokuapp.com/users/login`,
-        data
+        data,
+        Access - Control - Allow - Origin
       );
 
       console.log(response.data);
