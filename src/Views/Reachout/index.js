@@ -1,30 +1,34 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
-import Header from '../../Components/Header';
-import Loader from '../../Components/Loader';
-import Searchbar from '../../Components/Searchbar';
-import Searchgrid from '../../Components/Studentcardgrid';
-import Footer from '../../Components/Footer';
+import Header from "../../Components/Header";
+import Loader from "../../Components/Loader";
+import Searchbar from "../../Components/Searchbar";
+import Searchgrid from "../../Components/Studentcardgrid";
+import Footer from "../../Components/Footer";
 
-import './style.css';
+import "./style.css";
 
 export default function ReachOut({ students, batches, cities, workstatus }) {
-  const [typeOfSearch, setTypeOfSearch] = useState('batch');
-  const [childValue, setchildValue] = useState('');
+  const [typeOfSearch, setTypeOfSearch] = useState("batch");
+  const [childValue, setchildValue] = useState("");
   const [filteredStudents, setFilteredStudents] = useState(students);
   const [loading, setLoading] = useState(false);
-
 
   const searchController = async () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`
+        `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
       );
       if (response) {
         setLoading(false);
-        console.log(response)
+        console.log(response);
         setFilteredStudents(response.data.data);
       }
     } catch (e) {
@@ -40,7 +44,8 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
         <div className="search-bar-wrapper">
           <select
             className="reach-out-select"
-            onChange={(e) => setTypeOfSearch(e.target.value)}>
+            onChange={(e) => setTypeOfSearch(e.target.value)}
+          >
             <option className="reach-out-option" value="batch">
               Batch
             </option>
@@ -70,6 +75,6 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
       </>
     );
   } else {
-    return <Loader />
+    return <Loader />;
   }
 }
