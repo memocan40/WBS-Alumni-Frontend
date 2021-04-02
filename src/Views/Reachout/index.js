@@ -9,7 +9,13 @@ import Footer from "../../Components/Footer";
 
 import "./style.css";
 
-export default function ReachOut({ students, batches, cities, workstatus }) {
+export default function ReachOut({
+  students,
+  batches,
+  cities,
+  workstatus,
+  sid,
+}) {
   const [typeOfSearch, setTypeOfSearch] = useState("batch");
   const [childValue, setchildValue] = useState("");
   const [filteredStudents, setFilteredStudents] = useState(students);
@@ -22,7 +28,7 @@ export default function ReachOut({ students, batches, cities, workstatus }) {
         `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`,
         {
           headers: {
-            "Access-Control-Allow-Origin": "*",
+            cookie: sid,
           },
         }
       );
