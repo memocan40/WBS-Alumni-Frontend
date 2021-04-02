@@ -14,6 +14,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
   const [pw, setPw] = useState("");
   const [showAlertUn, setShowAlertUn] = useState(false);
   const [loading, setloading] = useState(false);
+  const [sid, setSid] = useState("");
   const history = useHistory();
 
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
         data,
         {
           headers: {
-            "Access-Control-Allow-Origin": "*",
+            cookie: sid,
           },
         }
       );
@@ -45,6 +46,7 @@ export default function Login({ setLoggedUser, loggedUser }) {
         console.log("User is not verified");
       } else {
         setLoggedUser(response.data.data);
+        setSid(response.data.data.sid);
         setloading(false);
         response.data.data.first_login
           ? history.push("/profile")
