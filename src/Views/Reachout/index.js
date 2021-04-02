@@ -25,7 +25,12 @@ export default function ReachOut({
     try {
       setLoading(true);
       const response = await axios.get(
-        `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`
+        `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`,
+        {
+          headers: {
+            cookie: sid,
+          },
+        }
       );
       if (response) {
         setLoading(false);
