@@ -5,3 +5,14 @@
   font-size: 1.5rem;
   outline: none;
 }
+
+.user-dropdown {
+  margin-top: 2.5rem;
+  z-index: 30;
+}
+
+.dropdown-link {
+  color: #007895;
+  text-decoration: none;
+  text-align: start;
+}
