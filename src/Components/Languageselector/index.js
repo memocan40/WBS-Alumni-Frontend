@@ -13,15 +13,6 @@ const LanguageSelector = () => {
 
   return (
     <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        language
-      </button>
       <select
         onChange={changeLanguage}
         class="dropdown-menu"
