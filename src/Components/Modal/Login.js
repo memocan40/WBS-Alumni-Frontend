@@ -40,7 +40,6 @@ export default function Login({ setLoggedUser, loggedUser }) {
       } else if (response.data.verified_user === false) {
         console.log("User is not verified");
       } else {
-        console.log(response.message);
         setLoggedUser(response.data.data);
         setSid(response.data.data.sid);
         setloading(false);
