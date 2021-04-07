@@ -40,7 +40,8 @@ export default function UserDropdown() {
       >
         <Dropdown.Item>
           <Link className="dropdown-link" to="/profile">
-            <i class="far fa-user-circle">{t("profile.label")}</i>
+            <i class="far fa-user-circle"></i>
+            {t("profile.label")}
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
