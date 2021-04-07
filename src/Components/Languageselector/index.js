@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import "./style.css";
 
@@ -9,14 +9,47 @@ const LanguageSelector = () => {
 
   const changeLanguage = (event) => {
     i18n.changeLanguage(event.target.value);
-  }
+  };
 
   return (
-    <select onChange={changeLanguage} className="lang-selector">
-      <option value="en" name="language" className="en-option">English</option>English
-      <option value="ger" name="language" className="ger-option">Deutsch</option> Deutsch
-    </select>
-  )
-}
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        language
+      </button>
+      <select
+        onChange={changeLanguage}
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        <option
+          value="en"
+          name="language"
+          className="en-option"
+          a
+          class="dropdown-item"
+        >
+          English
+        </option>
+        English
+        <option
+          value="ger"
+          name="language"
+          className="ger-option"
+          a
+          class="dropdown-item"
+        >
+          Deutsch
+        </option>
+        Deutsch
+      </select>
+    </div>
+  );
+};
 
 export default LanguageSelector;
