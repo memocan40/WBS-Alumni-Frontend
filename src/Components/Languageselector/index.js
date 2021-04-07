@@ -1,7 +1,7 @@
 import React from "react";
-
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 import { useTranslation } from "react-i18next";
-
 import "./style.css";
 
 const LanguageSelector = () => {
@@ -12,12 +12,13 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div class="dropdown">
-      <select
-        onChange={changeLanguage}
-        class="dropdown-menu"
-        aria-labelledby="dropdownMenuLink"
-      >
+    <DropdownButton
+      id="dropdown-basic"
+      variant="secondary"
+      className="user-dropdown"
+      title="&#9660;"
+    >
+      <Dropdown.Item>
         <option
           value="en"
           name="language"
@@ -28,6 +29,9 @@ const LanguageSelector = () => {
           English
         </option>
         English
+        <img src="https://cdn.imgbin.com/20/19/5/imgbin-flag-of-the-united-kingdom-united-kingdom-j8GwBMwFyGHdWy3iAKrmv6ac2.jpg" />
+      </Dropdown.Item>
+      <Dropdown.Item>
         <option
           value="ger"
           name="language"
@@ -38,8 +42,9 @@ const LanguageSelector = () => {
           Deutsch
         </option>
         Deutsch
-      </select>
-    </div>
+        <img src="https://cdn.countryflags.com/thumbs/germany/flag-button-round-250.png" />
+      </Dropdown.Item>
+    </DropdownButton>
   );
 };
 
