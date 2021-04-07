@@ -38,6 +38,7 @@ export default function UserDropdown() {
         className="user-dropdown"
         title="&#9660;"
       >
+
         <Link className="dropdown-link" to="/profile">
           <Dropdown.Item>
             <i class="far fa-user-circle">{t("profile.label")}</i>
@@ -46,6 +47,9 @@ export default function UserDropdown() {
 
         <div onClick={logout} className="dropdown-link">
           <Dropdown.Item>
+       
+          <div onClick={logout} className="dropdown-link">
+
             <i class="fas fa-sign-out-alt"></i>
             {t("logout.label")}
           </Dropdown.Item>
