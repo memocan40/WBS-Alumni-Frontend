@@ -38,17 +38,18 @@ export default function UserDropdown() {
         className="user-dropdown"
         title="&#9660;"
       >
-        <Dropdown.Item>
-          <Link className="dropdown-link" to="/profile">
+        <Link className="dropdown-link" to="/profile">
+          <Dropdown.Item>
             <i class="far fa-user-circle">{t("profile.label")}</i>
-          </Link>
-        </Dropdown.Item>
-        <Dropdown.Item>
-          <div onClick={logout} className="dropdown-link">
+          </Dropdown.Item>
+        </Link>
+
+        <div onClick={logout} className="dropdown-link">
+          <Dropdown.Item>
             <i class="fas fa-sign-out-alt"></i>
             {t("logout.label")}
-          </div>
-        </Dropdown.Item>
+          </Dropdown.Item>
+        </div>
       </DropdownButton>
     );
   } else {
