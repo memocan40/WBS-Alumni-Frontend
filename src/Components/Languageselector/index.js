@@ -16,7 +16,7 @@ const LanguageSelector = () => {
       <select
         onChange={changeLanguage}
         class="dropdown-menu"
-        aria-labelledby="dropdownMenuButton1"
+        aria-labelledby="dropdownMenuLink"
       >
         <option
           value="en"
