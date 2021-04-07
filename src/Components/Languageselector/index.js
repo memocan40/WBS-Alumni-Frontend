@@ -1,10 +1,8 @@
 import React from "react";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
+
 import { useTranslation } from "react-i18next";
 
 import "./style.css";
-import { DropdownItem } from "semantic-ui-react";
 
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();
@@ -14,43 +12,34 @@ const LanguageSelector = () => {
   };
 
   return (
-    <DropdownButton
-      id="dropdown-basic"
-      variant="secondary"
-      className="user-dropdown"
-      title="&#9660;"
-    >
-      <div class="dropdown">
-        <select
-          onChange={changeLanguage}
-          class="dropdown-menu"
-          aria-labelledby="dropdownMenuLink"
+    <div class="dropdown">
+      <select
+        onChange={changeLanguage}
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton1"
+      >
+        <option
+          value="en"
+          name="language"
+          className="en-option"
+          a
+          class="dropdown-item"
         >
-          <DropdownItem>
-            <option
-              value="en"
-              name="language"
-              className="en-option"
-              a
-              class="dropdown-item"
-            >
-              English
-            </option>
-          </DropdownItem>
-          <DropdownItem>
-            <option
-              value="ger"
-              name="language"
-              className="ger-option"
-              a
-              class="dropdown-item"
-            >
-              Deutsch
-            </option>
-          </DropdownItem>
-        </select>
-      </div>
-    </DropdownButton>
+          English
+        </option>
+        English
+        <option
+          value="ger"
+          name="language"
+          className="ger-option"
+          a
+          class="dropdown-item"
+        >
+          Deutsch
+        </option>
+        Deutsch
+      </select>
+    </div>
   );
 };
 
