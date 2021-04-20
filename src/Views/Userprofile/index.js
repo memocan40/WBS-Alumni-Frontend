@@ -38,13 +38,7 @@ export default function Profile({
   }, [userObject]);
 
   const dataSubmit = () => {
-    if (userObject.first_login === true) {
-      setUserObject({
-        ...userObject,
-        first_login: false,
-      });
-    }
-    Api.updateUserbyID(userObject);
+    Api.updateUserbyID(userObject, token);
   };
 
   const uploadPic = async () => {
