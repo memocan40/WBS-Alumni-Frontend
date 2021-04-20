@@ -16,9 +16,17 @@ const Api = {
     }
   },
 
-  updateUserbyID: async (obj) => {
+  updateUserbyID: async (obj, token) => {
     try {
-      const response = await axios.put(`${baseURL}users/update/${obj.id}`, obj);
+      const response = await axios.put(
+        `${baseURL}users/update/${obj.id}`,
+        obj,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (response) {
         return response;
       } else {
