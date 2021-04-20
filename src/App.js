@@ -31,6 +31,7 @@ function App() {
   const [interests, setInterests] = useState("");
   const [workStatus, setWorkStatus] = useState("");
   const [batches, setBatches] = useState("");
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     Api.getAllUsers()
@@ -95,6 +96,7 @@ function App() {
                 cities={cities}
                 workStatus={workStatus}
                 batches={batches}
+                token={token}
               />
             ) : (
               <LandingPageView />
@@ -140,7 +142,11 @@ function App() {
 
           {/*---- Log-in Route---- */}
           <Route path={"/login"}>
-            <Login setLoggedUser={setLoggedUser} loggedUser={loggedUser} />
+            <Login
+              setLoggedUser={setLoggedUser}
+              loggedUser={loggedUser}
+              setToken={setToken}
+            />
           </Route>
 
           {/*---- Landing Page Route---- */}
