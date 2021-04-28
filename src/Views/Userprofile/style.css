@@ -98,7 +98,6 @@
 /*--------------------*/
 
 @media (min-width: 320px) and (max-width: 575px) {
-
   .profile-wrapper {
     border: none;
   }
@@ -111,7 +110,6 @@
     text-align: center;
   }
 
-
   .profile-right-wrapper {
     width: 100%;
     margin: 1rem 0;
@@ -122,14 +120,13 @@
     font-size: 1.8rem;
   }
 
-  .profile-input-container{ 
+  .profile-input-container {
     width: 100%;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 
 @media (min-width: 575px) and (max-width: 767px) {
-
   .profile-wrapper {
     width: 95%;
     padding: 3%;
@@ -149,5 +146,4 @@
     width: 100%;
     margin: 0;
   }
-
 }

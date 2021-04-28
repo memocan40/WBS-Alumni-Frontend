@@ -203,6 +203,9 @@ export default function Profile({
             <button className="profile-edit-btn" onClick={dataSubmit}>
               {t("confirmchanges.label")}
             </button>
+            <button className="profile-edit-btn">
+              {t("changesconfirmed.label")}
+            </button>
           </div>
         </div>
         <Footer />
