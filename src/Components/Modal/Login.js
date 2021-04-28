@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import Loader from "../Loader";
 
 import "./style.css";
+const { BASEURL } = process.env;
 
 export default function Login({ setLoggedUser, loggedUser, setToken }) {
   const [email, setEmail] = useState("");
@@ -47,6 +48,8 @@ export default function Login({ setLoggedUser, loggedUser, setToken }) {
           : history.push("/home");
 
         setToken(response.data.accessToken);
+        localStorage.setItem("token", response.data.accessToken);
+        console.log(process.env);
       }
     } catch (err) {
       console.error(err);
