@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
-import Api from '../../Api/Api';
+import Api from "../../Api/Api";
 
 //Component imports
-import Loader from '../../Components/Loader';
-import Header from '../../Components/Header';
-import UserProfileInput from '../../Components/Userprofiledata/input';
-import UserProfileDropdown from '../../Components/Userprofiledata/dropdown';
-import Footer from '../../Components/Footer';
+import Loader from "../../Components/Loader";
+import Header from "../../Components/Header";
+import UserProfileInput from "../../Components/Userprofiledata/input";
+import UserProfileDropdown from "../../Components/Userprofiledata/dropdown";
+import Footer from "../../Components/Footer";
 
-import './style.css';
+import "./style.css";
 
 export default function Profile({
   userObject,
@@ -21,41 +21,42 @@ export default function Profile({
   interests,
   workStatus,
   batches,
+  token,
 }) {
-  const baseUrl = `https://hidden-shelf-31461.herokuapp.com`;
+  const baseUrl = `https://localhost/3000`;
 
   const placeholderPic =
-  'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png';
+    "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
 
+  const [pic, setPic] = useState("");
+  const [picUrl, setPicUrl] = useState(
+    `${baseUrl}/images/${userObject.picture}`
+  );
+  const [updateConfirmation, setUpdateConfirmation] = useState(false);
 
-  const [pic, setPic] = useState('');
-  const [picUrl, setPicUrl] = useState(`${baseUrl}/images/${userObject.picture}`);
-
-  useEffect(()=>{
-    setPicUrl(`${baseUrl}/images/${userObject.picture}`)
+  useEffect(() => {
+    setPicUrl(`${baseUrl}/images/${userObject.picture}`);
   }, [userObject]);
 
-
   const dataSubmit = () => {
-    if (userObject.first_login === true) {
-      setUserObject({
-        ...userObject,
-        first_login: false,
-      })
-    }
-    Api.updateUserbyID(userObject);
+    Api.updateUserbyID(userObject, token).then(
+      setUpdateConfirmation(true),
+      setTimeout(() => {
+        setUpdateConfirmation(false);
+      }, 3000)
+    );
   };
 
   const uploadPic = async () => {
     try {
       const data = new FormData();
-      data.append('profile_pic', pic);
+      data.append("profile_pic", pic);
       const res = await axios.post(
         `${baseUrl}/users/upload-profile-pic/${userObject.id}`,
         data
       );
       if (res) {
-        setUserObject({...userObject, picture: res.data.image});
+        setUserObject({ ...userObject, picture: res.data.image });
       }
     } catch (e) {
       console.error(e);
@@ -64,18 +65,19 @@ export default function Profile({
 
   const { t, i18n } = useTranslation();
 
-    if(userObject ) {
+  if (userObject) {
     return (
       <>
         <Header />
         <div className="profile-wrapper">
           <div className="profile-left-wrapper">
-            <h1 className="profile-heading">{t('yourprofile.label')}</h1>
+            <h1 className="profile-heading">{t("yourprofile.label")}</h1>
             <div className="profile-img-wrapper">
               <img
                 className="profile-img"
                 src={userObject.picture !== null ? picUrl : placeholderPic}
-                placeholder="user-profile"></img>
+                placeholder="user-profile"
+              ></img>
             </div>
             <form method="POST" encType="multipart/form-data">
               <input
@@ -89,14 +91,15 @@ export default function Profile({
                 onClick={(e) => {
                   e.preventDefault();
                   uploadPic();
-                }}>
-                {t('uploadpicture.label')}
+                }}
+              >
+                {t("uploadpicture.label")}
               </button>
             </form>
           </div>
           <div className="profile-right-wrapper">
             <div className="profile-desc">
-              {t('firstname.label')}{' '}
+              {t("firstname.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
                   value={userObject.first_name}
@@ -107,7 +110,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('lastname.label')}{' '}
+              {t("lastname.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
                   value={userObject.last_name}
@@ -118,7 +121,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('batch.label')}{' '}
+              {t("batch.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={batches}
@@ -130,7 +133,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('city.label')}{' '}
+              {t("city.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={cities}
@@ -142,7 +145,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('interests.label')}{' '}
+              {t("interests.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
                   value={userObject.interests}
@@ -153,7 +156,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('workstatus.label')}{' '}
+              {t("workstatus.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileDropdown
                   defValues={workStatus}
@@ -168,7 +171,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('github.label')}{' '}
+              {t("github.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
                   value={userObject.github}
@@ -179,7 +182,7 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('linkedin.label')}{' '}
+              {t("linkedin.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
                   value={userObject.linkedin}
@@ -190,13 +193,11 @@ export default function Profile({
               </span>
             </div>
             <div className="profile-desc">
-              {t('finalproject.label')}{' '}
+              {t("finalproject.label")}{" "}
               <span className="profile-input-container">
                 <UserProfileInput
-
                   value={userObject.final_project}
                   onSubmit={(valueFromChild) =>
-
                     setUserObject({
                       ...userObject,
                       final_project: valueFromChild,
@@ -205,9 +206,20 @@ export default function Profile({
                 />
               </span>
             </div>
-            <button className="profile-edit-btn" onClick={dataSubmit}>
-              {t('confirmchanges.label')}
-            </button>
+            <div>
+              <button className="profile-edit-btn" onClick={dataSubmit}>
+                {t("confirmchanges.label")}
+              </button>
+              <div
+                className={
+                  updateConfirmation
+                    ? "info-update-visible"
+                    : "info-update-invisible"
+                }
+              >
+                Changes were updated
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
