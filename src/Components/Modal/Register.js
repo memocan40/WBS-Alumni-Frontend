@@ -36,7 +36,7 @@ export default function Register() {
     try {
       setloading(true);
       const response = await axios.post(
-        `http://localhost:3000/users/register`,
+        `https://hidden-shelf-31461.herokuapp.com/users/register`,
         data
       );
 
