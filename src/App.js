@@ -71,11 +71,6 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-
-    // const checkToken = () => {
-    //   if (localStorage.getItem("token")) {
-    //   }
-    };
   }, []);
 
   return (
