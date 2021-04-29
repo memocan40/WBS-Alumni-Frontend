@@ -32,13 +32,19 @@ export default function Profile({
   const [picUrl, setPicUrl] = useState(
     `${baseUrl}/images/${userObject.picture}`
   );
+  const [updateConfirmation, setUpdateConfirmation] = useState(false);
 
   useEffect(() => {
     setPicUrl(`${baseUrl}/images/${userObject.picture}`);
   }, [userObject]);
 
   const dataSubmit = () => {
-    Api.updateUserbyID(userObject, token);
+    Api.updateUserbyID(userObject, token).then(
+      setUpdateConfirmation(true),
+      setTimeout(() => {
+        setUpdateConfirmation(false);
+      }, 3000)
+    );
   };
 
   const uploadPic = async () => {
@@ -200,12 +206,20 @@ export default function Profile({
                 />
               </span>
             </div>
-            <button className="profile-edit-btn" onClick={dataSubmit}>
-              {t("confirmchanges.label")}
-            </button>
-            <button className="profile-edit-btn">
-              {t("changesconfirmed.label")}
-            </button>
+            <div>
+              <button className="profile-edit-btn" onClick={dataSubmit}>
+                {t("confirmchanges.label")}
+              </button>
+              <div
+                className={
+                  updateConfirmation
+                    ? "info-update-visible"
+                    : "info-update-invisible"
+                }
+              >
+                Changes were updated
+              </div>
+            </div>
           </div>
         </div>
         <Footer />

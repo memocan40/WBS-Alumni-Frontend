@@ -93,6 +93,16 @@
   transition: all 0.2s;
 }
 
+.info-update-invisible {
+  opacity: 0;
+}
+
+.info-update-visible {
+  opacity: 1;
+  font-size: 1.5rem;
+  color: #007895;
+}
+
 /*--------------------*/
 /*---Media queries----*/
 /*--------------------*/
