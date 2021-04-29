@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import Loader from "../Loader";
 
 import "./style.css";
-const { BASEURL } = process.env;
 
 export default function Login({ setLoggedUser, loggedUser, setToken }) {
   const [email, setEmail] = useState("");
