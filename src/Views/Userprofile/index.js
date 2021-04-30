@@ -23,19 +23,19 @@ export default function Profile({
   batches,
   token,
 }) {
-  const baseUrl = `https://localhost/3000`;
+  const { REACT_APP_BASE_URL } = process.env;
 
   const placeholderPic =
     "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
 
   const [pic, setPic] = useState("");
   const [picUrl, setPicUrl] = useState(
-    `${baseUrl}/images/${userObject.picture}`
+    `${REACT_APP_BASE_URL}/images/${userObject.picture}`
   );
   const [updateConfirmation, setUpdateConfirmation] = useState(false);
 
   useEffect(() => {
-    setPicUrl(`${baseUrl}/images/${userObject.picture}`);
+    setPicUrl(`${REACT_APP_BASE_URL}/images/${userObject.picture}`);
   }, [userObject]);
 
   const dataSubmit = () => {
@@ -52,7 +52,7 @@ export default function Profile({
       const data = new FormData();
       data.append("profile_pic", pic);
       const res = await axios.post(
-        `${baseUrl}/users/upload-profile-pic/${userObject.id}`,
+        `${REACT_APP_BASE_URL}/users/upload-profile-pic/${userObject.id}`,
         data
       );
       if (res) {
