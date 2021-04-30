@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import './style.css';
 
-import LanguageSelector from '../../Components/Languageselector';
+import LanguageSelector from '../../Components/Reusable/LanguageSelector';
 
 export default function LandingPageView() {
   const { t, i18n } = useTranslation();

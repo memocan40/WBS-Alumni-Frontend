@@ -2,7 +2,7 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import {useState} from "react";
 
-import './welcome.css';
+import './index.css';
 
 export default function Welcome({displaybool}) {
   let [display,setdisplay]=useState({displaybool})

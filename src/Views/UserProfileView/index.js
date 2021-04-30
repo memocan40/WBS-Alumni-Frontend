@@ -6,11 +6,11 @@ import axios from "axios";
 import Api from "../../Api/Api";
 
 //Component imports
-import Loader from "../../Components/Loader";
-import Header from "../../Components/Header";
-import UserProfileInput from "../../Components/Userprofiledata/input";
-import UserProfileDropdown from "../../Components/Userprofiledata/dropdown";
-import Footer from "../../Components/Footer";
+import Loader from "../../Components/Reusable/Loader";
+import Header from "../../Components/Layout/Header";
+import UserProfileInput from "../../Components/User/UserProfileDataInputs/input";
+import UserProfileDropdown from "../../Components/User/UserProfileDataInputs/dropdown";
+import Footer from "../../Components/Layout/Footer";
 
 import "./style.css";
 

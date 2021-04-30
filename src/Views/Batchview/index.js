@@ -1,10 +1,10 @@
 import { useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 
-import Header from '../../Components/Header';
-import Footer from '../../Components/Footer';
-import StudentGrid from '../../Components/Studentcardgrid';
-import Loader from '../../Components/Loader';
+import Header from '../../Components/Layout/Header';
+import Footer from '../../Components/Layout/Footer';
+import StudentGrid from '../../Components/StudentCardGrid';
+import Loader from '../../Components/Reusable/Loader';
 
 import Api from '../../Api/Api';
 

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-import Loader from "../Loader";
+import Loader from "../Reusable/Loader";
 
 import "./style.css";
 const { REACT_APP_BASE_URL } = process.env;

@@ -7,18 +7,18 @@ import Countries from "./Api/Cities";
 
 import "./i18next-config";
 //Components
-import Loader from "./Components/Loader";
+import Loader from "./Components/Reusable/Loader";
 
 //Views
-import Profile from "./Views/Userprofile";
-import AllBatches from "./Views/Allbatches";
-import BatchView from "./Views/Batchview";
-import ReachOutView from "./Views/Reachout";
-import Login from "./Views/Login";
-import Register from "./Views/Register";
-import LandingPageView from "./Views/Landingpage";
-import HomePageView from "./Views/Homepage";
-import StudentProfile from "./Views/Studentprofile";
+import Profile from "./Views/UserProfileView";
+import AllBatches from "./Views/AllBatchesView";
+import BatchView from "./Views/BatchView";
+import ReachOutView from "./Views/ReachoutView";
+import Login from "./Views/LoginView";
+import Register from "./Views/RegisterView";
+import LandingPageView from "./Views/LandingPageView";
+import HomePageView from "./Views/HomePageView";
+import StudentProfile from "./Views/StudentProfileView";
 
 //App general styles
 import "./App.css";

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-import Header from "../../Components/Header";
-import Loader from "../../Components/Loader";
-import Searchbar from "../../Components/Searchbar";
-import Searchgrid from "../../Components/Studentcardgrid";
-import Footer from "../../Components/Footer";
+import Header from "../../Components/Layout/Header";
+import Loader from "../../Components/Reusable/Loader";
+import Searchbar from "../../Components/Students/StudentSearchBar";
+import Searchgrid from "../../Components/StudentCardGrid";
+import Footer from "../../Components/Layout/Footer";
 
 import "./style.css";
 

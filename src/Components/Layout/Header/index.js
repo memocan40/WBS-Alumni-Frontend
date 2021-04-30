@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import UserDropdown from '../Userdropdown';
-import ToggleBtn from '../Togglebtn';
-import LanguageSelector from '../Languageselector';
+import UserDropdown from '../UserDropdown';
+import ToggleBtn from '../../Reusable/ToggleBtn';
+import LanguageSelector from '../../Reusable/LanguageSelector';
 
 import './style.css';
 

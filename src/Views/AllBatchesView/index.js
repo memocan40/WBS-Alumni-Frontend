@@ -1,7 +1,7 @@
-import Header from '../../Components/Header';
-import BatchCard from '../../Components/Batchcard';
-import Footer from '../../Components/Footer';
-import Loader from '../../Components/Loader';
+import Header from '../../Components/Layout/Header';
+import BatchCard from '../../Components/Students/BatchCard';
+import Footer from '../../Components/Layout/Footer';
+import Loader from '../../Components/Reusable/Loader';
 
 import './style.css';
 
