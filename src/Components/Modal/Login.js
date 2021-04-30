@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import Loader from "../Loader";
 
 import "./style.css";
+const { REACT_APP_BASE_URL } = process.env;
 
 export default function Login({ setLoggedUser, loggedUser, setToken }) {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ export default function Login({ setLoggedUser, loggedUser, setToken }) {
     setloading(true);
     try {
       const response = await axios.post(
-        [`https://hidden-shelf-31461.herokuapp.com/users/login`],
+        [`${REACT_APP_BASE_URL}users/login`],
         data
       );
 

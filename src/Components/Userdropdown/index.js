@@ -8,6 +8,7 @@ import axios from "axios";
 import Loader from "../Loader";
 
 import "./style.css";
+const { REACT_APP_BASE_URL } = process.env;
 
 export default function UserDropdown() {
   const { t, i18n } = useTranslation();
@@ -19,9 +20,7 @@ export default function UserDropdown() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(
-        `https://hidden-shelf-31461.herokuapp.com/users/logout`
-      );
+      const response = await axios.post(`${REACT_APP_BASE_URL}users/logout`);
       if (response) {
         history.push("/");
       }

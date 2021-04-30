@@ -1,12 +1,10 @@
 import axios from "axios";
-
-const baseURL = "https://hidden-shelf-31461.herokuapp.com/";
-// const baseURL = "http://localhost:3000/";
+const { REACT_APP_BASE_URL } = process.env;
 
 const Api = {
   getAllUsers: async () => {
     try {
-      const response = await axios.get(`${baseURL}users`);
+      const response = await axios.get(`${REACT_APP_BASE_URL}users`);
       if (response.data) {
         return response.data.data;
       }
@@ -19,7 +17,7 @@ const Api = {
   updateUserbyID: async (obj, token) => {
     try {
       const response = await axios.put(
-        `${baseURL}users/update/${obj.id}`,
+        `${REACT_APP_BASE_URL}users/update/${obj.id}`,
         obj,
         {
           headers: {
@@ -40,7 +38,7 @@ const Api = {
 
   getInterests: async () => {
     try {
-      const response = await axios.get(`${baseURL}interests`);
+      const response = await axios.get(`${REACT_APP_BASE_URL}interests`);
       if (response) {
         return response.data.data;
       } else {
@@ -54,7 +52,7 @@ const Api = {
 
   getWorkStatuses: async () => {
     try {
-      const response = await axios.get(`${baseURL}work_status`);
+      const response = await axios.get(`${REACT_APP_BASE_URL}work_status`);
       if (response) {
         return response.data;
       }
@@ -66,7 +64,7 @@ const Api = {
 
   getAllBatches: async () => {
     try {
-      const response = await axios.get(`${baseURL}batches`);
+      const response = await axios.get(`${REACT_APP_BASE_URL}batches`);
       if (response) {
         return response.data;
       }
@@ -77,7 +75,7 @@ const Api = {
   },
 
   logIn: (requestBody) => {
-    axios.post(`${baseURL}users/login`, requestBody).then(
+    axios.post(`${REACT_APP_BASE_URL}users/login`, requestBody).then(
       (response) => {
         console.log(response.data);
       },
@@ -89,7 +87,7 @@ const Api = {
 
   getUserbyID: async (id) => {
     try {
-      const res = await axios.get(`${baseURL}users/${id}`);
+      const res = await axios.get(`${REACT_APP_BASE_URL}users/${id}`);
       if (res) {
         return res.data.data;
       }
@@ -99,7 +97,7 @@ const Api = {
   },
 
   getUserByBatch: (batch) => {
-    const response = axios.get(`${baseURL}users/batch/${batch}`);
+    const response = axios.get(`${REACT_APP_BASE_URL}users/batch/${batch}`);
     if (response) {
       return response;
     }
@@ -107,7 +105,7 @@ const Api = {
 
   getUserByInterest: async (interest) => {
     try {
-      const res = await axios.get(`${baseURL}interest/${interest}`);
+      const res = await axios.get(`${REACT_APP_BASE_URL}interest/${interest}`);
       if (res) {
         return res;
       }
