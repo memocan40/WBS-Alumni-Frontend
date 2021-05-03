@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
-import Loader from "../Reusable/Loader";
+import Loader from "../../Reusable/Loader";
 
 import "./style.css";
 const { REACT_APP_BASE_URL } = process.env;

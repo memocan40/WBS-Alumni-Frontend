@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import Loader from "../Reusable/Loader";
+import Loader from "../../Reusable/Loader";
 import { useForm } from "react-hook-form";
 
 // Importing style

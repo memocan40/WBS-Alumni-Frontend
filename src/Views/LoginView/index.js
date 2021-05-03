@@ -1,4 +1,4 @@
-import LoginModal from "../../Components/Modal/Login.js";
+import LoginModal from "../../Components/Layout/Forms/Login.js";
 
 import "./style.css";
 

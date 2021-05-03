@@ -1,4 +1,4 @@
-import RegisterModal from '../../Components/Modal/Register.js';
+import RegisterModal from '../../Components/Layout/Forms/Register.js';
 
 export default function Register() {
   
