@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../../Components/Layout/Header";
 import Loader from "../../Components/Reusable/Loader";
 import Searchbar from "../../Components/Students/StudentSearchBar";
-import Searchgrid from "../../Components/StudentCardGrid";
+import Searchgrid from "../../Components/Students/StudentCardGrid";
 import Footer from "../../Components/Layout/Footer";
 
 import "./style.css";

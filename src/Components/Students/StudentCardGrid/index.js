@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Loader from '../Reusable/Loader';
+import Loader from '../../Reusable/Loader';
 import StudentCard from '../StudentCard';
 
 import './style.css';

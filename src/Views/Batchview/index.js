@@ -1,39 +1,39 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Header from '../../Components/Layout/Header';
 import Footer from '../../Components/Layout/Footer';
-import StudentGrid from '../../Components/StudentCardGrid';
+import StudentGrid from '../../Components/Students/StudentCardGrid';
 import Loader from '../../Components/Reusable/Loader';
 
 import Api from '../../Api/Api';
 
 export default function BatchView({}) {
-    const { batchname } = useParams();
-    
-    const [studObject, setStudObj] = useState('');
- 
-    useEffect( async()=> {
-        try{
-            const res = await Api.getUserByBatch(batchname)
+  const { batchname } = useParams();
 
-            if(res) {
-                setStudObj(res.data.data);
-            }
-        } catch(e) {
-            console.error(e);
-        }
-    }, [])
+  const [studObject, setStudObj] = useState('');
 
-  if(studObject){
+  useEffect(async () => {
+    try {
+      const res = await Api.getUserByBatch(batchname);
 
-  return (
-    <>
-      <Header />
-        <StudentGrid filteredStudents={studObject}/>
-      <Footer />
-    </>
-  ); } else {
-    return  <Loader />
+      if (res) {
+        setStudObj(res.data.data);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
+
+  if (studObject) {
+    return (
+      <>
+        <Header />
+        <StudentGrid filteredStudents={studObject} />
+        <Footer />
+      </>
+    );
+  } else {
+    return <Loader />;
   }
 }

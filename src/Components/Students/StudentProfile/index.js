@@ -3,8 +3,8 @@ import axios from "axios";
 
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import Api from "../../Api/Api";
-import Loader from "../Reusable/Loader";
+import Api from "../../../Api/Api";
+import Loader from '../../Reusable/Loader';
 import "./style.css";
 const { REACT_APP_BASE_URL } = process.env;
 
