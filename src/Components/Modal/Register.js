@@ -12,8 +12,6 @@ import { useForm } from "react-hook-form";
 // Importing style
 import "./style.css";
 
-const { REACT_APP_BASE_URL } = process.env;
-
 //Register Component
 export default function Register() {
   const history = useHistory();
@@ -38,7 +36,7 @@ export default function Register() {
     try {
       setloading(true);
       const response = await axios.post(
-        `${REACT_APP_BASE_URL}users/register`,
+        `https://hidden-shelf-31461.herokuapp.com/users/register`,
         data
       );
 

@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import Loader from "../Loader";
 
 import "./style.css";
-const { REACT_APP_BASE_URL } = process.env;
 
 export default function Login({ setLoggedUser, loggedUser, setToken }) {
   const [email, setEmail] = useState("");
@@ -28,7 +27,7 @@ export default function Login({ setLoggedUser, loggedUser, setToken }) {
     setloading(true);
     try {
       const response = await axios.post(
-        [`${REACT_APP_BASE_URL}users/login`],
+        [`http://localhost:3000/users/login`],
         data
       );
 
