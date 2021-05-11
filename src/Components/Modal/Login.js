@@ -27,7 +27,7 @@ export default function Login({ setLoggedUser, loggedUser, setToken }) {
     setloading(true);
     try {
       const response = await axios.post(
-        [`http://localhost:3000/users/login`],
+        [`https://hidden-shelf-31461.herokuapp.com/users/login`],
         data
       );
 
