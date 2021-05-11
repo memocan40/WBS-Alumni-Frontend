@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 import Api from "../../Api/Api";
 import Loader from "../Loader";
 import "./style.css";
-const { REACT_APP_BASE_URL } = process.env;
 
 export default function Studentprofile({ obj }) {
   const [userObj, setUserObj] = useState("");
@@ -34,7 +33,7 @@ export default function Studentprofile({ obj }) {
               className="student-profile-img"
               src={
                 userObj.picture
-                  ? `${REACT_APP_BASE_URL}/images/${userObj.picture}`
+                  ? `https://hidden-shelf-31461.herokuapp.com/images/${userObj.picture}`
                   : placeholderURL
               }
               alt="Profilepic"

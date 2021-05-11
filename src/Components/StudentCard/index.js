@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import "./style.css";
 
-const { REACT_APP_BASE_URL } = process.env;
-
 export default function Studentcard({ name, batch, id, picture }) {
   const { t, i18n } = useTranslation();
   const placeholderURL =
@@ -16,7 +14,9 @@ export default function Studentcard({ name, batch, id, picture }) {
         <img
           className="student-card-img"
           src={
-            picture ? `${REACT_APP_BASE_URL}/images/${picture}` : placeholderURL
+            picture
+              ? `https://hidden-shelf-31461.herokuapp.com/images/${picture}`
+              : placeholderURL
           }
           alt="Profilepic"
         />

@@ -23,19 +23,19 @@ export default function Profile({
   batches,
   token,
 }) {
-  const { REACT_APP_BASE_URL } = process.env;
-
   const placeholderPic =
     "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
 
   const [pic, setPic] = useState("");
   const [picUrl, setPicUrl] = useState(
-    `${REACT_APP_BASE_URL}/images/${userObject.picture}`
+    `https://hidden-shelf-31461.herokuapp.com/images/${userObject.picture}`
   );
   const [updateConfirmation, setUpdateConfirmation] = useState(false);
 
   useEffect(() => {
-    setPicUrl(`${REACT_APP_BASE_URL}/images/${userObject.picture}`);
+    setPicUrl(
+      `https://hidden-shelf-31461.herokuapp.com/images/${userObject.picture}`
+    );
   }, [userObject]);
 
   const dataSubmit = () => {
@@ -52,7 +52,7 @@ export default function Profile({
       const data = new FormData();
       data.append("profile_pic", pic);
       const res = await axios.post(
-        `${REACT_APP_BASE_URL}/users/upload-profile-pic/${userObject.id}`,
+        `https://hidden-shelf-31461.herokuapp.com/users/upload-profile-pic/${userObject.id}`,
         data
       );
       if (res) {

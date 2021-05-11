@@ -9,8 +9,6 @@ import Footer from "../../Components/Footer";
 
 import "./style.css";
 
-const { REACT_APP_BASE_URL } = process.env;
-
 export default function ReachOut({
   students,
   batches,
@@ -27,7 +25,7 @@ export default function ReachOut({
     try {
       setLoading(true);
       const response = await axios.get(
-        `${REACT_APP_BASE_URL}users/${typeOfSearch}/${childValue}`
+        `https://hidden-shelf-31461.herokuapp.com/users/${typeOfSearch}/${childValue}`
       );
       if (response) {
         setLoading(false);
